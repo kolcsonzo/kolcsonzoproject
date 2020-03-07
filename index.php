@@ -8,5 +8,5 @@
 	</article>
 </main>
 <?php
-	include('inc/bottom.php')
+	include('inc/bottom.php');
 ?>
