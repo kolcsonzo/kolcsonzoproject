@@ -1,6 +1,6 @@
 <?php
 	header("Content-Type: text/html; charset=utf-8");
-	include('inc/top.php')
+	include('inc/top.php');
 ?>
 <main>
 	<article>
@@ -8,5 +8,5 @@
 	</article>
 </main>
 <?php
-	include('inc/bottom.php')
+	include('inc/bottom.php');
 ?>
