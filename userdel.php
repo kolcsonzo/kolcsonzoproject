@@ -31,8 +31,9 @@
 				}
 				//Ha vezető jogunk van, akkor törölhetünk
 				if ($userinfo['role'] == 2) {
-				echo '<a href="userdel.php?delete=' .$row['username']. '"> Törlés</a></br>';
+				echo '<a href="userdel.php?delete=' .$row['username']. '"> Törlés</a>';
 				}
+				echo "</br>";
 			}	//Sikerült-e a művelet?
 				if ($_GET['success'] == 1) { echo "Sikeresen végrehajtva!"; }
 				if ($_GET['success'] == 2) { echo "A művelet nem sikerült!"; }
