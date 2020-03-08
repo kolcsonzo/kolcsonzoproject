@@ -5,7 +5,7 @@
 		require('db.php');
 		$query = "SELECT * FROM users WHERE username='".$_SESSION['username']."'";
         $result = mysqli_query($con, $query) or die(mysql_error());
-		$row = mysqli_fetch_assoc($result);
+		$userinfo = mysqli_fetch_assoc($result);
 ?>
 <head>
 	<meta charset="utf-8">
@@ -21,8 +21,8 @@
 		<header>
 			<span class="header-information-text logo">logó vagy valami</span>	
 			<span class="header-information-text login">Bejelentkezve: 
-			<?php  echo $row['username'];
-					if ($row['role'] == 1) {
+			<?php  echo $userinfo['username'];
+					if ($userinfo['role'] == 1) {
 					echo ' (Munkatárs)';
 					} else {
 					echo ' (Vezető)';	
@@ -36,7 +36,7 @@
 				<li id="nav"><a href="foglalas.php">Foglalás</a></li>
 				<li id="nav"><a href="#news">Eszközlista</a></li>
 			<?php
-					if ($row['role'] == 2) {
+					if ($userinfo['role'] == 2) {
 					echo '<li id="nav"><a href="useradd.php">Felhasználó felvétele</a></li>';
 				}
 			?>
