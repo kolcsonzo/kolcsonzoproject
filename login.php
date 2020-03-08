@@ -23,8 +23,8 @@
 						Regisztrációs szándék esetén forduljon a rendszergazdához!	
 					</span>
 				</div>
-				<form action="" id="" method="">
 				<span class="text">BEJELENTKEZÉS</span><br>
+				<form action="" id="" method="">
 					<input type="text" id="user-account" name="user-account" placeholder="Felhasználónév">
 					<br>
 					<input type="password" id="user-password" name="user-password" placeholder="Jelszó"><br>

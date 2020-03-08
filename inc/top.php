@@ -17,9 +17,9 @@
 		</header>
 		<nav>
 			<ul id="nav">
-				<li id="nav"><a href="#home">Bejelentkezés</a></li>
-				<li id="nav"><a href="#home">Foglalás</a></li>
+				<li id="nav"><a href="foglalas.php">Foglalás</a></li>
 				<li id="nav"><a href="#news">Eszközlista</a></li>
+				<li id="nav"><a href="useradd.php">Felhasználó felvétele</a></li>
 				<li id="nav2"><a class="nav" href="#about">Impresszum</a></li>
 			</ul>
 		</nav>

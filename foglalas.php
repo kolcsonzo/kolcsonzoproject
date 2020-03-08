@@ -4,7 +4,7 @@
 ?>
 <main>
 	<article>
-		<span class="text">MEGNEVEZ�S</span><br>			
+		<span class="text">Eszköz foglalás</span><br>			
 	</article>
 </main>
 <?php
