@@ -6,40 +6,39 @@
 <main>
 	<article>
 		<div class="info pagename" style>
-			<span class="text" style="display:block;float:left;margin-top:6px;">Felhasználók kezelése</span>
+			<span class="text content-name">Felhasználók kezelése</span>
 			<div style="float:right;">
 				<button class="button" onclick="openPage('user-add')">Tag felvétel</button>
 				<button class="button" onclick="openPage('user-delete')">Tag törlés</button>
 			</div>
 		</div>
-		<br><br><br>
-		<div class="container" style="width: 400px;">
-					
+		<br><br>
+		<div class="container">			
 				<div id="user-add" class="tabcontent">
 					<div class="info">
 						<span><strong>Tag felvételéhez</strong> a következő űrlap kitöltése szükséges</span>
 					</div>
-					<form action="" id="" method="post">
+					<form action="" id="add-user-form" method="post" autocomplete="off">
 						<br>
 						<label for="username">Felhasználónév:</label>
-						<input type="text" style="float:right" id="username" name="username" required placeholder="">
+						<input type="text" style="float:right" id="username" name="username" required placeholder="Adja meg a felhasználónevet...">
 						<br>
 						<label for="full_name">Teljes név:</label>
-						<input type="text" style="float:right" id="full_name" name="full_name" required placeholder="">
+						<input type="text" style="float:right" id="full_name" name="full_name" required placeholder="Adja meg a teljes nevet...">
 						<br>
 						<label for="email">E-mail:</label>
-						<input type="mail" style="float:right" id="email" name="email" required placeholder="">
+						<input type="mail" style="float:right" id="email" name="email" required placeholder="Adja meg az e-mail címet...">
 						<br>
 						<label for="password">Jelszó:</label>
-						<input type="password" style="float:right" id="password" name="password" required placeholder="">
+						<input type="password" style="float:right" id="password" name="password" required placeholder="Adja meg a jelszót">
 						<br>
-						<label for="role">Szerepkör:</label>
-						 <select style="float:right" id="role" name="role">
+						<label for="role">Szerepkör:</label><br>
+						 <select id="role" name="role" class="select">
 							<option value="2">Vezető</option>
 							<option value="1">Munkatárs</option>
 						 </select>
-						<br>			
-						<button class="button">Felvesz</button>
+						<br><br><br><br>
+						<center><button class="button">Tag felvétele</button></center>
 						<?php
 							require('db.php');
 							if (isset($_REQUEST['username'])) {

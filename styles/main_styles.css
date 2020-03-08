@@ -22,7 +22,6 @@ body{
 	"bottom bottom 	bottom 	bottom"
 	"footer footer 	footer 	footer";
 }
-
 header{
 	background-color: #26ACDE;
 	padding: 28px 18vw 0 18vw;
@@ -64,6 +63,12 @@ nav{
 main{
 	padding-left: 16px;
 	grid-area: main;
+}
+.container{
+	width: 400px;
+}
+.content-name{
+	margin-top: 6px;
 }
 section#bottom{
 	background: #fefefe; 
@@ -186,7 +191,7 @@ ul#nav li#nav2 a:hover {
 main input {
   width: 300px;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 2px 0;
   border: none;
   color: #2293BD;
   border-left: 4px solid #26ACDE;
@@ -194,8 +199,18 @@ main input {
   transition: 0.4s;
   font-family: 'PT Sans', sans-serif;
 }
+.select{
+	padding:10px;
+	background-color: #fff;
+	font-size: 1.2em;
+	color: #2293BD;
+	border: 1px solid #2293BD;
+	margin-left: 28px;
+}
 main label{
 	color: #26ACDE;
+	margin: 15px 0 0 0;
+	font-family: 'Lato', sans-serif;
 }
 main input:focus {
   border-left: 4px solid IndianRed;
@@ -210,7 +225,7 @@ main input:focus {
   margin-left: -1.5px;
   top: 25px;
 }
-/*::placeholder {
+::placeholder {
   color: #2293BD;
   opacity: 0.7; 
 }
@@ -220,4 +235,4 @@ main input:focus {
 }
 ::-ms-input-placeholder
   color: #2293BD;
-opacity: 0.7; }*/
+opacity: 0.7; }

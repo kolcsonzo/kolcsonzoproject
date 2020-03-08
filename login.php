@@ -25,7 +25,7 @@ echo '
 						Regisztrációs szándék esetén forduljon a rendszergazdához!	
 					</span>
 				</div>
-				<form name="login" id="" method="post">
+				<form name="login" id="" method="post" autocomplete="off">
 				<span class="text">BEJELENTKEZÉS</span><br>
 					<input type="text" id="username" name="username" placeholder="Felhasználónév">
 					<br>
