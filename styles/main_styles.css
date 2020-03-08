@@ -61,9 +61,7 @@ nav{
 	top: 28px;*/
 }
 main{
-	display: flex;
 	padding-left: 16px;
-	justify-content: left;
 	grid-area: main;
 }
 section#bottom{
@@ -112,7 +110,7 @@ ul#nav li#nav {
 ul#nav li#nav a {
   display: block;
   text-align: center;
-  padding: 13px 16px 14px 16px;
+  padding: 14px 16px 14px 16px;
   text-decoration: none;
   color: #26ACDE;
   font-size: 1em;
@@ -126,7 +124,7 @@ ul#nav li#nav a:hover {
 ul#nav li#nav2 a {
   display: block;
   text-align: center;
-  padding: 13px 16px 14px 16px;
+  padding: 14px 16px 14px 16px;
   text-decoration: none;
   color: #fff;
   background-color: #2293BD;
@@ -136,7 +134,34 @@ ul#nav li#nav2 a {
 ul#nav li#nav2 a:hover {
   font-size: 1.1em;
 }
-/*.button {
+
+/*---------Fülek - Felhasználók kezelése------------*/
+/*-----------------------kezdés---------------------*/
+
+
+.tabcontent {
+  color: #26ACDE;
+  padding: 25px 20px;
+  height: 100%;
+}
+#user-add {display: block;}
+#user-delete {display: none;}
+
+/*---------Fülek - Felhasználók kezelése------------*/
+/*-----------------------vége-----------------------*/
+
+.info {
+  padding: 12px 16px;
+  background-color: #fff;
+  border-left: 6px solid #26ACDE;
+  margin-bottom: 20px;
+}
+.pagename{
+	height: 77px;
+	vertical-align: middle;
+}
+
+.button {
   background-color: #26ACDE;
   border: none;
   color: white;
@@ -167,13 +192,15 @@ main input {
   font-size: 1.2em;
   transition: 0.4s;
   font-family: 'PT Sans', sans-serif;
-
+}
+main label{
+	color: #26ACDE;
 }
 main input:focus {
   border-left: 4px solid IndianRed;
   background: FloralWhite;
   outline: none;
-}*/
+}
 .elvalaszto {
   border-left: 3px solid #26ACDE;
   height: 150px;

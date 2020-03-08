@@ -10,10 +10,25 @@
 <head>
 	<meta charset="utf-8">
 	<title>Eszköznyilvántartó és kölcsönző rendszer</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script src="https://kit.fontawesome.com/cc6376bd80.js" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i|PT+Sans|Roboto&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" href="styles/main_styles.css">
+	<script>
+		function openPage(pageName) {
+			if (pageName == 'user-add') {
+				document.getElementById("user-add").style.display = "block";
+				document.getElementById("user-delete").style.display = "none";				
+			}
+			else if (pageName == 'user-delete'){
+				document.getElementById("user-add").style.display = "none";
+				document.getElementById("user-delete").style.display = "block";
+			}
+		}
+	</script>
 </head>
 <body>
 
@@ -35,11 +50,11 @@
 			<ul id="nav">
 				<li id="nav"><a href="foglalas.php">Foglalás</a></li>
 				<li id="nav"><a href="#news">Eszközlista</a></li>
-			<?php
-					if ($userinfo['role'] == 2) {
-					echo '<li id="nav"><a href="useradd.php">Felhasználó felvétele</a></li>';
-				}
-			?>
+				<?php
+						if ($userinfo['role'] == 2) {
+						echo '<li id="nav"><a href="useradd.php">Felhasználók kezelése</a></li>';
+					}
+				?>
 				<li id="nav2"><a class="nav" href="#about">Impresszum</a></li>
 			</ul>
 		</nav>
