@@ -58,8 +58,7 @@ echo '
             header("Location: foglalas.php");
         } else {
 			//Hibaüzenet
-            echo 	'<div class="alert alert-danger alert-dismissible fade show" style="position: absolute; 
-					top: -115px; left: -50px;width: 400px;float:left;">
+            echo 	'<div class="alertpos alert alert-danger alert-dismissible fade show">
 					<button type="button" class="close" data-dismiss="alert">&times;</button>
 					<strong>Figyelem!</strong> Hibás felhasználónév vagy jelszó!
 					</div>';

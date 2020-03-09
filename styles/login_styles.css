@@ -18,6 +18,13 @@ body{
 	".		main	."
 	".		.		."
 }
+.alertpos{
+	position: absolute;
+	top: -115px; 
+	left: -50px;
+	width: 400px;
+	float:left;
+}
 main{
 	display: flex;
 	justify-content: center;
