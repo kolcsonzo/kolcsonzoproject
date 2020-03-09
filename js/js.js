@@ -134,17 +134,5 @@ function limitPagging() {
   }
 }
 
-$(function() {
-  // Just to append id number for each row
-  $('table tr:eq(0)').prepend('<th> ID </th>');
-
-  var id = 0;
-
-  $('table tr:gt(0)').each(function() {
-    id++;
-    $(this).prepend('<td>' + id + '</td>');
-  });
-});
-
 //  Developed By Yasser Mas
 // yasser.mas2@gmail.com

@@ -1,14 +1,19 @@
 body{
 
-    background-color: #eee; 
-}
 
-table th , table td{
+}
+table th{
+	background-color: #26ACDE;
+	color: #fff;
+	text-align: center;
+}
+table td{
     text-align: center;
+	color: #26ACDE;
 }
 
 table tr:nth-child(even){
-    background-color: #BEF2F5
+    background-color: #fff;
 }
 
 .pagination li:hover{
