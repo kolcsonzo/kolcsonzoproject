@@ -9,7 +9,7 @@ body{
 }
 .grid-container {
   display: grid;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   grid-template-rows: 80px 45px 100px auto 100px 200px 40px;
   grid-template-columns: auto 32vw 32vw auto;
@@ -17,7 +17,7 @@ body{
 	"header header	header	header"
 	"nav 	nav		nav 	nav"
 	". 		. 		. 		."
-	". 		main 	main 	."
+	". 		main	main	."
 	". 		. 		. 		."
 	"bottom bottom 	bottom 	bottom"
 	"footer footer 	footer 	footer";
@@ -25,7 +25,6 @@ body{
 header{
 	background-color: #26ACDE;
 	padding: 28px 18vw 0 18vw;
-	vertical-align: middle;
 	grid-area: header;
 	position: relative;
 }
@@ -63,12 +62,6 @@ nav{
 main{
 	padding-left: 16px;
 	grid-area: main;
-}
-.container{
-	width: 400px;
-}
-.content-name{
-	margin-top: 6px;
 }
 section#bottom{
 	background: #fefefe; 

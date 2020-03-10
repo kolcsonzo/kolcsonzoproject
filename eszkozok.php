@@ -6,7 +6,6 @@
 	include('inc/top.php');
 ?>
 <main>
-	<article>
 		<div class="form-group"> 	<!--		Show Numbers Of Rows 		-->
 			 <select class  ="form-control" name="state" id="maxRows">
 				<option value="5000">Összes sor...</option>
@@ -122,7 +121,6 @@
 			  })();
 			</script>
 		</div>	
-	</article>
 </main>
 <?php
 	include('inc/bottom.php');
