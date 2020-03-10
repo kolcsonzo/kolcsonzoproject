@@ -17,7 +17,7 @@ body{
 	"header header	header	header"
 	"nav 	nav		nav 	nav"
 	". 		. 		. 		."
-	". 		main	main	."
+	". 		main 	main 	."
 	". 		. 		. 		."
 	"bottom bottom 	bottom 	bottom"
 	"footer footer 	footer 	footer";
@@ -25,6 +25,7 @@ body{
 header{
 	background-color: #26ACDE;
 	padding: 28px 18vw 0 18vw;
+	vertical-align: middle;
 	grid-area: header;
 	position: relative;
 }
@@ -62,6 +63,12 @@ nav{
 main{
 	padding-left: 16px;
 	grid-area: main;
+}
+.container{
+	width: 400px;
+}
+.content-name{
+	margin-top: 6px;
 }
 section#bottom{
 	background: #fefefe; 
