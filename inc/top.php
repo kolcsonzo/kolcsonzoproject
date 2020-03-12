@@ -31,6 +31,17 @@
 			}
 		}
 	</script>
+	<!-- Ez a script frissíti le a taglistát, és töröl az adatbázisból. Átadja a szerepkört(a jogosultság ellenőrzése miatt) és a törlendő felhasználó nevét a query-nek -->
+	<script type="text/javascript">
+	function teszt(role, target)
+	{
+	   $.ajax({url:"userlist_query_delete.php", type:"POST", data: ({role: role, target: target}), async:true, cache:false, success:function(result)
+	{
+		 $("#delete_q").html(result);
+	}});
+
+	};
+	</script>
 </head>
 <body>
 
