@@ -24,7 +24,7 @@ body{
 }
 header{
 	background-color: #26ACDE;
-	padding: 28px 18vw 0 18vw;
+	padding: 28px 19vw 0 19vw;
 	vertical-align: middle;
 	grid-area: header;
 	position: relative;
@@ -40,25 +40,6 @@ nav{
 	padding: 0 18vw 0 18vw;
 	z-index: 1;
 	grid-area: nav;
-}
-.header-information-text{
-	color: #fff;
-	font-size: 1em;
-	display: inline-block;
-	padding-left:16px;
-	margin: auto 0 auto 0;
-}
-.logo{
-	float: left;
-	/*display:block;
-	position:absolute;
-	top: 27px;*/
-}
-.login{
-	float: right;
-	/*display:block;
-	position:absolute;
-	top: 28px;*/
 }
 main{
 	padding-left: 16px;
@@ -84,14 +65,6 @@ section#bottom{
 	display: block;
 	padding-top:10px;
 }
-.left-information-section{
-	float: left;
-	padding-left: 16px;
-}
-.right-information-section{
-	float: right;
-	padding-right: 16px;
-}
 footer{
 	background: #26ACDE;
 	padding: 10px 18vw 0 18vw;
@@ -104,16 +77,19 @@ span.text{
 	color: #26ACDE;
 	float:left;
 }
-ul#nav {
+
+/*--------------vízszintes menű és header információk stílusa-------------*/
+
+ul#nav, ul#header-pos {			/*ul nav és header stílus*/
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 }
-ul#nav li#nav {
+li#nav, li.position {			/*ul nav és header stílus*/
   float: left;
 }
-ul#nav li#nav a {
+li#nav a, li#nav2 a {			/*nav stílus*/
   display: block;
   text-align: center;
   padding: 14px 16px 14px 16px;
@@ -121,29 +97,56 @@ ul#nav li#nav a {
   color: #26ACDE;
   font-size: 1em;
 }
-ul#nav li#nav a:hover {
+li#nav a:hover {				/*nav stílus*/
   background-color: #2293BD;
   color: #fff;
   font-size: 1.1em;
-  float: left;
 }
-ul#nav li#nav2 a {
-  display: block;
-  text-align: center;
-  padding: 14px 16px 14px 16px;
-  text-decoration: none;
+li#nav2 a {						/*nav stílus*/
   color: #fff;
   background-color: #2293BD;
-  font-size: 1em;
   float: right;
 }
-ul#nav li#nav2 a:hover {
+li#nav2 a:hover {				/*nav stílus*/
   font-size: 1.1em;
+}
+
+li.position2 {			/*header stílus*/
+  float: right;
+  padding-left:25px;
+  color: #fff;
+}
+span.position2 {
+	display: block;
+	padding-top: 1px;
+	font-size: 18px;
+}
+.logout{
+	color: #fff;
+	font-size: 25px;
+}
+.logout:hover{
+	color: #721c24;
+}
+.logged-in{
+	color: #fff;
+	font-size: 20px;
+}
+.left-information-section, .right-information-section{
+	float: left;
+	padding-left: 16px;
+}
+.right-information-section{
+	float: right;
+}
+.x{
+	color: #721c24;
+	font-size: 25px;
+	cursor: pointer;
+
 }
 
 /*---------Fülek - Felhasználók kezelése------------*/
-/*-----------------------kezdés---------------------*/
-
 
 .tabcontent {
   color: #26ACDE;
@@ -153,7 +156,6 @@ ul#nav li#nav2 a:hover {
 #user-add {display: block;}
 #user-delete {display: none;}
 
-/*---------Fülek - Felhasználók kezelése------------*/
 /*-----------------------vége-----------------------*/
 
 .info {
@@ -207,6 +209,16 @@ main input {
 	border: 1px solid #2293BD;
 	margin-left: 28px;
 }
+.select-list{
+	padding: 12px 10px 12px 10px;
+	margin: 2px 0;
+	background-color: #26ACDE;
+	font-size: 1.2em;
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 3px;
+	width: 70px;
+}
 main label{
 	color: #26ACDE;
 	margin: 15px 0 0 0;
@@ -217,6 +229,7 @@ main input:focus {
   background: FloralWhite;
   outline: none;
 }
+
 .elvalaszto {
   border-left: 3px solid #26ACDE;
   height: 150px;
@@ -225,6 +238,7 @@ main input:focus {
   margin-left: -1.5px;
   top: 25px;
 }
+/*---------------placeholder stílusa------------*/
 ::placeholder {
   color: #2293BD;
   opacity: 0.7; 
@@ -235,4 +249,36 @@ main input:focus {
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: #2293BD;
-opacity: 0.7; }
+opacity: 0.7;
+}
+
+/*---------------kereső input------------*/
+ul.kereso_lista-Nr{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+li.tablazat_merteke{/*táblázat méret választó jobbra igazítás*/
+	float: right;
+}
+li.keresoNev{ /*eszközlista és tag törlés kereső balra igazítás*/
+	float: left;
+}
+input#keresoInput, input#keresoInput2{   /*eszközlista és tag törlés*/
+  padding: 12px 20px;
+  margin: 2px 0;
+  border: none;
+  color: #2293BD;
+  border-left: 4px solid #26ACDE;
+  font-size: 1.2em;
+  transition: 0.4s;
+  font-family: 'PT Sans', sans-serif;
+  margin-bottom: 15px;
+}
+input#keresoInput  { /*eszkozlista kereső input*/
+  width: 300px;
+}
+input#keresoInput2  {/*tag törlése kereső input*/
+  width: 250px;
+}

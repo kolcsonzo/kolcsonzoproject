@@ -33,31 +33,37 @@
 	</script>
 	<!-- Ez a script frissíti le a taglistát, és töröl az adatbázisból. Átadja a szerepkört(a jogosultság ellenőrzése miatt) és a törlendő felhasználó nevét a query-nek -->
 	<script type="text/javascript">
-	function teszt(role, target)
-	{
-	   $.ajax({url:"userlist_query_delete.php", type:"POST", data: ({role: role, target: target}), async:true, cache:false, success:function(result)
-	{
-		 $("#delete_q").html(result);
-	}});
+		function teszt(role, target)
+		{
+		   $.ajax({url:"userlist_query_delete.php", type:"POST", data: ({role: role, target: target}), async:true, cache:false, success:function(result)
+		{
+			 $("#delete_q").html(result);
+		}});
 
-	};
+		};
 	</script>
 </head>
 <body>
-
 	<div class="grid-container">
 		<header>
-			<span class="header-information-text logo">logó vagy valami</span>	
-			<span class="header-information-text login">Bejelentkezve: 
-			<?php  echo $userinfo['username'];
-					if ($userinfo['role'] == 1) {
-					echo ' (Munkatárs)';
-					} else {
-					echo ' (Vezető)';	
-					}
-			?>
-			</span></br>
-			<span class="header-information-text login"><p><a href="logout.php">Kijelentkezés!</a></p></span>
+			<ul id="header-pos">
+				<li class="position">logó vagy valami</li>
+				<li class="position2"><a href="logout.php">
+					<i class="fas fa-sign-out-alt logout"></i></a>
+				</li>
+				<li class="position2">
+					<span class="position2">
+						<i class="fas fa-user-check logged-in"></i>
+						<?php  echo $userinfo['username'];
+							if ($userinfo['role'] == 1) {
+							echo ' <i>(Munkatárs)</i>';
+							} else {
+							echo ' <i>(Vezető)</i>';	
+							}
+						?>	
+					</span>
+				</li>
+			</ul>
 		</header>
 		<nav>
 			<ul id="nav">
