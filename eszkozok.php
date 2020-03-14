@@ -5,19 +5,24 @@
 	header("Content-Type: text/html; charset=utf-8");
 	include('inc/top.php');
 ?>
-<main>
-		<div class="form-group"> 	<!--		Show Numbers Of Rows 		-->
-			 <select class  ="form-control" name="state" id="maxRows">
-				<option value="5000">Összes sor...</option>
-				<option value="5">5</option>
-				<option value="10">10</option>
-				<option value="15">15</option>
-				<option value="20">20</option>
-				<option value="50">50</option>
-				<option value="70">70</option>
-				<option value="100">100</option>
-			</select>
-		</div>
+<main>	
+		<ul class="kereso_lista-Nr">
+			<li class="keresoNev">
+				<input type="text" id="keresoInput" onkeyup="myFunction()" placeholder="Keresés név szerint...">
+			</li>
+			<li class="tablazat_merteke">
+				<select name="state" id="maxRows" class="select-list">
+					<option value="5000">Mind</option>
+					<option value="5">5</option>
+					<option value="10">10</option>
+					<option value="15">15</option>
+					<option value="20">20</option>
+					<option value="50">50</option>
+					<option value="70">70</option>
+					<option value="100">100</option>
+				</select>
+			</li>
+		</ul>
 		<table class="table table-striped table-class" id= "table-id">
 			<tr>
 				<th>ID</th>
@@ -35,6 +40,7 @@
 				<td>Foglalt</td>
 				<td>SP_506</td>
 			</tr>
+			<tr>
 				<td>2</td>
 				<td>Monitor</td>
 				<td>3 nap</td>
@@ -42,6 +48,7 @@
 				<td>Foglalt</td>
 				<td>SP_507</td>
 			</tr>
+			<tr>
 				<td>3</td>
 				<td>Laptop</td>
 				<td>3 nap</td>
@@ -57,6 +64,7 @@
 				<td>Foglalt</td>
 				<td>SP_506</td>
 			</tr>
+			<tr>
 				<td>2</td>
 				<td>Monitor</td>
 				<td>3 nap</td>
@@ -64,6 +72,7 @@
 				<td>Foglalt</td>
 				<td>SP_507</td>
 			</tr>
+			<tr>
 				<td>3</td>
 				<td>Laptop</td>
 				<td>3 nap</td>
@@ -79,6 +88,7 @@
 				<td>Foglalt</td>
 				<td>SP_506</td>
 			</tr>
+			<tr>
 				<td>2</td>
 				<td>Monitor</td>
 				<td>3 nap</td>
@@ -86,6 +96,7 @@
 				<td>Foglalt</td>
 				<td>SP_507</td>
 			</tr>
+			<tr>
 				<td>3</td>
 				<td>Laptop</td>
 				<td>3 nap</td>
@@ -105,20 +116,7 @@
 					<span> > <span class="sr-only">(current)</span></span>
 				</li>
 			</ul>
-			<script type="text/javascript">
-				getPagination('#table-id');
-						//getPagination('.table-class');
-						//getPagination('table');
-			  var _gaq = _gaq || [];
-			  _gaq.push(['_setAccount', 'UA-36251023-1']);
-			  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-			  _gaq.push(['_trackPageview']);
-
-			  (function() {
-				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			  })();
+			<script type="text/javascript" src="js/search_and_pagination.js"></script>
 			</script>
 		</div>	
 </main>

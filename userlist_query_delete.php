@@ -27,21 +27,54 @@ require('db.php');
 				$query = "SELECT * FROM users";
 				$result = mysqli_query($con, $query) or die(mysql_error());
 				
-				while ($row = $result->fetch_assoc()) {
-					echo $row['username'];
-					//Név mellé írjuk a szerepkört
-					if ($row['role'] == 1) {
-						echo " (Munkatárs)";
-					} else {
-						echo " (Vezető)";
-					}
-					//Ha vezető jogunk van, akkor törölhetünk
-					if ($rol == 2) {
-					echo '<button class="button" onclick="teszt('.$rol.','."'".$row['username']."'".');">Tag törlés</button>';
-					}
-					echo "</br>";
-				}
-				
-			
-					
-?>
+				echo '<ul class="kereso_lista-Nr">
+							<li class="keresoNev">
+							<input type="text" id="keresoInput2" onkeyup="myFunction()" placeholder="Felhaszálónév keresése">
+							</li>
+							<li class="tablazat_merteke">
+								<select name="state" id="maxRows" class="select-list">
+									<option value="5000">Mind</option>
+									<option value="5">5</option>
+									<option value="10">10</option>
+									<option value="15">15</option>
+									<option value="20">20</option>
+									<option value="50">50</option>
+									<option value="70">70</option>
+									<option value="100">100</option>
+								</select>
+							</li>
+						</ul>
+					<table class="table table-striped table-class" id= "table-id">
+						<tr>
+							<th>Felhasználónév</th>
+							<th>Beosztás</th>
+							<th>Törlés</th>
+						</tr>';
+
+						while ($row = $result->fetch_assoc()) {
+							echo '<tr>
+									<td>' . $row["username"] . '</td>';									
+							if ($row['role'] == 1) {
+								echo '<td>Munkatárs</td>';
+							}
+							else {
+								echo '<td>Vezető</td>';
+							}
+							if ($rol == 2) {
+								echo '<td><img class="fas fa-times x" onclick="teszt('.$rol.','."'".$row['username']."'".');"></td></tr>';
+								}
+							}
+							
+						echo '</table>'; 
+						echo '<div class="pagination-container">
+								<ul class="pagination">
+									<li data-page="prev">
+										<span> < <span class="sr-only">(current)</span></span>
+									</li>
+									<li data-page="next" id="prev">
+										<span> > <span class="sr-only">(current)</span></span>
+									</li>
+								</ul>
+							</div>';
+						echo '<script type="text/javascript" src="js/search_and_pagination.js"></script>';
+?>				

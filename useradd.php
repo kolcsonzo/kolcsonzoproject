@@ -89,7 +89,7 @@
 				<span><strong>Tag törléséhez</strong> használja a megfelelő sor melleti "Törlés" opciót.</span>
 			</div>
 
-					<span class="text">Felhasználók</span></br></br>	
+			<span class="text">Felhasználók</span></br></br>
 			<?php
 				//while
 				echo '<div id="delete_q"></div>'; //ide érkezik vissza a script lefutása utáni kód, tehát az eredmény
