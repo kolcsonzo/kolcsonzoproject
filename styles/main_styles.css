@@ -57,6 +57,9 @@ main{
 .pagination li span{ /*táblázat oldalszám stílus módosítása - alap*/
 	color: #26ACDE;
 }
+.pagination li span:hover{ /*táblázat oldalszám stílus módosítása - hover*/
+	color: #26ACDE;
+}
 section#bottom{
 	background: #fefefe; 
 	color: #26ACDE;
