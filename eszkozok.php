@@ -36,81 +36,27 @@
 				<th onclick="sortTable(5)" class="sort">Státusz<i class="fas fa-sort sort-icon"></i></th>
 				<th onclick="sortTable(6)" class="sort">Tárolási pozíció<i class="fas fa-sort sort-icon"></i></th>
 			</tr>
-			<tr>
-				<td>1</td>
-				<td>Projektor</td>
-				<td>3 nap</td>
-				<td>Epson</td>
-				<td>EH-TW650</td>
-				<td>Foglalt</td>
-				<td>S5_P6</td>
-			</tr>
-				<td>2</td>
-				<td>Monitor</td>
-				<td>3 nap</td>
-				<td>Samsung</td>
-				<td>C27F390</td>
-				<td>Foglalt</td>
-				<td>S5_P7</td>
-			</tr>
-				<td>3</td>
-				<td>Laptop</td>
-				<td>3 nap</td>
-				<td>Dell</td>
-				<td>Vostro15-3780
-				<td>Foglalt</td>
-				<td>S5_P8</td>
-			</tr>
-			<tr>
-				<td>4</td>
-				<td>Projektor</td>
-				<td>3 nap</td>
-				<td>Epson</td>
-				<td>EH-TW650</td>
-				<td>Foglalt</td>
-				<td>S5_P6</td>
-			</tr>
-				<td>5</td>
-				<td>Monitor</td>
-				<td>3 nap</td>
-				<td>Samsung</td>
-				<td>C27F390</td>
-				<td>Foglalt</td>
-				<td>S5_P7</td>
-			</tr>
-				<td>6</td>
-				<td>Laptop</td>
-				<td>3 nap</td>
-				<td>Dell</td>
-				<td>Vostro15-3780
-				<td>Foglalt</td>
-				<td>S5_P8</td>
-			</tr>
-			<tr>
-				<td>7</td>
-				<td>Projektor</td>
-				<td>3 nap</td>
-				<td>Epson</td>
-				<td>EH-TW650</td>
-				<td>Foglalt</td>
-				<td>S5_P6</td>
-			</tr>
-				<td>8</td>
-				<td>Monitor</td>
-				<td>3 nap</td>
-				<td>Samsung</td>
-				<td>C27F390</td>
-				<td>Foglalt</td>
-				<td>S5_P7</td>
-			</tr>
-				<td>9</td>
-				<td>Laptop</td>
-				<td>3 nap</td>
-				<td>Dell</td>
-				<td>Vostro15-3780
-				<td>Foglalt</td>
-				<td>S5_P8</td>
-			</tr>
+<?php
+//Eszközlista lekérdezése
+		$query = "SELECT * FROM devices";
+		$result = mysqli_query($con, $query) or die(mysql_error());
+				
+		while ($row = $result->fetch_assoc()) {
+			echo'<tr>
+					<td>'.$row["id"].'</td>
+					<td>'.$row["name"].'</td>
+					<td>'.$row["period_days"].' nap</td>
+					<td>'.$row["brand"].'</td>
+					<td>'.$row["type"].'</td>';
+			if ($row["status"] == 1) {
+			echo'	<td>Foglalt</td>';
+			} else {	
+			echo'	<td>Szabad</td>';
+			}
+			echo'	<td>S'.$row["pos_s"].' P'.$row["pos_p"].'</td>
+				</tr>';	
+		}
+?>
 		</table>
 		<!--		Start Pagination -->
 		<div class='pagination-container'>

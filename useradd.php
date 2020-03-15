@@ -39,7 +39,6 @@
 						<br><br><br><br>
 						<center><button class="button">Tag felvétele</button></center>
 						<?php
-							require('db.php');
 							if (isset($_REQUEST['username'])) {
 								$username = stripslashes($_REQUEST['username']);
 								$username = mysqli_real_escape_string($con, $username);
