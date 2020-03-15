@@ -46,8 +46,8 @@ require('db.php');
 						</ul>
 					<table class="table table-striped table-class" id= "table-id">
 						<tr>
-							<th>Felhasználónév</th>
-							<th>Beosztás</th>
+							<th onclick="sortTable(0)" class="sort">Felhasználónév</th>
+							<th onclick="sortTable(1)" class="sort">Beosztás</th>
 							<th>Törlés</th>
 						</tr>';
 

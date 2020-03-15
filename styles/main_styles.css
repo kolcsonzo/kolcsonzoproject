@@ -169,7 +169,7 @@ span.position2 {
 	vertical-align: middle;
 }
 
-.button {
+.button {						/*elküldő és tag kezelő gombokhoz*/
   background-color: #26ACDE;
   border: none;
   color: white;
@@ -183,6 +183,9 @@ span.position2 {
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   border: 1px solid #2293BD;
+}
+th.sort {					/*táblázat rendezéshez*/
+	cursor: pointer;
 }
 .button:hover {
   background-color: #2293BD;
