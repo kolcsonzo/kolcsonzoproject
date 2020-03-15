@@ -51,6 +51,12 @@ main{
 .content-name{
 	margin-top: 6px;
 }
+.pagination .active span{ /*táblázat oldalszám stílus módosítása - aktív*/
+	background-color: #26ACDE;
+}
+.pagination li span{ /*táblázat oldalszám stílus módosítása - alap*/
+	color: #26ACDE;
+}
 section#bottom{
 	background: #fefefe; 
 	color: #26ACDE;
