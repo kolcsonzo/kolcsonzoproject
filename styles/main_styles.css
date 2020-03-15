@@ -7,7 +7,7 @@
 body{
    background-color: #EBF5F8;
 }
-.grid-container {
+.grid-container {	/*A weboldal felosztása*/
   display: grid;
   width: 100%;
   height: 100vh;
@@ -45,7 +45,7 @@ main{
 	padding-left: 16px;
 	grid-area: main;
 }
-.container{
+.container{ /*Main tartalom méretezése*/
 	width: 400px;
 }
 .content-name{
@@ -321,3 +321,86 @@ input#keresoInput2  { /*eszkozlista kereső input*/
   font-family: 'PT Sans', sans-serif;
   margin-bottom: 15px;
 }
+/*----------információs ablak stílusa----------------*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 40%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header, .modal-header_warning{
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.modal-header_warning {
+  background-color: #CE2400;
+}
+
+.modal-body, .modal-body_warning {
+	padding: 2px 16px;
+	color: #5cb85c;
+}
+
+.modal-body_warning {
+	color: #CE2400;
+}
+
+.modal-footer, .modal-footer_warning {
+  padding: 10px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+.modal-footer_warning {
+  background-color: #CE2400;
+}
+/*----------------vége---------------------*/

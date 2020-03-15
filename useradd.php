@@ -57,9 +57,17 @@
 								$result   = mysqli_query($con, $query);
 								$rows = mysqli_num_rows($result);
 								if ($rows != 0) {
-								  		echo '<script language="javascript">';
-										echo 'alert("'.$full_name.' felhasználó már van az adatbázisban! ")';
-										echo '</script>';
+										echo '  <button id="myBtn" style="visibility: hidden;"></button>
+												<script>
+													window.onload = function(){
+														document.getElementById("myBtn").click();
+														document.getElementById("modal-body").className = "modal-body_warning";
+														document.getElementById("modal-header").className = "modal-header_warning";
+														document.getElementById("modal-footer").className = "modal-footer_warning";
+													}
+												</script>';
+										$eredmenyinfo1 = 'Sikertelen tagfelvétel!';
+										$eredmenyinfo2 = ' már bent van az adatbázisban!';
 								} else {
 
 								//Ha nincs, akkor mehet
@@ -67,19 +75,47 @@
 											 VALUES ('$username', '$full_name', '$email','" . md5($password) . "', '$role', '$create_datetime')";
 								$result   = mysqli_query($con, $query);
 								if ($result) {
-										echo '<script language="javascript">';
-										echo 'alert("'.$full_name.' regisztrálása sikeresen megtörtént! ")';
-										echo '</script>';
+										echo '  <button id="myBtn" style="visibility: hidden;"></button>
+												<script>
+													window.onload = function(){
+														document.getElementById("myBtn").click();
+													}
+												</script>';
+										$eredmenyinfo1 = 'Sikeres tagfelvétel!';
+										$eredmenyinfo2 = ' felvétele sikeres volt!';
 								} else {
-										echo '<script language="javascript">';
-										echo 'alert("'.$full_name.' regisztrálása nem sikerült, kérlek fordulj a rendszergazdához! ")';
-										echo '</script>';
+										echo '  <button id="myBtn" style="visibility: hidden;"></button>
+												<script>
+													window.onload = function(){
+														document.getElementById("myBtn").click();
+														document.getElementById("modal-body").className = "modal-body_warning";
+														document.getElementById("modal-header").className = "modal-header_warning";
+														document.getElementById("modal-footer").className = "modal-footer_warning";
+													}
+												</script>';
+										$eredmenyinfo1 = 'Sikertelen tagfelvétel!';
+										$eredmenyinfo2 = ' felvétele nem sikerült!';
 									} 
 								}
 							}
 						?>
 					</form>
-					
+					<!--információs ablak-->
+				<div id="myModal" class="modal">
+					<div class="modal-content">
+						<div class="modal-header" id="modal-header">
+							<span class="close">&times;</span>
+							<h3><?php echo $eredmenyinfo1 ?><h3>
+						</div>
+						<div class="modal-body" id="modal-body">
+							<h4><?php echo $full_name . $eredmenyinfo2 ?></h4>
+						</div>
+						<div class="modal-footer" id="modal-footer">
+						</div>
+					</div>
+				</div>	
+				<!--vége-->
+				<script type="text/javascript" src="js/inform_windows.js"></script>
 			</div>
 
 			<div id="user-delete" class="tabcontent">
