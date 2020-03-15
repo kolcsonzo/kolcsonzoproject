@@ -57,8 +57,7 @@
 								$result   = mysqli_query($con, $query);
 								$rows = mysqli_num_rows($result);
 								if ($rows != 0) {
-										echo '  <button id="myBtn" style="visibility: hidden;"></button>
-												<script>
+										echo '  <script>
 													window.onload = function(){
 														document.getElementById("myBtn").click();
 														document.getElementById("modal-body").className = "modal-body_warning";
@@ -75,8 +74,7 @@
 											 VALUES ('$username', '$full_name', '$email','" . md5($password) . "', '$role', '$create_datetime')";
 								$result   = mysqli_query($con, $query);
 								if ($result) {
-										echo '  <button id="myBtn" style="visibility: hidden;"></button>
-												<script>
+										echo '  <script>
 													window.onload = function(){
 														document.getElementById("myBtn").click();
 													}
@@ -84,8 +82,7 @@
 										$eredmenyinfo1 = 'Sikeres tagfelvétel!';
 										$eredmenyinfo2 = ' felvétele sikeres volt!';
 								} else {
-										echo '  <button id="myBtn" style="visibility: hidden;"></button>
-												<script>
+										echo '  <script>
 													window.onload = function(){
 														document.getElementById("myBtn").click();
 														document.getElementById("modal-body").className = "modal-body_warning";
@@ -101,6 +98,7 @@
 						?>
 					</form>
 					<!--információs ablak-->
+				<button id="myBtn" style="visibility: hidden;"></button>	
 				<div id="myModal" class="modal">
 					<div class="modal-content">
 						<div class="modal-header" id="modal-header">
