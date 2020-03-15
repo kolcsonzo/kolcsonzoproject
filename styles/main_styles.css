@@ -176,6 +176,12 @@ span.position2 {
 .pagename{
 	height: 77px;
 	vertical-align: middle;
+	padding: 12px 16px;
+	background-color: #fff;
+	border-radius: 10px;
+	border-left: 6px solid #26ACDE;
+	border-bottom: 6px solid #26ACDE;
+	margin-bottom: 20px;
 }
 
 .button {						/*elküldő és tag kezelő gombokhoz*/
@@ -266,6 +272,18 @@ main input:focus {
   color: #2293BD;
 opacity: 0.7;
 }
+#keresoInput::placeholder {
+  color: #fff;
+  opacity: 0.7; 
+}
+#keresoInput:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #fff;
+ opacity: 0.7; 
+}
+#keresoInput::-ms-input-placeholder { /* Microsoft Edge */
+  color: #fff;
+opacity: 0.7;
+}
 
 /*---------------kereső input------------*/
 ul.kereso_lista-Nr{
@@ -276,24 +294,30 @@ ul.kereso_lista-Nr{
 }
 li.tablazat_merteke{/*táblázat méret választó jobbra igazítás*/
 	float: right;
+	margin-left: 10px;
 }
 li.keresoNev{ /*eszközlista és tag törlés kereső balra igazítás*/
-	float: left;
+	float: right;
 }
-input#keresoInput, input#keresoInput2{   /*eszközlista és tag törlés*/
+input#keresoInput{   /*eszközlista kereső*/
+	height: 48px;
+	padding: 10.5px 10px;
+	margin: 2px 0;
+	background-color: #26ACDE;
+	font-size: 1.2em;
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 3px;
+}
+input#keresoInput2  { /*eszkozlista kereső input*/
+  width: 250px;
+  border: 2px solid #26ACDE;
   padding: 12px 20px;
   margin: 2px 0;
-  border: none;
   color: #2293BD;
   border-left: 4px solid #26ACDE;
   font-size: 1.2em;
   transition: 0.4s;
   font-family: 'PT Sans', sans-serif;
   margin-bottom: 15px;
-}
-input#keresoInput  { /*eszkozlista kereső input*/
-  width: 300px;
-}
-input#keresoInput2  {/*tag törlése kereső input*/
-  width: 250px;
 }

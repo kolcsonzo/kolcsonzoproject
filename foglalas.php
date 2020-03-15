@@ -6,9 +6,9 @@
 	include('inc/top.php');
 ?>
 <main>
-	<article>
-		<span class="text">Eszköz foglalás</span><br>			
-	</article>
+		<div class="pagename" style>
+			<span class="text content-name">Eszköz foglalása</span>
+		</div>
 </main>
 <?php
 	include('inc/bottom.php');

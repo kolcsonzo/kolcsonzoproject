@@ -4,8 +4,7 @@
 	include('inc/top.php');
 ?>
 <main>
-	<article>
-		<div class="info pagename" style>
+		<div class="pagename" style>
 			<span class="text content-name">Felhasználók kezelése</span>
 			<div style="float:right;">
 				<button class="button" onclick="openPage('user-add')">Tag felvétel</button>
@@ -99,7 +98,6 @@
 				
 			</div>
 		</div>					
-	</article>
 </main>
 
 <?php

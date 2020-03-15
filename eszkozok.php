@@ -1,28 +1,31 @@
 <?php
 //azonosítás
 	include("auth_session.php");
-	
 	header("Content-Type: text/html; charset=utf-8");
 	include('inc/top.php');
 ?>
-<main>	
-		<ul class="kereso_lista-Nr">
-			<li class="keresoNev">
-				<input type="text" id="keresoInput" onkeyup="myFunction()" placeholder="Keresés...">
-			</li>
-			<li class="tablazat_merteke">
-				<select name="state" id="maxRows" class="select-list">
-					<option value="5000">Mind</option>
-					<option value="5">5</option>
-					<option value="10">10</option>
-					<option value="15">15</option>
-					<option value="20">20</option>
-					<option value="50">50</option>
-					<option value="70">70</option>
-					<option value="100">100</option>
-				</select>
-			</li>
-		</ul>
+<main>
+		<div class="pagename" style>
+			<span class="text content-name">Eszközlista</span>
+			<ul class="kereso_lista-Nr">
+				<li class="tablazat_merteke">
+					<select name="state" id="maxRows" class="select-list">
+						<option value="5000">Mind</option>
+						<option value="5">5</option>
+						<option value="10">10</option>
+						<option value="15">15</option>
+						<option value="20">20</option>
+						<option value="50">50</option>
+						<option value="70">70</option>
+						<option value="100">100</option>
+					</select>
+				</li>
+				<li class="keresoNev">
+					<input type="text" id="keresoInput" onkeyup="myFunction()" placeholder="Keresés...">
+				</li>
+			</ul>			
+		</div>
+		
 		<table class="table table-striped table-class" id= "table-id">
 			<tr>
 				<th onclick="sortTable(0)" class="sort">ID<i class="fas fa-sort sort-icon"></i></th>
