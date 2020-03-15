@@ -31,84 +31,87 @@
 				<th onclick="sortTable(0)" class="sort">ID<i class="fas fa-sort sort-icon"></i></th>
 				<th onclick="sortTable(1)" class="sort">Név<i class="fas fa-sort sort-icon"></i></th>
 				<th onclick="sortTable(2)" class="sort">Max. foglalás<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="sortTable(3)" class="sort">Típus<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="sortTable(4)" class="sort">Státusz<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="sortTable(5)" class="sort">Tárolási pozíció<i class="fas fa-sort sort-icon"></i></th>
+				<th onclick="sortTable(3)" class="sort">Márka<i class="fas fa-sort sort-icon"></i></th>
+				<th onclick="sortTable(4)" class="sort">Típus<i class="fas fa-sort sort-icon"></i></th>
+				<th onclick="sortTable(5)" class="sort">Státusz<i class="fas fa-sort sort-icon"></i></th>
+				<th onclick="sortTable(6)" class="sort">Tárolási pozíció<i class="fas fa-sort sort-icon"></i></th>
 			</tr>
 			<tr>
 				<td>1</td>
 				<td>Projektor</td>
 				<td>3 nap</td>
 				<td>Epson</td>
+				<td>EH-TW650</td>
 				<td>Foglalt</td>
-				<td>SP_506</td>
+				<td>S5_P6</td>
 			</tr>
-			<tr>
 				<td>2</td>
 				<td>Monitor</td>
 				<td>3 nap</td>
 				<td>Samsung</td>
+				<td>C27F390</td>
 				<td>Foglalt</td>
-				<td>SP_507</td>
+				<td>S5_P7</td>
 			</tr>
-			<tr>
 				<td>3</td>
 				<td>Laptop</td>
 				<td>3 nap</td>
 				<td>Dell</td>
+				<td>Vostro15-3780
 				<td>Foglalt</td>
-				<td>SP_508</td>
+				<td>S5_P8</td>
 			</tr>
 			<tr>
-				<td>1</td>
+				<td>4</td>
 				<td>Projektor</td>
 				<td>3 nap</td>
 				<td>Epson</td>
+				<td>EH-TW650</td>
 				<td>Foglalt</td>
-				<td>SP_506</td>
+				<td>S5_P6</td>
 			</tr>
-			<tr>
-				<td>2</td>
+				<td>5</td>
 				<td>Monitor</td>
 				<td>3 nap</td>
 				<td>Samsung</td>
+				<td>C27F390</td>
 				<td>Foglalt</td>
-				<td>SP_507</td>
+				<td>S5_P7</td>
 			</tr>
-			<tr>
-				<td>3</td>
+				<td>6</td>
 				<td>Laptop</td>
 				<td>3 nap</td>
 				<td>Dell</td>
+				<td>Vostro15-3780
 				<td>Foglalt</td>
-				<td>SP_508</td>
-			</tr>			
+				<td>S5_P8</td>
+			</tr>
 			<tr>
-				<td>1</td>
+				<td>7</td>
 				<td>Projektor</td>
 				<td>3 nap</td>
 				<td>Epson</td>
+				<td>EH-TW650</td>
 				<td>Foglalt</td>
-				<td>SP_506</td>
+				<td>S5_P6</td>
 			</tr>
-			<tr>
-				<td>2</td>
+				<td>8</td>
 				<td>Monitor</td>
 				<td>3 nap</td>
 				<td>Samsung</td>
+				<td>C27F390</td>
 				<td>Foglalt</td>
-				<td>SP_507</td>
+				<td>S5_P7</td>
 			</tr>
-			<tr>
-				<td>3</td>
+				<td>9</td>
 				<td>Laptop</td>
 				<td>3 nap</td>
 				<td>Dell</td>
+				<td>Vostro15-3780
 				<td>Foglalt</td>
-				<td>SP_508</td>
+				<td>S5_P8</td>
 			</tr>
 		</table>
-
 		<!--		Start Pagination -->
 		<div class='pagination-container'>
 			<ul class="pagination">
