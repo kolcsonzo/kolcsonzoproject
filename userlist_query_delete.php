@@ -46,8 +46,8 @@ require('db.php');
 						</ul>
 					<table class="table table-striped table-class" id= "table-id">
 						<tr>
-							<th onclick="sortTable(0)" class="sort">Felhasználónév</th>
-							<th onclick="sortTable(1)" class="sort">Beosztás</th>
+							<th onclick="sortTable(0)" class="sort">Felhasználónév<i class="fas fa-sort sort-icon"></th>
+							<th onclick="sortTable(1)" class="sort">Beosztás<i class="fas fa-sort sort-icon"></th>
 							<th>Törlés</th>
 						</tr>';
 
@@ -75,6 +75,6 @@ require('db.php');
 										<span> > <span class="sr-only">(current)</span></span>
 									</li>
 								</ul>
+								<script type="text/javascript" src="js/search_and_pagination.js"></script>
 							</div>';
-						echo '<script type="text/javascript" src="js/search_and_pagination.js"></script>';
 ?>				

@@ -187,6 +187,9 @@ span.position2 {
 th.sort {					/*táblázat rendezéshez*/
 	cursor: pointer;
 }
+.sort-icon{		/*táblázat rendezése ikon*/
+	margin-left:5px;
+}
 .button:hover {
   background-color: #2293BD;
   font-style: bold;

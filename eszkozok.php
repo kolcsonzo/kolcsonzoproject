@@ -25,12 +25,12 @@
 		</ul>
 		<table class="table table-striped table-class" id= "table-id">
 			<tr>
-				<th onclick="sortTable(0)" class="sort">ID</th>
-				<th onclick="sortTable(1)" class="sort">Név</th>
-				<th onclick="sortTable(2)" class="sort">Max. foglalás</th>
-				<th onclick="sortTable(3)" class="sort">Típus</th>
-				<th onclick="sortTable(4)" class="sort">Státusz</th>
-				<th onclick="sortTable(5)" class="sort">Tárolási pozíció</th>
+				<th onclick="sortTable(0)" class="sort">ID<i class="fas fa-sort sort-icon"></i></th>
+				<th onclick="sortTable(1)" class="sort">Név<i class="fas fa-sort sort-icon"></i></th>
+				<th onclick="sortTable(2)" class="sort">Max. foglalás<i class="fas fa-sort sort-icon"></i></th>
+				<th onclick="sortTable(3)" class="sort">Típus<i class="fas fa-sort sort-icon"></i></th>
+				<th onclick="sortTable(4)" class="sort">Státusz<i class="fas fa-sort sort-icon"></i></th>
+				<th onclick="sortTable(5)" class="sort">Tárolási pozíció<i class="fas fa-sort sort-icon"></i></th>
 			</tr>
 			<tr>
 				<td>1</td>
@@ -117,7 +117,6 @@
 				</li>
 			</ul>
 			<script type="text/javascript" src="js/search_and_pagination.js"></script>
-			</script>
 		</div>	
 </main>
 <?php
