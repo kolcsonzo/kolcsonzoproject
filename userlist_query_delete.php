@@ -29,7 +29,7 @@ require('db.php');
 				
 				echo '<ul class="kereso_lista-Nr">
 							<li class="keresoNev">
-							<input type="text" id="keresoInput2" onkeyup="myFunction()" placeholder="Felhaszálónév keresése">
+							<input type="text" id="keresoInput2" onkeyup="myFunction()" placeholder="Keresés...">
 							</li>
 							<li class="tablazat_merteke">
 								<select name="state" id="maxRows" class="select-list">
