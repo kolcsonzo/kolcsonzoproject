@@ -8,7 +8,7 @@
 <main>	
 		<ul class="kereso_lista-Nr">
 			<li class="keresoNev">
-				<input type="text" id="keresoInput" onkeyup="myFunction()" placeholder="Keresés név szerint...">
+				<input type="text" id="keresoInput" onkeyup="myFunction()" placeholder="Keresés...">
 			</li>
 			<li class="tablazat_merteke">
 				<select name="state" id="maxRows" class="select-list">
