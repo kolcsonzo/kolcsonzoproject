@@ -1,3 +1,5 @@
+// táblázat számozás
+
 getPagination('#table-id');
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-36251023-1']);
@@ -9,18 +11,22 @@ getPagination('#table-id');
 	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	})();
+	
+// keresés a táblázatokban
 
 	function myFunction() {
-	 var input, filter, table, tr, td, i, txtValue;
+	 var input, filter, table, tr, i, txtValue;
 	input = document.getElementById("keresoInput");
 	filter = input.value.toUpperCase();
 	table = document.getElementById("table-id");
 	tr = table.getElementsByTagName("tr");
 
-	for (i = 0; i < tr.length; i++) {
-	td = tr[i].getElementsByTagName("td")[1];
+	for (i = 1; i < tr.length; i++) {
+		
+	td = tr[i];
+	
 	if (td) {
-	txtValue = td.textContent || td.innerText;
+	txtValue = (td.textContent || td.innerText);
 	if (txtValue.toUpperCase().indexOf(filter) > -1) {
 	tr[i].style.display = "";
 	} else {
