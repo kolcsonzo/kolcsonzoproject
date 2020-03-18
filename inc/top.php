@@ -19,6 +19,7 @@
 	<link href="styles/table_style.css" rel="stylesheet">
 	<script type="text/javascript" src="js/js.js"></script>
 	<link rel="stylesheet" href="styles/main_styles.css">
+	<!-- Tagok kezelésénél használt oldalbetöltő script. -->
 	<script>
 		function openPage(pageName) {
 			if (pageName == 'user-add') {
@@ -47,13 +48,12 @@
 	<div class="grid-container">
 		<header>
 			<ul id="header-pos">
-				<li class="position">logó vagy valami</li>
 				<li class="position2"><a href="logout.php">
-					<i class="fas fa-sign-out-alt logout"></i></a>
+					<svg class="fas fa-sign-out-alt logout"></svg></a>
 				</li>
 				<li class="position2">
 					<span class="position2">
-						<i class="fas fa-user-check logged-in"></i>
+						<svg class="fas fa-user-check logged-in"></svg>
 						<?php  echo $userinfo['username'];
 							if ($userinfo['role'] == 1) {
 							echo ' <i>(Munkatárs)</i>';
