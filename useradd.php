@@ -19,25 +19,28 @@
 					</div>
 					<form action="useradd.php" id="add-user-form" method="post" autocomplete="off">
 						<br>
-						<label for="username">Felhasználónév:</label>
+						<label for="username" class="label">Felhasználónév:</label>
 						<input type="text" style="float:right" id="username" name="username" required placeholder="Adja meg a felhasználónevet...">
-						<br>
-						<label for="full_name">Teljes név:</label>
-						<input type="text" style="float:right" id="full_name" name="full_name" required placeholder="Adja meg a teljes nevet...">
-						<br>
-						<label for="email">E-mail:</label>
-						<input type="mail" style="float:right" id="email" name="email" required placeholder="Adja meg az e-mail címet...">
-						<br>
-						<label for="password">Jelszó:</label>
-						<input type="password" style="float:right" id="password" name="password" required placeholder="Adja meg a jelszót">
-						<br>
-						<label for="role">Szerepkör:</label><br>
-						 <select id="role" name="role" class="select">
-							<option value="2">Vezető</option>
-							<option value="1">Munkatárs</option>
-						 </select>
 						<br><br><br><br>
-						<center><button class="button">Tag felvétele</button></center>
+						<label for="full_name" class="label">Teljes név:</label>
+						<input type="text" style="float:right" id="full_name" name="full_name" required placeholder="Adja meg a teljes nevet...">
+						<br><br><br><br>
+						<label for="email" class="label">E-mail:</label>
+						<input type="mail" style="float:right" id="email" name="email" required placeholder="Adja meg az e-mail címet...">
+						<br><br><br><br>
+						<label for="password" class="label">Jelszó:</label>
+						<input type="password" style="float:right" id="password" name="password" required placeholder="Adja meg a jelszót">
+						<br><br><br><br>
+						<label for="role" class="label">Szerepkör:</label><br>
+						<center>
+						<div class="radio-role">
+							<input type="radio" id="radioVezeto" name="role" value="2" checked>
+							<label for="radioVezeto">Vezető</label>
+							<input type="radio" id="radioMunkatárs" name="role" value="1">
+							<label for="radioMunkatárs">Munkatárs</label>
+						</div>						
+						<br><br>
+						<button class="button">Tag felvétele</button></center>
 						<?php
 							if (isset($_REQUEST['username'])) {
 								$username = stripslashes($_REQUEST['username']);
