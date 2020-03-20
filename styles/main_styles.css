@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Damion|Muli:400,600');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i|PT+Sans|Roboto&display=swap');
 *{
 	box-sizing: border-box;
 	margin: 0;
@@ -46,7 +48,7 @@ main{
 	grid-area: main;
 }
 .container{ /*Main tartalom méretezése*/
-	width: 400px;
+	width: 700px;
 }
 .content-name{
 	margin-top: 6px;
@@ -159,8 +161,9 @@ span.position2 {
 
 .tabcontent {
   color: #26ACDE;
-  padding: 25px 20px;
+  padding: 25px 262px;
   height: 100%;
+  position: relative;
 }
 #user-add {display: block;}
 #user-delete {display: none;}
@@ -179,8 +182,8 @@ span.position2 {
 	padding: 12px 16px;
 	background-color: #fff;
 	border-radius: 10px;
-	border-left: 6px solid #26ACDE;
-	border-bottom: 6px solid #26ACDE;
+	border-left: 5px solid #26ACDE;
+	border-bottom: 5px solid #26ACDE;
 	margin-bottom: 20px;
 }
 
@@ -211,20 +214,27 @@ th.sort {					/*táblázat rendezéshez*/
 	margin-left:5px;
 }
 main input {
-  width: 300px;
+  display: block;
+  width: 70%;
   padding: 12px 20px;
-  margin: 2px 0;
+  margin: 0 auto 15px auto;
   border: none;
   color: #2293BD;
-  border-left: 4px solid #26ACDE;
+  border-bottom: 2px solid #26ACDE;
   font-size: 1.2em;
   transition: 0.4s;
   font-family: 'PT Sans', sans-serif;
 }
 main input:focus {
-  border-left: 4px solid IndianRed;
+  border-bottom: 2px solid IndianRed;
   background: FloralWhite;
   outline: none;
+}
+.label{
+	color: #26ACDE;
+	margin-top: 0px;
+	font-family: 'Lato', sans-serif;
+	font-size: 1em;
 }
 .select{
 	padding:10px;
@@ -244,12 +254,6 @@ main input:focus {
 	border-radius: 3px;
 	width: 70px;
 }
-.label{
-	color: #26ACDE;
-	margin: 0;
-	font-family: 'Lato', sans-serif;
-	font-size: 1em;
-}
 
 .elvalaszto {
   border-left: 3px solid #26ACDE;
@@ -259,6 +263,16 @@ main input:focus {
   margin-left: -1.5px;
   top: 25px;
 }
+.elvalaszto2 {
+  border-top: 3px solid #26ACDE;
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 15px 0;
+  background-color: #fff;
+  padding: 5px 0;
+}
+
 /*---------------placeholder stílusa------------*/
 ::placeholder {
   color: #2293BD;

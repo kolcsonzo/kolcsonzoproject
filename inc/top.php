@@ -15,7 +15,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script src="https://kit.fontawesome.com/cc6376bd80.js" crossorigin="anonymous"></script>
-	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i|PT+Sans|Roboto&display=swap" rel="stylesheet"> 
 	<link href="styles/table_style.css" rel="stylesheet">
 	<script type="text/javascript" src="js/js.js"></script>
 	<link rel="stylesheet" href="styles/main_styles.css">
