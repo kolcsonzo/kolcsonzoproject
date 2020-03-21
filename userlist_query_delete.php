@@ -28,9 +28,6 @@ require('db.php');
 				$result = mysqli_query($con, $query) or die(mysql_error());
 				
 				echo '<ul class="kereso_lista-Nr">
-							<li class="keresoNev">
-							<input type="text" id="keresoInput2" onkeyup="myFunction()" placeholder="Keresés...">
-							</li>
 							<li class="tablazat_merteke">
 								<select name="state" id="maxRows" class="select-list">
 									<option value="5000">Mind</option>
@@ -43,6 +40,9 @@ require('db.php');
 									<option value="100">100</option>
 								</select>
 							</li>
+							<li class="keresoNev2">
+							<input type="text" id="keresoInput" onkeyup="myFunction()" placeholder="Keresés...">
+							</li>
 						</ul>
 					<table class="table table-striped table-class" id= "table-id">
 						<tr>
@@ -53,15 +53,15 @@ require('db.php');
 
 						while ($row = $result->fetch_assoc()) {
 							echo '<tr>
-									<td>' . $row["username"] . '</td>';									
+									<td style="vertical-align: middle; padding:3px;">' . $row["username"] . '</td>';									
 							if ($row['role'] == 1) {
-								echo '<td>Munkatárs</td>';
+								echo '<td style="vertical-align: middle; padding:3px;">Munkatárs</td>';
 							}
 							else {
-								echo '<td>Vezető</td>';
+								echo '<td style="vertical-align: middle; padding:3px;">Vezető</td>';
 							}
 							if ($rol == 2) {
-								echo '<td><img class="fas fa-times x" onclick="teszt('.$rol.','."'".$row['username']."'".');"></td></tr>';
+								echo '<td style="vertical-align: middle; padding:3px;"><img class="fas fa-times x" onclick="teszt('.$rol.','."'".$row['username']."'".');"></td></tr>';
 								}
 							}
 							

@@ -313,27 +313,19 @@ li.tablazat_merteke{/*táblázat méret választó jobbra igazítás*/
 li.keresoNev{ /*eszközlista és tag törlés kereső balra igazítás*/
 	float: right;
 }
-input#keresoInput{   /*eszközlista kereső*/
+li.keresoNev2{ /*eszközlista és tag törlés kereső balra igazítás*/
+	float: left;
+}
+input#keresoInput{   /*eszközlista, tag-törlés kereső*/
 	height: 48px;
-	padding: 10.5px 10px;
+	padding: 11px 10px;
 	margin: 2px 0;
 	background-color: #26ACDE;
 	font-size: 1.2em;
 	color: #fff;
 	border: 1px solid #fff;
 	border-radius: 3px;
-}
-input#keresoInput2  { /*eszkozlista kereső input*/
-  width: 250px;
-  border: 2px solid #26ACDE;
-  padding: 12px 20px;
-  margin: 2px 0;
-  color: #2293BD;
-  border-left: 4px solid #26ACDE;
-  font-size: 1.2em;
-  transition: 0.4s;
-  font-family: 'PT Sans', sans-serif;
-  margin-bottom: 15px;
+	width:250px;
 }
 /*----------információs ablak stílusa----------------*/
 .modal {
