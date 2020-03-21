@@ -15,11 +15,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script src="https://kit.fontawesome.com/cc6376bd80.js" crossorigin="anonymous"></script>
-	<link href="styles/table_style.css" rel="stylesheet">
+	<link href="styles/table_styles.css" rel="stylesheet">
 	<script type="text/javascript" src="js/js.js"></script>
 	<link rel="stylesheet" href="styles/main_styles.css">
+	<link rel="stylesheet" href="styles/mobile_styles.css">
 	<!-- Tagok kezelésénél használt oldalbetöltő script. -->
-	<script>
+	<script type="text/javascript">
 		function openPage(pageName) {
 			if (pageName == 'user-add') {
 				document.getElementById("user-add").style.display = "block";
@@ -30,9 +31,7 @@
 				document.getElementById("user-delete").style.display = "block";
 			}
 		}
-	</script>
 	<!-- Ez a script frissíti le a taglistát, és töröl az adatbázisból. Átadja a szerepkört(a jogosultság ellenőrzése miatt) és a törlendő felhasználó nevét a query-nek -->
-	<script type="text/javascript">
 		function teszt(role, target)
 		{
 		   $.ajax({url:"userlist_query_delete.php", type:"POST", data: ({role: role, target: target}), async:true, cache:false, success:function(result)
@@ -47,6 +46,7 @@
 	<div class="grid-container">
 		<header>
 			<ul id="header-pos">
+				<li class="position">Eszköznyilvántartó</li>
 				<li class="position2"><a href="logout.php">
 					<svg class="fas fa-sign-out-alt logout"></svg></a>
 				</li>
@@ -65,14 +65,20 @@
 			</ul>
 		</header>
 		<nav>
+			<label for="mobile-menu" class="mobile-menu-button">
+				<span></span>
+				<span></span>
+				<span></span>	
+			</label>
+			<input type="checkbox" id="mobile-menu">
 			<ul id="nav">
 				<li id="nav"><a href="foglalas.php">Foglalás</a></li>
 				<li id="nav"><a href="eszkozok.php">Eszközlista</a></li>
-				<?php
-						if ($userinfo['role'] == 2) {
-						echo '<li id="nav"><a href="useradd.php">Felhasználók kezelése</a></li>';
-					}
-				?>
-				<li id="nav2"><a class="nav" href="#about">Impresszum</a></li>
+					<?php
+							if ($userinfo['role'] == 2) {
+							echo '<li id="nav"><a href="useradd.php">Felhasználók kezelése</a></li>';
+						}
+					?>
+				<li id="nav2"><a href="#bottom">Impresszum</a></li>
 			</ul>
 		</nav>

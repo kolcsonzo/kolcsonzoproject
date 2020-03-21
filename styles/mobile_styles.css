@@ -1,0 +1,154 @@
+
+@media (max-width: 1200px){
+	.tabcontent {
+	  padding: 25px 16vw;
+	}
+}
+@media (max-width: 960px){
+	.tabcontent {
+	  padding: 25px 14vw;
+	}
+}
+/*grid módosítása*/
+@media (max-width: 890px){
+	.grid-container {	/*A weboldal felosztása*/
+	  grid-template-rows: 80px 45px 50px auto 50px 200px 40px;
+	  grid-template-columns: 50% 50%;
+	  grid-template-areas:
+		"header header"
+		"nav 	nav"
+		". 		."
+		"main 	main"
+		". 		."
+		"bottom bottom"
+		"footer footer";
+	}
+	header{
+		padding: 28px 1vw 0 1vw;
+	}
+	nav{
+		padding: 0 1vw 0 1vw;
+	}
+	main{
+		padding-right: 16px;
+	}
+	.tabcontent {
+	  padding: 25px 10vw;
+	}
+	section#bottom{
+		padding: 0 1vw 0 1vw;
+	}	
+	footer{
+		padding: 10px 1vw 0 1vw;
+	}	
+}
+
+/*------------------------------------------------------------------------*/ 
+
+ /*navigációs menü*/
+ .mobile-menu-button + input[type="checkbox"], .mobile-menu-button{
+	display: none;
+ }
+ 
+@media (max-width: 810px){
+
+	.mobile-menu-button{
+		display: block;
+		padding: 3px 5px;
+		float: right;
+		margin: 8px 0 0 0;
+	}
+	
+	.mobile-menu-button span{
+		display:block;
+		height: 6px;
+		background-color: #26ACDE;
+		width: 30px;
+		margin-bottom: 3px; 
+		border-radius: 2px;
+	}
+	
+	.mobile-menu-button span:last-of-type{
+		margin: 0;
+	}
+	
+	.mobile-menu-button + input[type="checkbox"]{
+		height: 4px;
+		background-color: #fff;
+		width: 20px;
+	}
+	.mobile-menu-button + input[type="checkbox"]:checked ~ ul#nav li, ul#nav2 li a{
+		display: block;
+	}
+	ul#nav li{
+		display: none;
+		float: none;
+		background-color: #26ACDE;
+		border-top: 1px solid #000;
+		color: #fff;
+	}
+	ul#nav li:first-child{
+		display: none;
+		float: none;
+		border: 0;
+		margin-top: 45px;
+	}
+	li#nav a{
+		color: #fff;
+	}
+	li#nav2 a {		
+		float: none;
+		color: #fff;
+		background-color: #26ACDE;
+	}
+	li#nav2 a:hover {	
+		color: #fff;
+		background-color: #2293BD;
+		font-size: 1.1em;
+	}
+	ul#nav{
+		position: relative;
+	}
+}
+ul#mobile-search-devices{display: none;}
+.pagename div svg{display: none;}
+
+
+@media (max-width: 600px){
+	ul#search-devices{
+		display:none;
+	}
+	ul#mobile-search-devices{
+		display: block;
+	}
+	.pagename div button{
+		display: none;
+	}
+	.pagename div svg{
+		font-size: 25px;
+		display: inline-block;
+		padding: 0;
+		margin-top: 11px;
+		color: green;
+	}
+	.pagename div svg:last-of-type{
+		margin-left: 8px;
+		color: red;
+	}
+	span.text{
+		font-size: 1.3em;
+		margin-top: 12px;
+	}
+	div.pagename{
+		padding: 0px 10px;
+		height: 50px;
+	}
+}
+/*-------------------------------------------------------------------------*/
+
+
+
+
+
+
+

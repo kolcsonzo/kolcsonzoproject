@@ -6,6 +6,9 @@
 	padding: 0;	
 	font-family: 'Roboto', sans-serif;
 }
+html{
+	scroll-behavior: smooth;
+}
 body{
    background-color: #EBF5F8;
 }
@@ -90,7 +93,10 @@ span.text{
 }
 
 /*--------------vízszintes menű és header információk stílusa-------------*/
-
+div#login-nav{
+	float: left;
+	display: none;
+}
 ul#nav, ul#header-pos {			/*ul nav és header stílus*/
 	list-style-type: none;
 	margin: 0;
@@ -161,7 +167,7 @@ span.position2 {
 
 .tabcontent {
   color: #26ACDE;
-  padding: 25px 262px;
+  padding: 25px 18vw;
   height: 100%;
   position: relative;
 }
@@ -215,9 +221,9 @@ th.sort {					/*táblázat rendezéshez*/
 }
 main input {
   display: block;
-  width: 70%;
+  width: 100%;
   padding: 12px 20px;
-  margin: 0 auto 15px auto;
+  margin: 0 0 15px 0;
   border: none;
   color: #2293BD;
   border-bottom: 2px solid #26ACDE;

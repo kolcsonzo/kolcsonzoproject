@@ -9,6 +9,8 @@
 			<div style="float:right;">
 				<button class="button" onclick="openPage('user-add')">Tag felvétel</button>
 				<button class="button" name="del" onclick="openPage('user-delete')">Tag törlés</button>
+				<svg class="fas fa-user-plus"></svg>
+				<svg class="fas fa-user-minus"></svg>
 			</div>
 		</div>
 		<br><br>
@@ -120,8 +122,6 @@
 			<div class="info">
 				<span><strong>Tag törléséhez</strong> használja a megfelelő sor melleti "Törlés" opciót.</span>
 			</div>
-
-			<span class="text">Felhasználók</span></br></br>
 			<?php
 				//while
 				echo '<div id="delete_q"></div>'; //ide érkezik vissza a script lefutása utáni kód, tehát az eredmény
