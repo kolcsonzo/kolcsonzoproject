@@ -428,7 +428,7 @@ input#keresoInput {   /*eszközlista, tag-törlés kereső*/
 
 /* Hide all steps by default: */
 .tab {
-  display: none;
+  /*display: none;*/
 }
 
 #prevBtn {
