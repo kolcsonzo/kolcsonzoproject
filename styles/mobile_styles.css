@@ -41,6 +41,9 @@
 	footer{
 		padding: 10px 1vw 0 1vw;
 	}	
+	.right-information-section{
+		padding-right:16px;
+	}
 }
 
 /*------------------------------------------------------------------------*/ 
@@ -129,12 +132,14 @@ ul#mobile-search-devices{display: none;}
 		display: inline-block;
 		padding: 0;
 		margin-top: 11px;
-		color: green;
+		color: #26ACDE;
 		cursor: pointer;
 	}
 	.pagename div svg:last-of-type{
 		margin-left: 8px;
-		color: red;
+	}
+	.pagename div svg:hover{
+		color: ##2293BD;
 	}
 	span.text{
 		font-size: 1.3em;
@@ -151,6 +156,45 @@ ul#mobile-search-devices{display: none;}
 	input#keresoInput{
 		width: 144px;
 	}
+}
+@media (max-width: 1085px){
+	input#keresoInput{
+		width: 210px;
+	}
+}
+@media (max-width: 405px){
+	input#keresoInput{
+		width: 120px;
+	}
+}
+@media (max-width: 535px){
+	.mobile-view{
+		display: none;
+	}
+@media (max-width: 460px){
+	#table-id{
+		font-size: 10px;
+	}
+	.mobile-view2{
+		font-size: 14px;
+	}
+	
+	.select-list{
+		padding: 7px 10px;
+	}
+	input#keresoInput{
+		height: 38px;
+	}
+	
+@media (max-width: 400px){
+	#table-id{
+		font-size: 8px;
+	}
+	.mobile-view2 tr{
+		font-size: 14px;
+	}
+	
+
 }
 
 

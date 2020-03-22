@@ -44,7 +44,7 @@ require('db.php');
 							<input type="text" id="keresoInput" onkeyup="myFunction()" placeholder="Keresés...">
 							</li>
 						</ul>
-					<table class="table table-striped table-class" id= "table-id">
+					<table class="table table-striped table-class mobile-view2" id= "table-id">
 						<tr>
 							<th onclick="sortTable(0)" class="sort">Felhasználónév<i class="fas fa-sort sort-icon"></th>
 							<th onclick="sortTable(1)" class="sort">Beosztás<i class="fas fa-sort sort-icon"></th>

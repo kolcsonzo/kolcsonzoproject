@@ -44,7 +44,7 @@
 			</ul>
 		<table class="table table-striped table-class" id= "table-id">
 			<tr>
-				<th onclick="sortTable(0)" class="sort">ID<i class="fas fa-sort sort-icon"></i></th>
+				<th onclick="sortTable(0)" class="sort mobile-view">ID<i class="fas fa-sort sort-icon"></i></th>
 				<th onclick="sortTable(1)" class="sort">Név<i class="fas fa-sort sort-icon"></i></th>
 				<th onclick="sortTable(2)" class="sort">Max. foglalás<i class="fas fa-sort sort-icon"></i></th>
 				<th onclick="sortTable(3)" class="sort">Márka<i class="fas fa-sort sort-icon"></i></th>
@@ -59,7 +59,7 @@
 				
 		while ($row = $result->fetch_assoc()) {
 			echo'<tr>
-					<td>'.$row["id"].'</td>
+					<td class="mobile-view">'.$row["id"].'</td>
 					<td>'.$row["name"].'</td>
 					<td>'.$row["period_days"].' nap</td>
 					<td>'.$row["brand"].'</td>
