@@ -14,9 +14,14 @@ getPagination('#table-id');
 	
 // keresés a táblázatokban
 
-	function myFunction() {
+	function myFunction(x) {
 	 var input, filter, table, tr, i, txtValue;
-	input = document.getElementById("keresoInput");
+	 if (x == 0) {
+		input = document.getElementById("keresoInput");
+	 }
+	 else {
+		input = document.getElementById(x);
+	 }
 	filter = input.value.toUpperCase();
 	table = document.getElementById("table-id");
 	tr = table.getElementsByTagName("tr");

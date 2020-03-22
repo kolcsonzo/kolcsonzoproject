@@ -41,7 +41,7 @@ require('db.php');
 								</select>
 							</li>
 							<li class="keresoNev2">
-							<input type="text" id="keresoInput" onkeyup="myFunction()" placeholder="Keresés...">
+							<input type="text" id="keresoInput" onkeyup="myFunction(0)" placeholder="Keresés...">
 							</li>
 						</ul>
 					<table class="table table-striped table-class mobile-view2" id= "table-id">

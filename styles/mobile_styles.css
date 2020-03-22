@@ -122,7 +122,7 @@ ul#mobile-search-devices{display: none;}
 		display:none;
 	}
 	ul#mobile-search-devices{
-		display: block;
+		display: inline-block;
 	}
 	.pagename div button{
 		display: none;
@@ -148,6 +148,9 @@ ul#mobile-search-devices{display: none;}
 	div.pagename{
 		padding: 0px 10px;
 		height: 50px;
+	}
+	ul.kereso_lista-Nr{
+		width: 100%;
 	}
 }
 /*-------------------------------------------------------------------------*/

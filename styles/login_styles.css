@@ -9,10 +9,10 @@ body{
 }
 .grid-container-login {
   display: grid;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  grid-template-rows: 20vh 345px auto;
-  grid-template-columns: auto 400px auto;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 2fr auto 2fr;
   grid-template-areas:
 	". 		. 		."
 	".		main	."
@@ -31,7 +31,7 @@ main{
 	border: 5px solid #26ABDE;
 	border-top: 5px solid #26ABDE;
 	border-bottom: 5px solid #26ABDE;
-	padding: 10% 0 10% 0;
+	padding: 5% 10%;
 	background-color: #EBF5F8;
 	grid-area: main;
 }
@@ -48,8 +48,8 @@ div#information {
 }
 span.text{
 	display:block;
-	margin: 0 0 15px 0;
-	font-size: 1.5em;
+	margin: 5px 0 5px 0;
+	font-size: 1.2em;
 	color: #26ACDE;
 }
 .button {
@@ -73,7 +73,8 @@ span.text{
   box-shadow: 0 3px 4px 0 rgba(0,0,0,0.24),0 17px 30px 0 rgba(0,0,0,0.19);
 }
 main input {
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   border: none;
