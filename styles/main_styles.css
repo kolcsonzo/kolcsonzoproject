@@ -322,7 +322,7 @@ li.keresoNev{ /*eszközlista és tag törlés kereső balra igazítás*/
 li.keresoNev2{ /*eszközlista és tag törlés kereső balra igazítás*/
 	float: left;
 }
-input#keresoInput{   /*eszközlista, tag-törlés kereső*/
+input#keresoInput {   /*eszközlista, tag-törlés kereső*/
 	height: 48px;
 	padding: 11px 10px;
 	margin: 2px 0;
@@ -333,6 +333,7 @@ input#keresoInput{   /*eszközlista, tag-törlés kereső*/
 	border-radius: 3px;
 	width:250px;
 }
+
 /*----------információs ablak stílusa----------------*/
 .modal {
   display: none; /* Hidden by default */

@@ -9,8 +9,8 @@
 			<div style="float:right;">
 				<button class="button" onclick="openPage('user-add')">Tag felvétel</button>
 				<button class="button" name="del" onclick="openPage('user-delete')">Tag törlés</button>
-				<svg class="fas fa-user-plus"></svg>
-				<svg class="fas fa-user-minus"></svg>
+				<svg class="fas fa-user-plus" onclick="openPage('user-add')"></svg>
+				<svg class="fas fa-user-minus" onclick="openPage('user-delete')"></svg>
 			</div>
 		</div>
 		<br><br>

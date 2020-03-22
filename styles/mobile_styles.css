@@ -84,7 +84,7 @@
 		display: none;
 		float: none;
 		background-color: #26ACDE;
-		border-top: 1px solid #000;
+		border-top: 1px solid #2293BD;
 		color: #fff;
 	}
 	ul#nav li:first-child{
@@ -114,7 +114,7 @@ ul#mobile-search-devices{display: none;}
 .pagename div svg{display: none;}
 
 
-@media (max-width: 600px){
+@media (max-width: 600px){ /*tag hozzáadás, törlés - menük*/
 	ul#search-devices{
 		display:none;
 	}
@@ -130,6 +130,7 @@ ul#mobile-search-devices{display: none;}
 		padding: 0;
 		margin-top: 11px;
 		color: green;
+		cursor: pointer;
 	}
 	.pagename div svg:last-of-type{
 		margin-left: 8px;
@@ -146,7 +147,11 @@ ul#mobile-search-devices{display: none;}
 }
 /*-------------------------------------------------------------------------*/
 
-
+@media (max-width: 460px){
+	input#keresoInput{
+		width: 144px;
+	}
+}
 
 
 
