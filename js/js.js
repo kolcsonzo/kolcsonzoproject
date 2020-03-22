@@ -9,7 +9,7 @@
 function getPagination(table) {
   var lastPage = 1;
 
-  $('#maxRows')
+  $('#maxRows') 
     .on('change', function(evt) {
       //$('.paginationprev').html('');						// reset pagination
 

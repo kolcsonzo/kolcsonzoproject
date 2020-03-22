@@ -21,13 +21,13 @@
 					</select>
 				</li>
 				<li class="keresoNev">
-					<input type="text" id="keresoInput" onkeyup="myFunction()" placeholder="Keresés...">
+					<input type="text" id="keresoInput" onkeyup="myFunction('keresoInput')" placeholder="Keresés...">
 				</li>
 			</ul>			
 		</div>
 		<ul id="mobile-search-devices" class="kereso_lista-Nr">
 				<li class="tablazat_merteke">
-					<select name="state" id="maxRows" class="select-list">
+					<select name="state" id="maxRows2" class="select-list">
 						<option value="5000">Mind</option>
 						<option value="5" selected>5</option>
 						<option value="10">10</option>
@@ -38,8 +38,8 @@
 						<option value="100">100</option>
 					</select>
 				</li>
-				<li class="keresoNev">
-					<input type="text" id="keresoInput" onkeyup="myFunction()" placeholder="Keresés...">
+				<li class="keresoNev2">
+					<input type="text" id="keresoInput2" onkeyup="myFunction('keresoInput2')" placeholder="Keresés...">
 				</li>
 			</ul>
 		<table class="table table-striped table-class" id= "table-id">

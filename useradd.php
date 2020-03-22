@@ -99,23 +99,6 @@
 							}
 						?>
 					</form>
-					<!--információs ablak-->
-				<button id="myBtn" style="visibility: hidden;"></button>	
-				<div id="myModal" class="modal">
-					<div class="modal-content">
-						<div class="modal-header" id="modal-header">
-							<span class="close">&times;</span>
-							<h3><?php echo $eredmenyinfo1 ?><h3>
-						</div>
-						<div class="modal-body" id="modal-body">
-							<h4><?php echo $full_name . $eredmenyinfo2 ?></h4>
-						</div>
-						<div class="modal-footer" id="modal-footer">
-						</div>
-					</div>
-				</div>	
-				<!--vége-->
-				<script type="text/javascript" src="js/inform_windows.js"></script>
 			</div>
 
 			<div id="user-delete" class="tabcontent">
@@ -126,10 +109,25 @@
 				//while
 				echo '<div id="delete_q"></div>'; //ide érkezik vissza a script lefutása utáni kód, tehát az eredmény
 				echo '<script type="text/javascript">teszt('.$userinfo['role'].')</script>';
-				?>
-
-				
-			</div>					
+			?>
+			</div>	
+			<!--információs ablak-->
+			<button id="myBtn" style="visibility: hidden;"></button>	
+			<div id="myModal" class="modal">
+				<div class="modal-content">
+					<div class="modal-header" id="modal-header">
+						<span class="close">&times;</span>
+						<h3><?php echo $eredmenyinfo1 ?><h3>
+					</div>
+					<div class="modal-body" id="modal-body">
+						<h4><?php echo $full_name . $eredmenyinfo2 ?></h4>
+					</div>
+					<div class="modal-footer" id="modal-footer">
+					</div>
+				</div>
+			</div>	
+				<!--vége-->
+				<script type="text/javascript" src="js/inform_windows.js"></script>
 </main>
 
 <?php
