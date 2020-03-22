@@ -165,9 +165,9 @@ ul#mobile-search-devices{display: none;}
 		width: 210px;
 	}
 }
-@media (max-width: 405px){
-	input#keresoInput{
-		width: 120px;
+@media (max-width: 900px){
+	.modal-content{
+		width: 80%;
 	}
 }
 @media (max-width: 535px){
@@ -188,7 +188,11 @@ ul#mobile-search-devices{display: none;}
 	input#keresoInput{
 		height: 38px;
 	}
-	
+@media (max-width: 405px){
+	input#keresoInput{
+		width: 120px;
+	}
+}	
 @media (max-width: 400px){
 	#table-id{
 		font-size: 8px;
@@ -196,10 +200,7 @@ ul#mobile-search-devices{display: none;}
 	.mobile-view2 tr{
 		font-size: 14px;
 	}
-	
-
 }
-
 
 
 
