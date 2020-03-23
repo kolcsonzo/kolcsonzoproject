@@ -46,7 +46,11 @@
 	<div class="grid-container">
 		<header>
 			<ul id="header-pos">
-				<li class="position">Eszköznyilvántartó</li>
+				<div>
+					<img src="img/logo.png">
+					<span>Eszköznyilvántartó<br>és kölcsönző rendszer</span>
+				</div>
+				<div class="circle"></div>
 				<li class="position2"><a href="logout.php">
 					<svg class="fas fa-sign-out-alt logout"></svg></a>
 				</li>

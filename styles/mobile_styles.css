@@ -44,6 +44,9 @@
 	.right-information-section{
 		padding-right:16px;
 	}
+	header div{
+		left: 5px;
+	}
 }
 
 /*------------------------------------------------------------------------*/ 
@@ -172,6 +175,9 @@ ul#mobile-search-devices{display: none;}
 }
 @media (max-width: 535px){
 	.mobile-view{
+		display: none;
+	}
+	header div span{
 		display: none;
 	}
 @media (max-width: 460px){
