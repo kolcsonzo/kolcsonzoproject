@@ -8,8 +8,16 @@
 
 function getPagination(table) {
   var lastPage = 1;
+	var rows_nr = "";
+	if ($( document ).width() > 600){	
+		rows_nr = "#maxRows"
+	}
+	else{
+		rows_nr = "#maxRows2"
+	}
 
-  $('#maxRows') 
+
+  $(rows_nr)
     .on('change', function(evt) {
       //$('.paginationprev').html('');						// reset pagination
 

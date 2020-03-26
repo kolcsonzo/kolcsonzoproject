@@ -59,16 +59,16 @@
 								$result   = mysqli_query($con, $query);
 								$rows = mysqli_num_rows($result);
 								if ($rows != 0) {
-										echo '  <script>
+										echo '<script>
 													window.onload = function(){
-														document.getElementById("myBtn").click();
-														document.getElementById("modal-body").className = "modal-body_warning";
-														document.getElementById("modal-header").className = "modal-header_warning";
-														document.getElementById("modal-footer").className = "modal-footer_warning";
-													}
+														  $.meow({
+															message: "' . $full_name . ' tag felvétele sikertelen.<br>A tag már szerepel az adatbázisban",
+															title: "Sikertelen tagfelvétel!",
+															duration: 3500,
+															icon: "img/meow_no.png"
+														  });
+														}													
 												</script>';
-										$eredmenyinfo1 = 'Sikertelen tagfelvétel!';
-										$eredmenyinfo2 = ' már bent van az adatbázisban!';
 								} else {
 
 								//Ha nincs, akkor mehet
@@ -76,24 +76,27 @@
 											 VALUES ('$username', '$full_name', '$email','" . md5($password) . "', '$role', '$create_datetime')";
 								$result   = mysqli_query($con, $query);
 								if ($result) {
-										echo '  <script>
+										echo '<script language="javascript">
 													window.onload = function(){
-														document.getElementById("myBtn").click();
-													}
+														  $.meow({
+															message: "' . $full_name . ' tag felvétele sikeres.",
+															title: "Sikeres tagfelvétel!",
+															duration: 3500,
+															icon: "img/meow_yes.png"
+														  });
+														}													
 												</script>';
-										$eredmenyinfo1 = 'Sikeres tagfelvétel!';
-										$eredmenyinfo2 = ' felvétele sikeres volt!';
 								} else {
-										echo '  <script>
+										echo '<script language="javascript">
 													window.onload = function(){
-														document.getElementById("myBtn").click();
-														document.getElementById("modal-body").className = "modal-body_warning";
-														document.getElementById("modal-header").className = "modal-header_warning";
-														document.getElementById("modal-footer").className = "modal-footer_warning";
-													}
+														  $.meow({
+															message: "' . $full_name . ' tag felvétele sikertelen.",
+															title: "Sikertelen tagfelvétel!",
+															duration: 3500,
+															icon: "img/meow_no.png"
+														  });
+														}													
 												</script>';
-										$eredmenyinfo1 = 'Sikertelen tagfelvétel!';
-										$eredmenyinfo2 = ' felvétele nem sikerült!';
 									} 
 								}
 							}
@@ -111,23 +114,6 @@
 				echo '<script type="text/javascript">teszt('.$userinfo['role'].')</script>';
 			?>
 			</div>	
-			<!--információs ablak-->
-			<button id="myBtn" style="visibility: hidden;"></button>	
-			<div id="myModal" class="modal">
-				<div class="modal-content">
-					<div class="modal-header" id="modal-header">
-						<span class="close">&times;</span>
-						<h3><?php echo $eredmenyinfo1 ?><h3>
-					</div>
-					<div class="modal-body" id="modal-body">
-						<h4><?php echo $full_name . $eredmenyinfo2 ?></h4>
-					</div>
-					<div class="modal-footer" id="modal-footer">
-					</div>
-				</div>
-			</div>	
-				<!--vége-->
-				<script type="text/javascript" src="js/inform_windows.js"></script>
 </main>
 
 <?php

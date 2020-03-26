@@ -11,14 +11,18 @@
 	<meta charset="utf-8">
 	<title>Eszköznyilvántartó és kölcsönző rendszer</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script src="https://kit.fontawesome.com/cc6376bd80.js" crossorigin="anonymous"></script>
-	<link href="styles/table_styles.css" rel="stylesheet">
 	<script type="text/javascript" src="js/js.js"></script>
+	<script type="text/javascript" src="js/jquery.meow.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/table_styles.css">
+	<link rel="stylesheet" href="styles/jquery.meow.css">
 	<link rel="stylesheet" href="styles/main_styles.css">
 	<link rel="stylesheet" href="styles/mobile_styles.css">
+	
 	<!-- Tagok kezelésénél használt oldalbetöltő script. -->
 	<script type="text/javascript">
 		function openPage(pageName) {
