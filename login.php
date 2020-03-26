@@ -22,7 +22,6 @@
 echo '
 	<div class="grid-container-login">
 		<main>
-			<article id="login">
 				<div id="information">
 					<span style="font-size: 30px; color: #26ACDE;">
 						<i class="fas fa-info-circle"></i>		
@@ -39,33 +38,32 @@ echo '
 					<button class="button">Bejelentkezés</button>
 				</form>
 			';
-    require('db.php');
-    session_start();
-    //Form elküldés után
-    if (isset($_POST['username'])) {
-        $username = stripslashes($_REQUEST['username']);
-        $username = mysqli_real_escape_string($con, $username);
-        $password = stripslashes($_REQUEST['password']);
-        $password = mysqli_real_escape_string($con, $password);
-        // Létezik -e a user
-        $query    = "SELECT * FROM `users` WHERE username='$username'
-                     AND password='" . md5($password) . "'";
-        $result = mysqli_query($con, $query) or die(mysql_error());
-        $rows = mysqli_num_rows($result);
-        if ($rows != 0) {
-            $_SESSION['username'] = $username;
-            // Van ilyen user és jó a pw
-            header("Location: foglalas.php");
-        } else {
-			//Hibaüzenet
-            echo 	'<div class="alertpos alert alert-danger alert-dismissible fade show">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong>Figyelem!</strong> Hibás felhasználónév vagy jelszó!
-					</div>';
-				}
-    }
+			require('db.php');
+			session_start();
+			//Form elküldés után
+			if (isset($_POST['username'])) {
+				$username = stripslashes($_REQUEST['username']);
+				$username = mysqli_real_escape_string($con, $username);
+				$password = stripslashes($_REQUEST['password']);
+				$password = mysqli_real_escape_string($con, $password);
+				// Létezik -e a user
+				$query    = "SELECT * FROM `users` WHERE username='$username'
+							 AND password='" . md5($password) . "'";
+				$result = mysqli_query($con, $query) or die(mysql_error());
+				$rows = mysqli_num_rows($result);
+				if ($rows != 0) {
+					$_SESSION['username'] = $username;
+					// Van ilyen user és jó a pw
+					header("Location: foglalas.php");
+				} else {
+					//Hibaüzenet
+					echo 	'<div id="alert" class="alertpos alert alert-danger alert-dismissible fade show">
+							<button type="button" class="close" data-dismiss="alert">&times;</button>
+							<strong>Figyelem!</strong> Hibás felhasználónév vagy jelszó!
+							</div>';
+						}
+			}
 ?>
-			</article>
 		</main>
 	</div>
 </body>
