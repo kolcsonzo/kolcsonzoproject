@@ -46,6 +46,11 @@ nav{
 	z-index: 1;
 	grid-area: nav;
 }
+nav::after{
+	content: '';
+	clear: both;
+	display: table;
+}
 main{
 	padding-left: 16px;
 	grid-area: main;
@@ -93,15 +98,10 @@ span.text{
 }
 
 /*--------------vízszintes menű és header információk stílusa-------------*/
-div#login-nav{
-	float: left;
-	display: none;
-}
 ul#nav, ul#header-pos {			/*ul nav és header stílus*/
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
 }
 li#nav, li.position {			/*ul nav és header stílus*/
   float: left;

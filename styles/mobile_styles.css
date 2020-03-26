@@ -27,10 +27,10 @@
 		padding: 28px 1vw 0 1vw;
 	}
 	nav{
-		padding: 0 1vw 0 1vw;
+		padding: 0;
 	}
-	main{
-		padding-right: 16px;
+	li#nav{
+		display: table;
 	}
 	.tabcontent {
 	  padding: 25px 10vw;
