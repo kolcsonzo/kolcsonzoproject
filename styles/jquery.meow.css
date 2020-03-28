@@ -1,6 +1,6 @@
 /* pozíció */
 .meows {
-  position: absolute;
+  position: fixed;
   top: 20vh;
   left: 50%;
   transform: translate(-50%,0);

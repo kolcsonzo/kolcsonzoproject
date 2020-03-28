@@ -88,7 +88,7 @@
 															message: "' . $full_name . ' tag felvétele sikeres.",
 															title: "Sikeres tagfelvétel!",
 															duration: 3500,
-															icon: "img/check-square-solid.svg",'; /*https://fontawesome.com/icons/check-square?style=solid  - color changed**/
+															icon: "img/check-square-solid.svg",'; /*https://fontawesome.com/icons/check-square?style=solid  - color changed*/
 														echo 'closeable: false
 														  });
 														}													

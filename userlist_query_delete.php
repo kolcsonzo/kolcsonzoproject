@@ -6,29 +6,43 @@ $target = $_POST['target'];
 require('db.php');
 
 //A törlés folyamata
+
+
 				//Vezető szerepkörhöz kötött..
 				if ($rol == 2 AND $target != "") {
 					$del_query = "DELETE FROM users WHERE username='".$target."'";
 					$execute = mysqli_query($con, $del_query) or die(mysql_error());
 					//Tényleg volt törlés az sql-ben..?
 					if (mysqli_affected_rows($con) == 1) {
-					echo '<script language="javascript">';
-					echo 'alert("A törlési művelet sikeresen végrehajtódott!")';
-					echo '</script>';
+								echo '<script language="javascript">';
+								echo '$.meow({';
+								echo 'message: "A törlési folyamat sikeresen befejeződött.",';
+								echo 'title: "Sikeres törlés!",';
+								echo 'duration: 3500,';
+								echo 'icon: "img/check-square-solid.svg",'; /*Ingyenes ikon: https://fontawesome.com/icons/check-square?style=solid  - szín megváltoztatva*/
+								echo 'closeable: false';
+								echo '});';
+								echo '</script>';
 					} else {
-					echo '<script language="javascript">';
-					echo 'alert("A törlési művelet sikertelen! SQL probléma!")';
-					echo '</script>';
+								echo '<script language="javascript">';
+								echo '$.meow({';
+								echo 'message: "A tag törlése sikertelen volt. SQL hiba!",';
+								echo 'title: "Sikertelen törlés!",';
+								echo 'duration: 3500,';
+								echo 'icon: "img/exclamation-triangle-solid.svg",'; /*Ingyenes ikon: https://fontawesome.com/icons/exclamation-triangle?style=solid  - szín megváltoztatva*/
+								echo 'closeable: false';
+								echo '});';
+								echo '</script>';							
 					}
 					echo "</br>";
-				}
+				}			
 //--------------------------------------------------------------------------------------------------------
 //Felhasználók lekérdezése
 				$query = "SELECT * FROM users";
 				$result = mysqli_query($con, $query) or die(mysql_error());
 				
 				echo '<ul class="kereso_lista-Nr">
-							<li id="delete_user_mobil_rowNr "class="tablazat_merteke">
+							<li class="tablazat_merteke">
 								<select name="state" id="maxRows" class="select-list">
 									<option value="5000">Mind</option>
 									<option value="5">5</option>
@@ -64,7 +78,6 @@ require('db.php');
 								echo '<td style="vertical-align: middle; padding:3px;"><img class="fas fa-times x" onclick="teszt('.$rol.','."'".$row['username']."'".');"></td></tr>';
 								}
 							}
-							
 						echo '</table>'; 
 						echo '<div class="pagination-container">
 								<ul class="pagination">
