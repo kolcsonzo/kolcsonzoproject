@@ -34,13 +34,23 @@
 				document.getElementById("user-add").style.display = "none";
 				document.getElementById("user-delete").style.display = "block";
 			}
-		}
+		};
 	<!-- Ez a script frissíti le a taglistát, és töröl az adatbázisból. Átadja a szerepkört(a jogosultság ellenőrzése miatt) és a törlendő felhasználó nevét a query-nek -->
 		function teszt(role, target)
 		{
 		   $.ajax({url:"userlist_query_delete.php", type:"POST", data: ({role: role, target: target}), async:true, cache:false, success:function(result)
 		{
 			 $("#delete_q").html(result);
+		}});
+
+		};
+		<!-- Foglaláshoz szükséges script -->
+		
+		function foglalas(eszkoz, id)
+		{
+		   $.ajax({url:"foglalas_query.php", type:"POST", data: ({eszkoz: eszkoz, id: id}), async:true, cache:false, success:function(result)
+		{
+			 $("#foglalas_result").html(result);
 		}});
 
 		};

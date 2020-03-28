@@ -4,7 +4,7 @@ $eszkoz = $_POST['eszkoz'];
 $id = $_POST['id'];
 
 require('db.php');
-//Ha az a foglalásnál az első dropdown menüben választunk eszközt, akkor biztosan teljesül a feltétel (bár amúgy is), és lefut a következő kód:
+//Ha a foglalásnál az első dropdown menüben választunk eszközt, akkor biztosan teljesül a feltétel (bár amúgy is), és lefut a következő kód:
 if  ($eszkoz != "na") {
 		echo ' 
 		<div class="tab">

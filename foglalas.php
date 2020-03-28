@@ -12,6 +12,7 @@
 	</div>
 	<form id="reservingForm" action="/action_page.php">
 	  <?php
+	  //Az oldal betöltésénél azonnal megjelenik az eszköz választós dropdown menü, és ez nem is fog újratöltődni már. Az OnChange eseményre elindul az ajax, azaz meghívódik a foglalas_query.php átadva az "eszkoz, id(na)" paramétereket
 		echo '
 		<div class="tab">
 			<label for="">Eszköz:</label><br>
