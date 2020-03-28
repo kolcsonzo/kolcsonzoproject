@@ -192,6 +192,7 @@ span.position2 {
 	border-left: 5px solid #26ACDE;
 	border-bottom: 5px solid #26ACDE;
 	margin-bottom: 20px;
+	position: relative;
 }
 
 .button {						/*elküldő és tag kezelő gombokhoz*/
@@ -294,15 +295,15 @@ main input:focus {
   color: #2293BD;
 opacity: 0.7;
 }
-#keresoInput::placeholder, #keresoInput2::placeholder {
+#keresoInput::placeholder{
   color: #fff;
   opacity: 0.7; 
 }
-#keresoInput:-ms-input-placeholder, #keresoInput2:-ms-input-placeholder { /* Internet Explorer 10-11 */
+#keresoInput:-ms-input-placeholder{ /* Internet Explorer 10-11 */
  color: #fff;
  opacity: 0.7; 
 }
-#keresoInput::-ms-input-placeholder, #keresoInput2::-ms-input-placeholder { /* Microsoft Edge */
+#keresoInput::-ms-input-placeholder{ /* Microsoft Edge */
   color: #fff;
 	opacity: 0.7;
 }
@@ -324,7 +325,7 @@ li.keresoNev{ /*eszközlista balra igazítás*/
 li.keresoNev2{ /*tag törlés kereső balra igazítás*/
 	float: left;
 }
-input#keresoInput, input#keresoInput2{   /*eszközlista, tag-törlés kereső*/
+input#keresoInput{   /*eszközlista, tag-törlés kereső*/
 	height: 48px;
 	padding: 11px 10px;
 	margin: 2px 0;

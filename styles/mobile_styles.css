@@ -29,14 +29,11 @@
 	nav{
 		padding: 0;
 	}
-	main{
-		padding: 0 16px;
-	}
 	li#nav{
 		display: table;
 	}
 	.tabcontent {
-	  padding: 25px 10vw;
+	  padding: 25px 28vw;
 	}
 	section#bottom{
 		padding: 0 1vw 0 1vw;
@@ -49,6 +46,9 @@
 	}
 	header div{
 		left: 5px;
+	}
+	main{
+		margin-right: 16px;
 	}
 }
 
@@ -119,17 +119,21 @@
 		position: relative;
 	}
 }
-ul#mobile-search-devices{display: none;}
 .pagename div svg{display: none;}
 
+@media (max-width: 680px){
+	.tabcontent{
+		padding: 0 18vw;
+	}
+}
+
+@media (max-width: 600px){
+	.tabcontent{
+		padding: 0 9vw;
+	}
+}
 
 @media (max-width: 600px){ /*tag hozzáadás, törlés - menük*/
-	ul#search-devices{
-		display:none;
-	}
-	ul#mobile-search-devices{
-		display: inline-block;
-	}
 	.pagename div button{
 		display: none;
 	}
@@ -146,29 +150,43 @@ ul#mobile-search-devices{display: none;}
 	}
 	.pagename div svg:hover{
 		color: ##2293BD;
-	}
+	}/*
+	ul.kereso_lista-Nr{
+		width: 100%;
+	}*/
+}
+/*-------------------------------------------------------------------------*/
+@media (max-width: 510px){
 	span.text{
 		font-size: 1.3em;
-		margin-top: 12px;
+		margin-top: 11px;
 	}
 	div.pagename{
 		padding: 0px 10px;
 		height: 50px;
 	}
-	ul.kereso_lista-Nr{
+	.search_and_rowNr{
+		position: absolute;
+		top: 0px;
+		right: 5px;
 		width: 100%;
+		margin-top: 2px;
 	}
-}
-/*-------------------------------------------------------------------------*/
-
-@media (max-width: 460px){
+	.select-list{
+		padding: 7px 10px;
+	}
 	input#keresoInput{
-		width: 144px;
+		height: 38px;
 	}
 }
 @media (max-width: 1085px){
 	input#keresoInput{
 		width: 210px;
+	}
+}
+@media (max-width: 450px){
+	input#keresoInput{
+		width: 100px;
 	}
 }
 @media (max-width: 900px){
@@ -183,28 +201,17 @@ ul#mobile-search-devices{display: none;}
 	header div span{
 		display: none;
 	}
-@media (max-width: 460px){
+@media (max-width: 490px){
+	.tabcontent{
+		padding: 25px 0;
+	}
 	#table-id{
 		font-size: 10px;
 	}
 	.mobile-view2{
 		font-size: 14px;
 	}
-	
-	.select-list{
-		padding: 7px 10px;
-	}
-	input#keresoInput{
-		height: 38px;
-	}
-	input#keresoInput2{
-		height: 38px;
-	}
-@media (max-width: 405px){
-	input#keresoInput{
-		width: 120px;
-	}
-}	
+}
 @media (max-width: 400px){
 	#table-id{
 		font-size: 8px;
@@ -213,11 +220,15 @@ ul#mobile-search-devices{display: none;}
 		font-size: 14px;
 	}
 }
-@media (max-width: 365px){
-	input#keresoInput2{
-		width: 205px;
-	}}
-
+@media (max-width: 340px){
+	input#keresoInput{
+		width: 90px;
+	}
+	li.tablazat_merteke{
+		margin-right: 5px;
+		margin-left: 5px;
+	}
+}
 
 
 

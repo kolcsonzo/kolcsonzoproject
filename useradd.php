@@ -70,8 +70,8 @@
 															message: "' . $full_name . ' tag felvétele sikertelen.<br>A tag már szerepel az adatbázisban",
 															title: "Sikertelen tagfelvétel!",
 															duration: 3500,
-															icon: "img/meow_no.png",
-															closeable: false
+															icon: "img/exclamation-triangle-solid.svg",'; /*Free icon: https://fontawesome.com/icons/exclamation-triangle?style=solid  - color changed*/
+														echo 'closeable: false
 														  });
 														}													
 												</script>';
@@ -88,8 +88,8 @@
 															message: "' . $full_name . ' tag felvétele sikeres.",
 															title: "Sikeres tagfelvétel!",
 															duration: 3500,
-															icon: "img/meow_yes.png",
-															closeable: false
+															icon: "img/check-square-solid.svg",'; /*https://fontawesome.com/icons/check-square?style=solid  - color changed**/
+														echo 'closeable: false
 														  });
 														}													
 												</script>';
@@ -100,8 +100,9 @@
 															message: "' . $full_name . ' tag felvétele sikertelen.",
 															title: "Sikertelen tagfelvétel!",
 															duration: 3500,
-															icon: "img/meow_no.png"
-														  });
+															icon: "img/exclamation-triangle-solid.svg",'; /*Free icon: https://fontawesome.com/icons/exclamation-triangle?style=solid  - color changed*/
+														echo 'closeable: false
+															});
 														}													
 												</script>';
 									} 

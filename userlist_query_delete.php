@@ -28,7 +28,7 @@ require('db.php');
 				$result = mysqli_query($con, $query) or die(mysql_error());
 				
 				echo '<ul class="kereso_lista-Nr">
-							<li class="tablazat_merteke">
+							<li id="delete_user_mobil_rowNr "class="tablazat_merteke">
 								<select name="state" id="maxRows" class="select-list">
 									<option value="5000">Mind</option>
 									<option value="5">5</option>

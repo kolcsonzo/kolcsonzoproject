@@ -16,12 +16,7 @@ getPagination('#table-id');
 
 	function myFunction(x) {
 	 var input, filter, table, tr, i, txtValue;
-	 if (x == 0) {
-		input = document.getElementById("keresoInput");
-	 }
-	 else {
-		input = document.getElementById(x);
-	 }
+	input = document.getElementById("keresoInput");
 	filter = input.value.toUpperCase();
 	table = document.getElementById("table-id");
 	tr = table.getElementsByTagName("tr");
