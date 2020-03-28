@@ -197,6 +197,9 @@ ul#mobile-search-devices{display: none;}
 	input#keresoInput{
 		height: 38px;
 	}
+	input#keresoInput2{
+		height: 38px;
+	}
 @media (max-width: 405px){
 	input#keresoInput{
 		width: 120px;
@@ -210,6 +213,10 @@ ul#mobile-search-devices{display: none;}
 		font-size: 14px;
 	}
 }
+@media (max-width: 365px){
+	input#keresoInput2{
+		width: 205px;
+	}}
 
 
 

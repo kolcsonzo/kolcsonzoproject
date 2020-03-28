@@ -63,6 +63,7 @@ main{
 }
 .pagination .active span{ /*táblázat oldalszám stílus módosítása - aktív*/
 	background-color: #26ACDE;
+	z-index: -1;
 }
 .pagination li span{ /*táblázat oldalszám stílus módosítása - alap*/
 	color: #26ACDE;
