@@ -70,6 +70,7 @@
 															message: "' . $full_name . ' tag felvétele sikertelen.<br>A tag már szerepel az adatbázisban",
 															title: "Sikertelen tagfelvétel!",
 															duration: 3500,
+															icon: "img/meow_no.png",
 															closeable: false
 														  });
 														}													
@@ -87,7 +88,8 @@
 															message: "' . $full_name . ' tag felvétele sikeres.",
 															title: "Sikeres tagfelvétel!",
 															duration: 3500,
-															icon: "img/meow_yes.png"
+															icon: "img/meow_yes.png",
+															closeable: false
 														  });
 														}													
 												</script>';

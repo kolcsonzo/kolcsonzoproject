@@ -1,4 +1,4 @@
-// táblázat számozás
+// táblázat oldalszámozás
 
 getPagination('#table-id');
 	var _gaq = _gaq || [];
