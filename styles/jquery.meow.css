@@ -1,14 +1,15 @@
 /* pozíció */
 .meows {
-  position: fixed;
-  top: 40vh;
-  left: 19vw;
+  position: absolute;
+  top: 20vh;
+  left: 50%;
+  transform: translate(-50%,0);
   z-index: 20000;
 }
 
 .meow {
   position: relative;
-  margin: 20px 20px 0 0;
+  margin: 20px 0 0 0;
 }
 
 /* üzenet beállításai */
@@ -16,12 +17,12 @@
   width: 300px;
   min-height: 48px;
   padding: 10px;
-  font-family: Helvetica;
+  font-family: Roboto;
   font-size: 15px;
   color: #fff;
   text-shadow: 1px 1px 3px #000;
-  background: #191919;
-  border: 2px solid transparent;
+  background: #26ACDE;
+  border: 2px solid #2293BD;
   text-align: left;
   -webkit-border-radius: 10px;
    -khtml-border-radius: 10px;
@@ -29,12 +30,12 @@
       -ms-border-radius: 10px;
        -o-border-radius: 10px;
           border-radius: 10px;
-  -webkit-opacity: 0.85;
-   -khtml-opacity: 0.85;
-     -moz-opacity: 0.85;
-      -ms-opacity: 0.85;
-       -o-opacity: 0.85;
-          opacity: 0.85;
+  -webkit-opacity: 0.95;
+   -khtml-opacity: 0.95;
+     -moz-opacity: 0.95;
+      -ms-opacity: 0.95;
+       -o-opacity: 0.95;
+          opacity: 0.95;
   zoom: 1;
   -webkit-box-shadow: 2px 2px 10px rgba(25, 25, 25, 0.25);
    -khtml-box-shadow: 2px 2px 10px rgba(25, 25, 25, 0.25);
@@ -54,7 +55,7 @@
 }
 
 .meow.hover .inner {
-  border: 2px solid #fff;
+  border: 2px solid #2293BD;
 }
 
 .meow .inner h1 {
@@ -69,9 +70,9 @@
 .meow .inner h2 {
   font-size: 16px;
   position: relative;
-  top: -5px;
-  color: #fff600;
-  font-family: Helvetica;
+  top: -12px;
+  color: #fff;
+  font-family: Roboto;
 }
 
 .meow .inner .icon {
@@ -94,7 +95,7 @@
 .meow.hover .inner .close {
   position: absolute;
   top: 4px;
-  left: 4px;
+  right: 4px;
   display: block;
   width: 18px;
   height: 18px;
@@ -104,8 +105,8 @@
   color: #ffffff;
   text-align: center;
   text-decoration: none;
-  background: #191919;
-  border: 2px solid #ffffff;
+  background: #26ACDE;
+  border: 2px solid #2293BD;
   -webkit-border-radius: 18px;
    -khtml-border-radius: 18px;
      -moz-border-radius: 18px;

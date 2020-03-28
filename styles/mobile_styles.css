@@ -29,6 +29,9 @@
 	nav{
 		padding: 0;
 	}
+	main{
+		padding: 0 16px;
+	}
 	li#nav{
 		display: table;
 	}
