@@ -29,7 +29,7 @@
 						<label>Teljes név:</label>
 						<input type="text" id="full_name" name="full_name" required placeholder="Adja meg a teljes nevet...">
 						<label>E-mail:</label>
-						<input type="mail" id="email" name="email" required placeholder="Adja meg az e-mail címet...">
+						<input type="email" id="email" name="email" required placeholder="Adja meg az e-mail címet...">
 						<label>Jelszó:</label>
 						<input type="password" id="password" name="password" required placeholder="Adja meg a jelszót">
 						<label>Szerepkör:</label>
@@ -45,7 +45,8 @@
 						</div>
 						</center>
 						<?php
-							if (isset($_REQUEST['username'])) {
+						//biztos ami biztos, ellenőrizzük itt is, hogy van -e vezetői jogosultsága az illetőnek, aki új felhasználót próbál felvenni
+							if (isset($_REQUEST['username']) AND $userinfo['role'] == 2) {
 								$username = stripslashes($_REQUEST['username']);
 								$username = mysqli_real_escape_string($con, $username);
 								$full_name = stripslashes($_REQUEST['full_name']);
