@@ -46,9 +46,9 @@
 		};
 		<!-- Foglaláshoz szükséges script -->
 		
-		function foglalas(eszkoz, id)
+		function foglalas(eszkoz, id, idotartam)
 		{
-		   $.ajax({url:"foglalas_query.php", type:"POST", data: ({eszkoz: eszkoz, id: id}), async:true, cache:false, success:function(result)
+		   $.ajax({url:"foglalas_query.php", type:"POST", data: ({eszkoz: eszkoz, id: id, idotartam: idotartam}), async:true, cache:false, success:function(result)
 		{
 			 $("#foglalas_result").html(result);
 		}});

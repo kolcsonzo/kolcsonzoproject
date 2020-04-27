@@ -15,8 +15,8 @@
 	  //Az oldal betöltésénél azonnal megjelenik az eszköz választós dropdown menü, és ez nem is fog újratöltődni már. Az OnChange eseményre elindul az ajax, azaz meghívódik a foglalas_query.php átadva az "eszkoz, id(na)" paramétereket
 		echo '
 		<div class="tab">
-			<label for="">Eszköz:</label><br>
-			<select onchange="foglalas(document.getElementById('."'eszkoz'".').value,'."'na'".');" id="eszkoz" name="" class="select">
+			<label for="eszkoz">Eszköz:</label><br>
+			<select onchange="foglalas(document.getElementById('."'eszkoz'".').value,'."'na'".','."'na'".');" id="eszkoz" name="" class="select">
 			<option value="" disabled selected>Kérlek válassz!</option>';
 				$query = "SELECT name FROM `devices` GROUP BY name";
 				$result = mysqli_query($con, $query) or die(mysql_error());
