@@ -198,6 +198,9 @@
 	.mobile-view{
 		display: none;
 	}
+	.bottom-font-size-right{
+		font-size: 0.6em;
+	}
 	header div span{
 		display: none;
 	}
@@ -210,6 +213,9 @@
 	}
 	.mobile-view2{
 		font-size: 14px;
+	}
+	.bottom-font-size-left{
+		font-size: 0.6em;
 	}
 }
 @media (max-width: 400px){
