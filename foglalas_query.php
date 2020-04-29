@@ -10,7 +10,7 @@ if  ($eszkoz != "na") {
 		echo ' 
 		<div class="tab">
 			<label for="id">Eszköz típusa:</label><br>
-			<select id="id" onchange="foglalas('."'".$eszkoz."'".',document.getElementById('."'id'".').value,'."'na'".');" name="" class="select">';
+			<select id="id" onchange="foglalas('."'".$eszkoz."'".',document.getElementById('."'id'".').value,'."'na'".');" name="id" class="select">';
 				//Ha még nincs ID (tehát nem történt típus választás), akkor megkérjük a választásra
 				if ($id == "na") {echo '<option value="" disabled selected>Kérlek válassz!</option>';}
 			
@@ -34,7 +34,7 @@ if  ($id != "na") {
 		echo ' 
 		<div class="tab">
 			<label for="idotartam">Foglalás időtartama:</label><br>
-			<select id="idotartam" onchange="foglalas('."'".$eszkoz."'".','."'".$id."'".',document.getElementById('."'idotartam'".').value);" name="ido" class="select">
+			<select id="idotartam" onchange="foglalas('."'".$eszkoz."'".','."'".$id."'".',document.getElementById('."'idotartam'".').value);" name="idotartam" class="select">
 				<option value="" disabled selected>Kérlek válassz!</option>';
 				$query = "SELECT * FROM `devices` WHERE id='$id'";
 				$result = mysqli_query($con, $query) or die(mysql_error());
