@@ -38,8 +38,14 @@
 				<th onclick="sortTable(6)" class="sort">Tárolási pozíció<i class="fas fa-sort sort-icon"></i></th>
 			</tr>
 <?php
-//Eszközlista lekérdezése
-		$query = "SELECT * FROM devices";
+//Eszközlista lekérdezése összekötve a foglalásokkal, hogy az eszköz foglaltsága is listázható legyen..
+//Ha a reservations táblában nincs benne az adott eszköz ID -je VAGY a foglalás arra az eszközre lejárt(aktuális dátum nincs a foglalás kezdete és vége között), akkor szabad státusz jelenik meg
+		$query = 
+			"SELECT *, IF( EXISTS(
+							 SELECT *
+							 FROM reservations
+							 WHERE reservations.device_id = devices.id AND NOW() BETWEEN reservations.start_datetime AND reservations.end_datetime ), 1, 0) as allapot
+			 FROM devices";
 		$result = mysqli_query($con, $query) or die(mysql_error());
 				
 		while ($row = $result->fetch_assoc()) {
@@ -49,7 +55,7 @@
 					<td>'.$row["period_days"].' nap</td>
 					<td>'.$row["brand"].'</td>
 					<td>'.$row["type"].'</td>';
-			if ($row["status"] == 1) {
+			if ($row["allapot"] == 1) {
 			echo'	<td>Foglalt</td>';
 			} else {	
 			echo'	<td>Szabad</td>';

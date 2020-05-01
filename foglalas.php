@@ -40,11 +40,16 @@ $StartDate = date('Y-m-d H:i:s'); //aktuális dátum
 $EndDate = date('Y-m-d H:i:s', strtotime(' + '.$days.' days'));//lejárati dátum (amit az aktuális dátum+időtartam hozzáadásából kapunk meg)
 //Ellenőrizzük, hogy minden adat megvan -e az új sor beszúráshoz, mert különben hibára futunk
 	  if (isset($_REQUEST['eszkoz']) AND isset($_REQUEST['id']) AND isset($_REQUEST['idotartam']) AND $userinfo['role'] >= 1) {
-		  //Ha minden megvan, akkor mehet
+		  //Ha minden megvan, akkor mehet a sor beszúrása a reservations táblába
 			$query    = "INSERT INTO reservations (user_id, device_id, start_datetime, end_datetime) 
 											VALUES ('$userid','$device_id','$StartDate', '$EndDate')";
 											$result   = mysqli_query($con, $query);
+		  //Ezután az eszközlistában átállítjuk az eszköz státuszát foglaltra
+		  $query    = "UPDATE devices SET status=1
+											VALUES ('$userid','$device_id','$StartDate', '$EndDate')";
+											$result   = mysqli_query($con, $query);
 			//ide jöhet bármilyen success üzenet
+			echo 'Sikeres foglalás!';
 	  }
 	  ?>
 	</form>
