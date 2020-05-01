@@ -51,7 +51,17 @@
 														VALUES ('$userid','$device_id','$StartDate', '$EndDate')";
 														$result   = mysqli_query($con, $query);
 						//ide jöhet bármilyen success üzenet
-						echo 'Sikeres foglalás!';
+						echo '<script language="javascript">
+								window.onload = function(){
+								$.meow({
+								message: "Az eszköz foglalása sikeresen megtörtént.",
+								title: "Sikeres eszközfoglalás!",
+								duration: 3500,
+								icon: "img/check-square-solid.svg",'; /*https://fontawesome.com/icons/check-square?style=solid  - color changed*/
+								echo 'closeable: false
+								});
+								}													
+							</script>';
 				  }
 				  ?>
 				</form>
