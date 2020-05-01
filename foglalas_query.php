@@ -8,7 +8,7 @@ require('db.php');
 //Ha a foglalásnál az első dropdown menüben választunk eszközt, akkor biztosan teljesül a feltétel (bár amúgy is), és lefut a következő kód:
 if  ($eszkoz != "na") {
 		echo ' 
-		<div class="tab" style="color: #26ACDE;>
+		<div class="tab">
 			<label for="id">Eszköz típusa:</label><br>
 			<select id="id" onchange="foglalas('."'".$eszkoz."'".',document.getElementById('."'id'".').value,'."'na'".');" name="id" class="select">';
 				//Ha még nincs ID (tehát nem történt típus választás), akkor megkérjük a választásra
