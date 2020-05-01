@@ -279,10 +279,24 @@ div.tab label{
 	border: 1px solid #2293BD;
 	margin-left: 28px;
 }
+
+#tab-center{
+	position:static;
+	left: 50%;
+	width:auto;
+	transform: translateX(50%);
+}
+
 #tab-center .select{
 	margin-left: 0px;
 	min-width: 200px;
 	width: auto;
+}
+#tab-center .button{
+	margin-top: 10px;
+}
+#tab-center2{
+	transform: translateX(-100px);
 }
 .select-list{
 	padding: 12px 0px;
@@ -298,12 +312,7 @@ div.tab label{
     text-align: center;
     -ms-text-align-last: center;
     -moz-text-align-last: center;}
-#tab-center{
-	position: absolute;
-	left: 50%;
-	width:auto;
-	transform: translateX(-50%);
-}
+
 .elvalaszto {
   border-left: 3px solid #26ACDE;
   height: 150px;
@@ -445,5 +454,4 @@ header div img{
 	box-shadow: 3px 3px 11px -2px rgba(0,0,0,0.75);
 	border: 1px solid #fff;
 }
-
 
