@@ -1,7 +1,7 @@
 
 <?php
 //Globális
-$rol = $_POST['role'];
+$role = $_POST['role'];
 $target = $_POST['target'];
 require('db.php');
 
@@ -9,7 +9,7 @@ require('db.php');
 
 
 				//Vezető szerepkörhöz kötött..
-				if ($rol == 2 AND $target != "") {
+				if ($role == 2 AND $target != "") {
 					$del_query = "DELETE FROM users WHERE username='".$target."'";
 					$execute = mysqli_query($con, $del_query) or die(mysql_error());
 					//Tényleg volt törlés az sql-ben..?
@@ -77,8 +77,8 @@ require('db.php');
 							else {
 								echo '<td style="vertical-align: middle; padding:3px;">Vezető</td>';
 							}
-							if ($rol == 2) {
-								echo '<td style="vertical-align: middle; padding:3px;"><img class="fas fa-times x" onclick="teszt('.$rol.','."'".$row['username']."'".');"></td></tr>';
+							if ($role == 2) {
+								echo '<td style="vertical-align: middle; padding:3px;"><img class="fas fa-times x" onclick="teszt('.$role.','."'".$row['username']."'".');"></td></tr>';
 								}
 							}
 						echo '</thead>'; 

@@ -54,9 +54,7 @@
 														VALUES ('$userid','$device_id','$StartDate', '$EndDate')";
 														$result   = mysqli_query($con, $query);
 					  //Ezután az eszközlistában átállítjuk az eszköz státuszát foglaltra
-					  $query    = "UPDATE devices SET status=1
-														VALUES ('$userid','$device_id','$StartDate', '$EndDate')";
-														$result   = mysqli_query($con, $query);
+
 						//ide jöhet bármilyen success üzenet
 						echo '<script language="javascript">
 								window.onload = function(){

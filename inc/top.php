@@ -2,10 +2,7 @@
 
 <html>
 <?php
-		require('db.php');
-		$query = "SELECT * FROM users WHERE username='".$_SESSION['username']."'";
-        $result = mysqli_query($con, $query) or die(mysql_error());
-		$userinfo = mysqli_fetch_assoc($result);
+		include("auth_user.php")
 ?>
 <head>
 	<meta charset="utf-8">
@@ -51,6 +48,16 @@
 		   $.ajax({url:"foglalas_query.php", type:"POST", data: ({eszkoz: eszkoz, id: id, idotartam: idotartam}), async:true, cache:false, success:function(result)
 		{
 			 $("#foglalas_result").html(result);
+		}});
+
+		};
+		<!-- Foglalásaim listázásához szükséges script -->
+		
+		function foglalasaim(foglalas_id)
+		{
+		   $.ajax({url:"foglalasaim_query.php", type:"POST", data: ({foglalas_id: foglalas_id}), async:true, cache:false, success:function(result)
+		{
+			 $("#foglalasaim_result").html(result);
 		}});
 
 		};
