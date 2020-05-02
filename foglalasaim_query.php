@@ -38,7 +38,7 @@ echo '
 				<th onclick="sortTable(3)" class="sort">Foglalás kezdete<i class="fas fa-sort sort-icon"></i></th>
 				<th onclick="sortTable(4)" class="sort">Foglalás vége<i class="fas fa-sort sort-icon"></i></th>
 				<th onclick="sortTable(5)" class="sort">Státusz<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="sortTable(6)" class="sort">Visszaadás<i class="fas fa-sort sort-icon"></i></th>
+				<th onclick="" class=""><i class=""></i></th>
 			</tr>
 			</thead>
 			<tbody>';
