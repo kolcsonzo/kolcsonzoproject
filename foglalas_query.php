@@ -14,14 +14,16 @@ if  ($eszkoz != "na") {
 				//Ha még nincs ID (tehát nem történt típus választás), akkor megkérjük a választásra
 				if ($id == "na") {echo '<option value="" disabled selected>Kérlek válassz!</option>';}
 			
-				$query = "SELECT * FROM `devices` WHERE name='$eszkoz'";
+				$query = "SELECT devices.id, devices.brand, devices.type
+FROM devices
+WHERE IF( EXISTS( SELECT * FROM reservations WHERE reservations.device_id = devices.id AND NOW() BETWEEN reservations.start_datetime AND reservations.end_datetime ), 1, 0) = '0' AND devices.name='$eszkoz'";
 				$result = mysqli_query($con, $query) or die(mysql_error());
 				while ($row = $result->fetch_assoc()) {
 					//A típus kiválasztása után, a hozzátartozó ID alapján újratöltésnél mindig visszaállítjuk a dropdown menüben az előzőleg választottatat egy "selected" tulajdonsággal
 					if ($id == $row['id']) {
-						echo '<option selected="selected" value="'.$row["id"].'">'.$row["type"].' (id: '.$row["id"].')</option> ';
+						echo '<option selected="selected" value="'.$row["id"].'">'.$row["brand"].' '.$row["type"].' (id: '.$row["id"].')</option> ';
 					} else {
-						echo '<option value="'.$row["id"].'">'.$row["type"].' (id: '.$row["id"].')</option>';
+						echo '<option value="'.$row["id"].'">'.$row["brand"].' '.$row["type"].' (id: '.$row["id"].')</option>';
 					}
 				}
 				
