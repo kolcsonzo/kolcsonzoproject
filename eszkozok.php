@@ -44,7 +44,7 @@
 //Eszközlista lekérdezése összekötve a foglalásokkal, hogy az eszköz foglaltsága is listázható legyen..
 //Ha a reservations táblában nincs benne az adott eszköz ID -je VAGY a foglalás arra az eszközre lejárt(aktuális dátum nincs a foglalás kezdete és vége között), akkor szabad státusz jelenik meg
 		$query = 
-			"SELECT *, DATE_FORMAT(reservations.end_datetime, '%Y-%m-%d %H:%i') AS lejarati_datum, IF( EXISTS(
+			"SELECT *, devices.id AS eszkoz_id, DATE_FORMAT(reservations.end_datetime, '%Y-%m-%d %H:%i') AS lejarati_datum, IF( EXISTS(
 							 SELECT *
 							 FROM reservations
 							 WHERE reservations.device_id = devices.id AND NOW() BETWEEN reservations.start_datetime AND reservations.end_datetime ), 1, 0) as allapot
@@ -55,7 +55,7 @@ ON reservations.device_id = devices.id";
 				
 		while ($row = $result->fetch_assoc()) {
 			echo'<tr>
-					<td class="mobile-view">'.$row["id"].'</td>
+					<td class="mobile-view">'.$row["eszkoz_id"].'</td>
 					<td>'.$row["name"].'</td>
 					<td>'.$row["period_days"].' nap</td>
 					<td>'.$row["brand"].'</td>
