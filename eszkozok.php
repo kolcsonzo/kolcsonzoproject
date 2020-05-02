@@ -50,7 +50,8 @@
 							 WHERE reservations.device_id = devices.id AND NOW() BETWEEN reservations.start_datetime AND reservations.end_datetime ), 1, 0) as allapot
 FROM devices
 LEFT JOIN reservations
-ON reservations.device_id = devices.id";
+ON reservations.device_id = devices.id
+GROUP BY device_id";
 		$result = mysqli_query($con, $query) or die(mysql_error());
 				
 		while ($row = $result->fetch_assoc()) {
