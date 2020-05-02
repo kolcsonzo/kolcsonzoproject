@@ -22,13 +22,38 @@ if ($rows != 1) {
 //Foglalás visszaadása, ami valójában csak egy dátum módosítást jelent
 
 $query    = "UPDATE reservations SET end_datetime=NOW()-1 WHERE id = '$foglalas_id'";
-$result   = mysqli_query($con, $query);} }
+$result   = mysqli_query($con, $query);
 
 //Ide jöhet a success üzenet
 echo 'Sikresen visszaadtad az eszközt!';
+		} 
+}
+
 
 //Foglalások lekérdezése
 echo '
+		<div class="pagename" style>
+			<span class="text content-name">Foglalásaim</span>
+			<div class="search_and_rowNr">
+				<ul id="search-devices" class="kereso_lista-Nr">
+					<li class="tablazat_merteke">
+						<select name="state" id="maxRows" class="select-list">
+							<option value="5000">Mind</option>
+							<option value="5">5</option>
+							<option value="10">10</option>
+							<option value="15">15</option>
+							<option value="20">20</option>
+							<option value="50">50</option>
+							<option value="70">70</option>
+							<option value="100">100</option>
+						</select>
+					</li>
+					<li class="keresoNev">
+						<input type="text" id="keresoInput" onkeyup="myFunction('."'keresoInput'".')" placeholder="Keresés...">
+					</li>
+				</ul>	
+			</div>
+		</div>
 <table class="table table-striped table-class" id= "table-id">
 			<thead>
 			<tr>
@@ -38,7 +63,7 @@ echo '
 				<th onclick="sortTable(3)" class="sort">Foglalás kezdete<i class="fas fa-sort sort-icon"></i></th>
 				<th onclick="sortTable(4)" class="sort">Foglalás vége<i class="fas fa-sort sort-icon"></i></th>
 				<th onclick="sortTable(5)" class="sort">Státusz<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="" class=""><i class=""></i></th>
+				<th onclick="sortTable(6)" class=""></th>
 			</tr>
 			</thead>
 			<tbody>';
@@ -76,5 +101,17 @@ echo '
 //Foglalások lekérdezésének vége
 		echo'
 			</tbody>
-</table>'; 
+</table>
+		<!--		Start Pagination -->
+		<div class='."'pagination-container'".'>
+			<ul class="pagination">
+				<li data-page="prev">
+					<span> < <span class="sr-only">(current)</span></span>
+				</li>
+				<li data-page="next" id="prev">
+					<span> > <span class="sr-only">(current)</span></span>
+				</li>
+			</ul>
+			<script type="text/javascript" src="js/search_and_pagination.js"></script>
+		</div>'; 
 ?>
