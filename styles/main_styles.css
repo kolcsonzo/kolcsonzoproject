@@ -194,7 +194,10 @@ span.position2 {
   height: 100%;
   position: relative;
 }
-#user-add {display: block;}
+#user-add {
+	display: block;
+	position:relative;
+}
 #user-delete {display: none;}
 
 /*-----------------------vége-----------------------*/
@@ -263,7 +266,8 @@ main input:focus {
 div.tab label{
 	margin-top:10px;
 	color: #26ACDE;
-	font-weight: bold;	
+	font-weight: bold;
+	float: left;
 }
 .label{
 	color: #26ACDE;
@@ -277,26 +281,18 @@ div.tab label{
 	font-size: 1.2em;
 	color: #2293BD;
 	border: 1px solid #2293BD;
-	margin-left: 28px;
 }
-
-#tab-center{
-	position:static;
-	left: 50%;
-	width:auto;
-	transform: translateX(50%);
+.tab-center{
+	display:block;
+	width:200px;
+	margin: 0 auto;
 }
-
-#tab-center .select{
-	margin-left: 0px;
-	min-width: 200px;
-	width: auto;
+.tab-center button{
+	margin-top: 15px;
 }
-#tab-center .button{
-	margin-top: 10px;
-}
-#tab-center2{
-	transform: translateX(-100px);
+.tab-center form select{
+	width: 200px;
+	float:left;
 }
 .select-list{
 	padding: 12px 0px;

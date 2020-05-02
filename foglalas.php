@@ -7,21 +7,20 @@
 ?>
 
 <main>
-	<div class="pagename" style>
-		<span class="text content-name">Eszköz foglalása</span>
-	</div>
-	<div id="user-add" class="tabcontent">
-		<div class="info">
-			<span><strong>Az eszközkölcsönzés</strong> megkezdéséhez kérem válasszon egyet az eszközcsoportból.</span>
-		</div>		
-		<div id="tab-center">
-			<div id="tab-center2">
-				<form action="foglalas.php" id="" method="post" autocomplete="off">
+		<div class="pagename" style>
+			<span class="text content-name">Eszköz foglalása</span>
+		</div>
+		<div id="user-add" class="tabcontent">
+			<div class="info">
+				<span><strong>Az eszközkölcsönzés</strong> megkezdéséhez kérem válasszon egyet az eszközcsoportból.</span>
+			</div>		
+			<div class="tab-center">
+				<form action="foglalas.php" method="post" autocomplete="off">
 				<?php
 				  //Az oldal betöltésénél azonnal megjelenik az eszköz választós dropdown menü, és ez nem is fog újratöltődni már. Az OnChange eseményre elindul az ajax, azaz meghívódik a foglalas_query.php átadva az "eszkoz, id(na)" paramétereket
 					echo '
 					<div class="tab">
-						<label for="eszkoz" style="color: #26ACDE";>Eszköz:</label><br>
+						<label for="eszkoz" align="left">Eszköz:</label><br>
 						<select onchange="foglalas(document.getElementById('."'eszkoz'".').value,'."'na'".','."'na'".');" id="eszkoz" name="eszkoz" class="select">
 						<option value="" disabled selected>Kérlek válassz!</option>';
 							$query = "SELECT devices.name
@@ -71,8 +70,7 @@
 				  ?>
 				</form>
 			</div>
-		</div>
-	</div>
+		</div>	
 </main>
 <?php
 	include('inc/bottom.php');
