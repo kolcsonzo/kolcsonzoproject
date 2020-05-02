@@ -102,8 +102,7 @@ echo '
 		echo'
 			</tbody>
 </table>
-		<!--		Start Pagination -->
-		<div class='."'pagination-container'".'>
+		<div class="pagination-container">
 			<ul class="pagination">
 				<li data-page="prev">
 					<span> < <span class="sr-only">(current)</span></span>
