@@ -17,14 +17,17 @@
 		<div id="tab-center">
 			<div id="tab-center2">
 				<form action="foglalas.php" id="" method="post" autocomplete="off">
-				  <?php
+				<?php
 				  //Az oldal betöltésénél azonnal megjelenik az eszköz választós dropdown menü, és ez nem is fog újratöltődni már. Az OnChange eseményre elindul az ajax, azaz meghívódik a foglalas_query.php átadva az "eszkoz, id(na)" paramétereket
 					echo '
 					<div class="tab">
 						<label for="eszkoz" style="color: #26ACDE";>Eszköz:</label><br>
 						<select onchange="foglalas(document.getElementById('."'eszkoz'".').value,'."'na'".','."'na'".');" id="eszkoz" name="eszkoz" class="select">
 						<option value="" disabled selected>Kérlek válassz!</option>';
-							$query = "SELECT name FROM `devices` GROUP BY name";
+							$query = "SELECT devices.name
+										FROM devices
+										WHERE IF( EXISTS( SELECT * FROM reservations WHERE reservations.device_id = devices.id AND NOW() BETWEEN reservations.start_datetime AND reservations.end_datetime ), 1, 0) = '0'
+										GROUP BY devices.name";
 							$result = mysqli_query($con, $query) or die(mysql_error());
 							while ($row = $result->fetch_assoc()) {
 							echo '
