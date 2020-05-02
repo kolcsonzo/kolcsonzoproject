@@ -10,6 +10,10 @@
 	<div class="pagename" style>
 		<span class="text content-name">Eszköz foglalása</span>
 	</div>
+	<div id="user-add" class="tabcontent">
+		<div class="info">
+			<span><strong>Az eszközkölcsönzés</strong> megkezdéséhez kérem válasszon egyet az eszközcsoportból.</span>
+		</div>		
 		<div id="tab-center">
 			<div id="tab-center2">
 				<form action="foglalas.php" id="" method="post" autocomplete="off">
@@ -67,6 +71,7 @@
 				</form>
 			</div>
 		</div>
+	</div>
 </main>
 <?php
 	include('inc/bottom.php');

@@ -21,13 +21,16 @@ function getPagination(table) {
       var trnum = 0; // reset tr counter
       var maxRows = parseInt($(this).val()); // get Max Rows from select option
 
-      if (maxRows == 5000) {
+      var totalRows = $(table + ' tbody tr').length; // numbers of rows
+
+      if (maxRows == 5000 || totalRows <= maxRows) {
         $('.pagination').hide();
-      } else {
+      } 
+	  else {
         $('.pagination').show();
       }
+	  
 
-      var totalRows = $(table + ' tbody tr').length; // numbers of rows
       $(table + ' tr:gt(0)').each(function() {
         // each TR in  table and not the header
         trnum++; // Start Counter
@@ -105,6 +108,10 @@ function getPagination(table) {
     })
     .val(5)
     .change();
+	
+	if(maxRows >= trnum){
+		$('.pagination').hide();
+	}
 
   // end of on select change
 

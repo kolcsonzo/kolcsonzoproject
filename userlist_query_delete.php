@@ -59,11 +59,14 @@ require('db.php');
 							</li>
 						</ul>
 					<table class="table table-striped table-class mobile-view2" id= "table-id">
+						<thead>
 						<tr>
 							<th onclick="sortTable(0)" class="sort">Felhasználónév<i class="fas fa-sort sort-icon"></th>
 							<th onclick="sortTable(1)" class="sort">Beosztás<i class="fas fa-sort sort-icon"></th>
 							<th>Törlés</th>
-						</tr>';
+						</tr>
+						</thead>
+						<tbody>';
 
 						while ($row = $result->fetch_assoc()) {
 							echo '<tr>
@@ -78,6 +81,7 @@ require('db.php');
 								echo '<td style="vertical-align: middle; padding:3px;"><img class="fas fa-times x" onclick="teszt('.$rol.','."'".$row['username']."'".');"></td></tr>';
 								}
 							}
+						echo '</thead>'; 
 						echo '</table>'; 
 						echo '<div class="pagination-container">
 								<ul class="pagination">

@@ -30,6 +30,7 @@
 			</div>
 		</div>
 		<table class="table table-striped table-class" id= "table-id">
+			<thead>
 			<tr>
 				<th onclick="sortTable(0)" class="sort mobile-view">Foglalás ID<i class="fas fa-sort sort-icon"></i></th>
 				<th onclick="sortTable(1)" class="sort">Eszköz<i class="fas fa-sort sort-icon"></i></th>
@@ -38,6 +39,8 @@
 				<th onclick="sortTable(4)" class="sort">Foglalás vége<i class="fas fa-sort sort-icon"></i></th>
 				<th onclick="sortTable(5)" class="sort">Státusz<i class="fas fa-sort sort-icon"></i></th>
 			</tr>
+			</thead>
+			<tbody>
 			<?php
 //UserID megadása a globális userinfo lekérdezésből..(a queryben történő egyszerűbb felhasználás érdekében nem közvetlenül az userinfóból van)
 $userid = $userinfo["id"];
@@ -71,6 +74,7 @@ $userid = $userinfo["id"];
 			echo'</tr>';	
 		}
 ?>
+			</tbody>
 		</table>
 		<!--		Start Pagination -->
 		<div class='pagination-container'>

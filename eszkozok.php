@@ -28,6 +28,7 @@
 			</div>
 		</div>
 		<table class="table table-striped table-class" id= "table-id">
+			<thead>
 			<tr>
 				<th onclick="sortTable(0)" class="sort mobile-view">ID<i class="fas fa-sort sort-icon"></i></th>
 				<th onclick="sortTable(1)" class="sort">Név<i class="fas fa-sort sort-icon"></i></th>
@@ -37,6 +38,8 @@
 				<th onclick="sortTable(5)" class="sort">Státusz<i class="fas fa-sort sort-icon"></i></th>
 				<th onclick="sortTable(6)" class="sort">Tárolási pozíció<i class="fas fa-sort sort-icon"></i></th>
 			</tr>
+			</thead>
+			<tbody>
 <?php
 //Eszközlista lekérdezése összekötve a foglalásokkal, hogy az eszköz foglaltsága is listázható legyen..
 //Ha a reservations táblában nincs benne az adott eszköz ID -je VAGY a foglalás arra az eszközre lejárt(aktuális dátum nincs a foglalás kezdete és vége között), akkor szabad státusz jelenik meg
@@ -64,6 +67,7 @@
 				</tr>';	
 		}
 ?>
+		</tbody>
 		</table>
 		<!--		Start Pagination -->
 		<div class='pagination-container'>
