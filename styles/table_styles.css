@@ -6,10 +6,12 @@ table th{
 	background-color: #26ACDE;
 	color: #fff;
 	text-align: center;
+	vertical-align: middle;
 }
 table td{
     text-align: center;
 	color: #26ACDE;
+	vertical-align: middle;
 }
 
 table tr:nth-child(even){

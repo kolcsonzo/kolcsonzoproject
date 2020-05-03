@@ -194,11 +194,11 @@ span.position2 {
   height: 100%;
   position: relative;
 }
-#user-add {
+#user-add, #device-add {
 	display: block;
 	position:relative;
 }
-#user-delete {display: none;}
+#user-delete, #device-delete {display: none;}
 
 /*-----------------------vége-----------------------*/
 
@@ -371,7 +371,7 @@ li.keresoNev2{ /*tag törlés kereső balra igazítás*/
 	float: left;
 }
 input#keresoInput{   /*eszközlista, tag-törlés kereső*/
-	height: 48px;
+	height: 47px;
 	padding: 11px 10px;
 	margin: 2px 0;
 	background-color: #26ACDE;

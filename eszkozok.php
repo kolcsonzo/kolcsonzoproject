@@ -21,14 +21,14 @@
 							<option value="100">100</option>
 						</select>
 					</li>
-					<li class="keresoNev">
+					<li class="keresoNev" id="input-devices-mobile">
 						<input type="text" id="keresoInput" onkeyup="myFunction('keresoInput')" placeholder="Keresés...">
 					</li>
 				</ul>	
 			</div>
 		</div>
 		<table class="table table-striped table-class" id= "table-id">
-			<thead>
+			<thead id="device-list-thead">
 			<tr>
 				<th onclick="sortTable(0)" class="sort mobile-view">ID<i class="fas fa-sort sort-icon"></i></th>
 				<th onclick="sortTable(1)" class="sort">Név<i class="fas fa-sort sort-icon"></i></th>
@@ -39,7 +39,7 @@
 				<th onclick="sortTable(6)" class="sort">Tárolási pozíció<i class="fas fa-sort sort-icon"></i></th>
 			</tr>
 			</thead>
-			<tbody>
+			<tbody id="device-list-tbody">
 <?php
 //Eszközlista lekérdezése összekötve a foglalásokkal, hogy az eszköz foglaltsága is listázható legyen..
 //Ha a reservations táblában nincs benne az adott eszköz ID -je VAGY a foglalás arra az eszközre lejárt(aktuális dátum nincs a foglalás kezdete és vége között), akkor szabad státusz jelenik meg

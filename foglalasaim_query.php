@@ -25,7 +25,15 @@ $query    = "UPDATE reservations SET end_datetime=NOW()-1 WHERE id = '$foglalas_
 $result   = mysqli_query($con, $query);
 
 //Ide jöhet a success üzenet
-echo 'Sikresen visszaadtad az eszközt!';
+		echo '<script language="javascript">';
+		echo '$.meow({';
+		echo 'message: "Az eszköz visszaadása sikeresen megtörtént.",';
+		echo 'title: "Sikeres visszamondás!",';
+		echo 'duration: 3500,';
+		echo 'icon: "img/check-square-solid.svg",'; /*Ingyenes ikon: https://fontawesome.com/icons/check-square?style=solid  - szín megváltoztatva*/
+		echo 'closeable: false';
+		echo '});';
+		echo '</script>';
 		} 
 }
 
@@ -48,14 +56,14 @@ echo '
 							<option value="100">100</option>
 						</select>
 					</li>
-					<li class="keresoNev">
+					<li class="keresoNev" id="input-devices-mobile">
 						<input type="text" id="keresoInput" onkeyup="myFunction('."'keresoInput'".')" placeholder="Keresés...">
 					</li>
 				</ul>	
 			</div>
 		</div>
 <table class="table table-striped table-class" id= "table-id">
-			<thead>
+			<thead id="reserve-list-thead">
 			<tr>
 				<th onclick="sortTable(0)" class="sort mobile-view">Foglalás ID<i class="fas fa-sort sort-icon"></i></th>
 				<th onclick="sortTable(1)" class="sort">Eszköz<i class="fas fa-sort sort-icon"></i></th>
@@ -66,7 +74,7 @@ echo '
 				<th onclick="sortTable(6)" class=""></th>
 			</tr>
 			</thead>
-			<tbody>';
+			<tbody id="reserve-list-tbody">';
 			
 		$query =" 
 			SELECT reservations.id AS id, devices.name AS name, devices.type AS type, DATE_FORMAT(start_datetime, '%Y-%m-%d %H:%i') as start_datetime, DATEDIFF( end_datetime, NOW()) AS remaining, IF (end_datetime < NOW(), 1, 0) AS allapot, DATE_FORMAT(end_datetime, '%Y-%m-%d %H:%i') as end_datetime

@@ -100,6 +100,7 @@
 				<li id="nav"><a href="foglalas.php">Foglalás</a></li>
 				<li id="nav"><a href="eszkozok.php">Eszközlista</a></li>
 				<li id="nav"><a href="foglalasaim.php">Foglalásaim</a></li>
+				<li id="nav"><a href="eszkozkezelo.php">Eszközkezelő</a></li>
 					<?php
 							if ($userinfo['role'] == 2) {
 							echo '<li id="nav"><a href="useradd.php">Felhasználók kezelése</a></li>';
