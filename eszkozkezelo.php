@@ -42,6 +42,8 @@
 				<input type="text" id="username" name="username" required placeholder="Adja meg az eszköz márkáját...">
 				<label>Típus:</label>
 				<input type="text" id="full_name" name="full_name" required placeholder="Adja meg az eszköz típusát...">
+				<label>Típus:</label>
+				<input type="text" id="full_name" name="full_name" required placeholder="Adja meg az eszköz típusát...">
 				<label>Maximális foglalás hossza: (max 15 nap)</label>
 				<center>
 				<select class="select">

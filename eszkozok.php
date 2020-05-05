@@ -78,7 +78,7 @@ GROUP BY device_id";
 			$(document).ready(function() {
 			$('#device').DataTable( {
 				"info":     false,
-				"order": [[ 2, "asc" ]],
+				"order": [[ 0, "asc" ]],
 				"language": {
 					"paginate": {
 						"next": ">",

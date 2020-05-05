@@ -117,7 +117,7 @@ echo '
 				$(document).ready(function() {
 				$('#device').DataTable( {
 					"info":     false,
-					"order": [[ 2, "asc" ]],
+					"order": [[ 4, "desc" ]],
 					"language": {
 						"paginate": {
 							"next": ">",
