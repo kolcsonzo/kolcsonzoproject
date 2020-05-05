@@ -458,3 +458,7 @@ div.row:first-child{
 ul.pagination li.active a{
 	background-color: #26ACDE !Important;
 }
+div#group_of_devices{
+	display:none;
+	margin-top: 15px;
+}

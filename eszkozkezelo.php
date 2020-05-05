@@ -20,28 +20,26 @@
 		<br><br>
 		<div id="user-add" class="tabcontent">
 			<div class="info">
-				<span><strong>Eszközcsoport létrehozásához</strong> használja a következő űrlapot abban az esetben, ha az még nem létezik.</span>
-			</div>
-			<form action="useradd.php" id="add-user-form" method="post" autocomplete="off">
-				<br>
-				<label>Eszközcsoport megnevezése:</label>
-				<input type="text" id="username" name="username" required placeholder="Adja meg az eszközcsoport nevét">
-				<br>
-				<center>
-					<div class="elvalaszto2">
-						<button class="button">Létrehozás</button>
-					</div>
-				</center>
-			</form><br><br><br><br>
-			<div class="info">
 				<span><strong>Eszköz felvételéhez</strong> a következő űrlap kitöltése szükséges.</span>
 			</div>
 			<form action="useradd.php" id="add-user-form" method="post" autocomplete="off">
 				<br>
+				<label>Válasszon eszközcsoportot!</label>
+				<center>
+					<select id ="getGroupOfDevices" class="select" onchange="group_of_devices()">
+						<option value="Choose" disabled selected>Kérlek válassz!</option>
+						<option value="Laptop">Laptop</option>
+						<option value="Monitor">Monitor</option>
+						<option value="Projektor">Projektor</option>
+						<option value="other">Egyéb</option>
+					</select>				
+				</center>
+				<div id="group_of_devices">
+					<label>Eszközcsoport létrehozása:</label>
+					<input type="text" id="username" name="username" required placeholder="Adja meg az eszközcsoport nevét...">
+				</div>
 				<label>Márka:</label>
 				<input type="text" id="username" name="username" required placeholder="Adja meg az eszköz márkáját...">
-				<label>Típus:</label>
-				<input type="text" id="full_name" name="full_name" required placeholder="Adja meg az eszköz típusát...">
 				<label>Típus:</label>
 				<input type="text" id="full_name" name="full_name" required placeholder="Adja meg az eszköz típusát...">
 				<label>Maximális foglalás hossza: (max 15 nap)</label>
@@ -74,7 +72,6 @@
 				<?php echo '<script type="text/javascript">eszkoz_torles()</script>'; ?>
 				<div id="eszkozkezelo_result" class=""></div> <!-- Ez a query visszatérési helye -->
 </main>
-
 <?php
 	include('inc/bottom.php');
 ?>
