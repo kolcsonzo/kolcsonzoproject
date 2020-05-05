@@ -121,6 +121,7 @@
 							echo '<li id="nav"><a href="useradd.php">Felhasználók kezelése</a></li>';
 						}
 					?>
+				<li id="nav"><a href="naplozas.php">Naplózás</a></li>
 				<li id="nav2"><a href="#bottom">Impresszum</a></li>
 			</ul>
 		</nav>

@@ -127,7 +127,7 @@ li#nav, li.position {			/*ul nav és header stílus*/
 li#nav a, li#nav2 a {			/*nav stílus*/
   display: block;
   text-align: center;
-  padding: 14px 16px 14px 16px;
+  padding: 14px 9px 14px 9px;
   text-decoration: none;
   color: #26ACDE;
   font-size: 1em;
