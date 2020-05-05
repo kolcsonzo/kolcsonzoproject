@@ -47,7 +47,7 @@ echo '
 					<li class="tablazat_merteke">
 						<select name="state" id="maxRows" class="select-list">
 							<option value="5000">Mind</option>
-							<option value="5">5</option>
+							<option value="5" selected>5</option>
 							<option value="10">10</option>
 							<option value="15">15</option>
 							<option value="20">20</option>
@@ -62,19 +62,20 @@ echo '
 				</ul>	
 			</div>
 		</div>
-<table class="table table-striped table-class" id= "table-id">
-			<thead id="reserve-list-thead">
-			<tr>
-				<th onclick="sortTable(0)" class="sort mobile-view">Foglalás ID<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="sortTable(1)" class="sort">Eszköz<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="sortTable(2)" class="sort">Eszköz típusa<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="sortTable(3)" class="sort">Foglalás kezdete<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="sortTable(4)" class="sort">Foglalás vége<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="sortTable(5)" class="sort">Státusz<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="sortTable(6)" class=""></th>
-			</tr>
+		<div class="table-responsive">
+		<table id="device" class="table table-hover" style="width:100%">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Eszköz</th>
+					<th>Eszköz típusa</th>
+					<th>Foglalás kezdete</th>
+					<th>Foglalás vége</th>
+					<th>Státusz</th>
+					<th>Törlés</th>
+				</tr>
 			</thead>
-			<tbody id="reserve-list-tbody">';
+			<tbody>';
 			
 		$query =" 
 			SELECT reservations.id AS id, devices.name AS name, devices.type AS type, DATE_FORMAT(start_datetime, '%Y-%m-%d %H:%i') as start_datetime, DATEDIFF( end_datetime, NOW()) AS remaining, IF (end_datetime < NOW(), 1, 0) AS allapot, DATE_FORMAT(end_datetime, '%Y-%m-%d %H:%i') as end_datetime
@@ -88,7 +89,7 @@ echo '
 				
 		while ($row = $result->fetch_assoc()) {
 			echo'<tr>
-					<td class="mobile-view">'.$row["id"].'</td>
+					<td>'.$row["id"].'</td>
 					<td>'.$row["name"].'</td>
 					<td>'.$row["type"].'</td>
 					<td>'.$row["start_datetime"].'</td>';
@@ -109,16 +110,34 @@ echo '
 //Foglalások lekérdezésének vége
 		echo'
 			</tbody>
-</table>
-		<div class="pagination-container">
-			<ul class="pagination">
-				<li data-page="prev">
-					<span> < <span class="sr-only">(current)</span></span>
-				</li>
-				<li data-page="next" id="prev">
-					<span> > <span class="sr-only">(current)</span></span>
-				</li>
-			</ul>
-			<script type="text/javascript" src="js/search_and_pagination.js"></script>
-		</div>'; 
+		</table>
+		</div>'
 ?>
+				<script>
+				$(document).ready(function() {
+				$('#device').DataTable( {
+					"info":     false,
+					"order": [[ 2, "asc" ]],
+					"language": {
+						"paginate": {
+							"next": ">",
+							"previous": "<"
+						},
+						"lengthMenu": "_MENU_",
+						"search": "",
+						"zeroRecords": "Nincs találat...",
+						"infoEmpty": "Nincsenek rekordok az adatbázisban."
+						},
+					"lengthMenu": [ [5,10,15,20,50,70,100,5000], [5,10,15,20,50,70,100,"Mind"] ]
+					} );
+				
+				var table = $('#device').DataTable();
+				 
+				$('#keresoInput').on( 'keyup', function () {
+					table.search( this.value ).draw();
+				} );			
+				$('#maxRows').change(function(){
+					table.page.len( $(this).val() ).draw();
+				})		
+				});
+				</script>

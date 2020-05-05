@@ -62,15 +62,9 @@ main{
 .content-name{
 	margin-top: 6px;
 }
-.pagination .active span{ /*táblázat oldalszám stílus módosítása - aktív*/
+.pagination .active{ /*táblázat oldalszám stílus módosítása - aktív*/
 	background-color: #26ACDE;
 	z-index: -1;
-}
-.pagination li span{ /*táblázat oldalszám stílus módosítása - alap*/
-	color: #26ACDE;
-}
-.pagination li span:hover{ /*táblázat oldalszám stílus módosítása - hover*/
-	color: #26ACDE;
 }
 section#bottom{
 	background: #fefefe; 
@@ -451,3 +445,16 @@ header div img{
 	border: 1px solid #fff;
 }
 
+#device thead th{
+	vertical-align: bottom;
+}
+#device thead th::after{
+	transform: translateY(25%)
+}
+
+div.row:first-child{
+	display: none;
+}
+ul.pagination li.active a{
+	background-color: #26ACDE !Important;
+}

@@ -128,23 +128,8 @@
 	.tabcontent{
 		padding: 0 18vw;
 	}
-	#device-list-thead{
-		font-size: 12px;
-	}
-	#device-list-thead th{
-		padding: 8px 2px;
-		vertical-align: top;
-	}
-	#device-list-tbody td{
-		padding: 8px 2px;
-	}
 }
 
-@media (max-width: 701px){
-	.devices-mobile td{
-		padding: 2px;
-	}
-}
 @media (max-width: 600px){
 	.tabcontent{
 		padding: 0 9vw;
@@ -168,10 +153,7 @@
 	}
 	.pagename div svg:hover{
 		color: ##2293BD;
-	}/*
-	ul.kereso_lista-Nr{
-		width: 100%;
-	}*/
+	}
 }
 /*-------------------------------------------------------------------------*/
 @media (max-width: 510px){
@@ -207,22 +189,14 @@
 		width: 80%;
 	}
 }
-@media (max-width: 730px){
-	#reserve-list-thead th{
-		vertical-align: top;
-	}
-}
 @media (max-width: 700px){
 	.mobile-view{
 		display: none;
 	}
 }
-@media (max-width: 630px){
-	#reserve-list-thead{
+@media (max-width: 800px){
+	.table-responsive table tr{
 		font-size: 12px;
-	}
-	#reserve-list-thead th{
-		padding: 8px 2px;
 	}
 }
 
@@ -237,31 +211,15 @@
 	.tabcontent{
 		padding: 25px 0;
 	}
-	#reserve-list-tbody td{
-		padding: 8px 2px;
-		font-size: 12px;
-		vertical-align: middle;
-	}
 }
 @media (max-width: 430px){
 	#input-devices-mobile input{
 		width: 150px;
 	}
-	#device-list-tbody td{
-		font-size:12px;
-		padding: 5px 1px;
-	}
-
 }
 @media (max-width: 375px){
 	#input-devices-mobile input{
 		width: 100px;
-	}
-}
-@media (max-width: 350px){
-
-	#device-thead{
-		font-size: 10px;
 	}
 }
 @media (max-width: 340px){

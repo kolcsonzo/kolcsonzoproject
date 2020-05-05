@@ -12,7 +12,7 @@
 					<li class="tablazat_merteke">
 						<select name="state" id="maxRows" class="select-list">
 							<option value="5000">Mind</option>
-							<option value="5">5</option>
+							<option value="5" selected>5</option>
 							<option value="10">10</option>
 							<option value="15">15</option>
 							<option value="20">20</option>
@@ -22,25 +22,26 @@
 						</select>
 					</li>
 					<li class="keresoNev" id="input-devices-mobile">
-						<input type="text" id="keresoInput" onkeyup="myFunction('keresoInput')" placeholder="Keresés...">
+						<input type="text" id="keresoInput" oninput="myFunction()" placeholder="Keresés...">
 					</li>
 				</ul>	
 			</div>
 		</div>
-		<table class="table table-striped table-class" id= "table-id">
-			<thead id="device-list-thead">
-			<tr>
-				<th onclick="sortTable(0)" class="sort mobile-view">ID<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="sortTable(1)" class="sort">Név<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="sortTable(2)" class="sort">Max. foglalás<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="sortTable(3)" class="sort">Márka<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="sortTable(4)" class="sort">Típus<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="sortTable(5)" class="sort">Státusz<i class="fas fa-sort sort-icon"></i></th>
-				<th onclick="sortTable(6)" class="sort">Tárolási pozíció<i class="fas fa-sort sort-icon"></i></th>
-			</tr>
+		<div class="table-responsive">
+		<table id="device" class="table table-hover" style="width:100%">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Név</th>
+					<th>Max. foglalás</th>
+					<th>Márka</th>
+					<th>Típus</th>
+					<th>Státusz</th>
+					<th>Tárolási pozíció</th>
+				</tr>
 			</thead>
-			<tbody id="device-list-tbody">
-<?php
+			<tbody>
+			<?php
 //Eszközlista lekérdezése összekötve a foglalásokkal, hogy az eszköz foglaltsága is listázható legyen..
 //Ha a reservations táblában nincs benne az adott eszköz ID -je VAGY a foglalás arra az eszközre lejárt(aktuális dátum nincs a foglalás kezdete és vége között), akkor szabad státusz jelenik meg
 		$query = 
@@ -56,9 +57,9 @@ GROUP BY device_id";
 				
 		while ($row = $result->fetch_assoc()) {
 			echo'<tr>
-					<td class="mobile-view">'.$row["eszkoz_id"].'</td>
+					<td>'.$row["eszkoz_id"].'</td>
 					<td>'.$row["name"].'</td>
-					<td>'.$row["period_days"].' nap</td>
+					<td>'.$row["period_days"].'&nbsp;nap</td>
 					<td>'.$row["brand"].'</td>
 					<td>'.$row["type"].'</td>';
 			if ($row["allapot"] == 1) {
@@ -69,21 +70,39 @@ GROUP BY device_id";
 			echo'	<td>S'.$row["pos_s"].' P'.$row["pos_p"].'</td>
 				</tr>';	
 		}
-?>
-		</tbody>
+?>			
+			</tbody>
 		</table>
-		<!--		Start Pagination -->
-		<div class='pagination-container'>
-			<ul class="pagination">
-				<li data-page="prev">
-					<span> < <span class="sr-only">(current)</span></span>
-				</li>
-				<li data-page="next" id="prev">
-					<span> > <span class="sr-only">(current)</span></span>
-				</li>
-			</ul>
-			<script type="text/javascript" src="js/search_and_pagination.js"></script>
-		</div>	
+		</div>
+		<script>
+			$(document).ready(function() {
+			$('#device').DataTable( {
+				"info":     false,
+				"order": [[ 2, "asc" ]],
+				"language": {
+					"paginate": {
+						"next": ">",
+						"previous": "<"
+					},
+					"lengthMenu": "_MENU_",
+					"search": "",
+					"zeroRecords": "Nincs találat...",
+					"infoEmpty": "Nincsenek rekordok az adatbázisban."
+					},
+				"lengthMenu": [ [5,10,15,20,50,70,100,5000], [5,10,15,20,50,70,100,"Mind"] ]
+				} );
+			
+			var table = $('#device').DataTable();
+			 
+			$('#keresoInput').on( 'keyup', function () {
+				table.search( this.value ).draw();
+			} );			
+			$('#maxRows').change(function(){
+				table.page.len( $(this).val() ).draw();
+			})		
+			});
+		</script>
+				
 </main>
 <?php
 	include('inc/bottom.php');
