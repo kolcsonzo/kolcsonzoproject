@@ -12,7 +12,15 @@ $query    = "DELETE FROM devices WHERE id='$eszkoz_id'";
 $result   = mysqli_query($con, $query) or die(mysql_error());
 echo '<script type="text/javascript">openPage('."'".'user-delete'."'".')</script>';//törlés tab megnyitása a törlés megtörténte után
 //success üzenet
-echo 'Sikresen törölted az eszközt!';
+echo '<script language="javascript">';
+echo '$.meow({';
+echo 'message: "A törlési folyamat sikeresen befejeződött.",';
+echo 'title: "Sikeres törlés!",';
+echo 'duration: 3500,';
+echo 'icon: "img/check-square-solid.svg",'; /*Ingyenes ikon: https://fontawesome.com/icons/check-square?style=solid  - szín megváltoztatva*/
+echo 'closeable: false';
+echo '});';
+echo '</script>';
 } 
 //----------------------------------------------------------ESZKÖZÖK KILISTÁZÁSA-----------------------------------------------------------------------------------
 $query ="SELECT *, devices.id as id
