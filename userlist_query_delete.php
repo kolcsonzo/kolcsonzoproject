@@ -1,17 +1,23 @@
 
 <?php
 //Globális
-$role = $_POST['role'];
+require('auth_session.php'); //session ellenőrzése, hogy egyáltalán létezik -e
+include("auth_user.php");	 //user adatainak lekérdezése
+include("auth_admin.php");	//vezetői jog meglétének ellenőrzése
+$role = $userinfo['role'];
 $target = $_POST['target'];
-require('db.php');
 
 //A törlés folyamata
 
 
 				//Vezető szerepkörhöz kötött..
 				if ($role == 2 AND $target != "") {
+					//törlés az users táblából
 					$del_query = "DELETE FROM users WHERE username='".$target."'";
 					$execute = mysqli_query($con, $del_query) or die(mysql_error());
+					//eszköz foglalásainak törlése
+					$del_query = "DELETE FROM reservations WHERE user_id='".$target."'";
+					$execute = mysqli_query($con, $del_query) or die(mysql_error());	
 					//Tényleg volt törlés az sql-ben..?
 					if (mysqli_affected_rows($con) == 1) {
 								echo '<script language="javascript">';
@@ -78,7 +84,7 @@ require('db.php');
 								echo '<td style="vertical-align: middle; padding:3px;">Vezető</td>';
 							}
 							if ($role == 2) {
-								echo '<td style="vertical-align: middle; padding:3px;"><img class="fas fa-times x" onclick="teszt('.$role.','."'".$row['username']."'".');"></td></tr>';
+								echo '<td style="vertical-align: middle; padding:3px;"><img class="fas fa-times x" onclick="user_delete('."'".$row['username']."'".');"></td></tr>';
 								}
 							}
 						echo '</thead>'; 

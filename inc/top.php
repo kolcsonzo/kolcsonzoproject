@@ -32,10 +32,10 @@
 				document.getElementById("user-delete").style.display = "block";
 			}
 		};
-	<!-- Ez a script frissíti le a taglistát, és töröl az adatbázisból. Átadja a szerepkört(a jogosultság ellenőrzése miatt) és a törlendő felhasználó nevét a query-nek -->
-		function teszt(role, target)
+	<!-- Ez a script frissíti le a taglistát, és töröl az adatbázisból. Átadja a törlendő felhasználó nevét a query-nek -->
+		function user_delete(target)
 		{
-		   $.ajax({url:"userlist_query_delete.php", type:"POST", data: ({role: role, target: target}), async:true, cache:false, success:function(result)
+		   $.ajax({url:"userlist_query_delete.php", type:"POST", data: ({target: target}), async:true, cache:false, success:function(result)
 		{
 			 $("#delete_q").html(result);
 		}});
@@ -58,6 +58,16 @@
 		   $.ajax({url:"foglalasaim_query.php", type:"POST", data: ({foglalas_id: foglalas_id}), async:true, cache:false, success:function(result)
 		{
 			 $("#foglalasaim_result").html(result);
+		}});
+
+		};
+		<!-- Eszköz törlés -->
+		
+		function eszkoz_torles(eszkoz_id)
+		{
+		   $.ajax({url:"eszkoz_torles_query.php", type:"POST", data: ({eszkoz_id: eszkoz_id}), async:true, cache:false, success:function(result)
+		{
+			 $("#eszkozkezelo_result").html(result);
 		}});
 
 		};

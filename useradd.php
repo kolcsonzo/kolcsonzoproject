@@ -119,7 +119,7 @@
 			<?php
 				//while
 				echo '<div id="delete_q"></div>'; //ide érkezik vissza a script lefutása utáni kód, tehát az eredmény
-				echo '<script type="text/javascript">teszt('.$userinfo['role'].')</script>';
+				echo '<script type="text/javascript">user_delete()</script>';
 			?>
 			</div>	
 </main>
