@@ -276,6 +276,11 @@ div.tab label{
 	color: #2293BD;
 	border: 1px solid #2293BD;
 }
+.select-sor, .select-polc{
+	width: 100px;
+	margin-bottom: 10px;
+	display: inline-block;
+}
 .tab-center{
 	display:block;
 	width:200px;
@@ -447,6 +452,7 @@ header div img{
 
 #device thead th{
 	vertical-align: bottom;
+	padding-right: 10px;
 }
 #device thead th::after{
 	transform: translateY(25%)
@@ -461,4 +467,10 @@ ul.pagination li.active a{
 div#group_of_devices{
 	display:none;
 	margin-top: 15px;
+}
+th#torles:before {
+	display:none;
+}
+th#torles:after {
+	display:none;
 }

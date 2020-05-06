@@ -4,21 +4,21 @@
 	include("auth_session.php");
 	header("Content-Type: text/html; charset=utf-8");
 	include('inc/top.php');
-//Vezető szerep azonosítás
+@//Vezető szerep azonosítás
 	include("auth_admin.php");
 
 //----------------------------------------------------ESZKÖZ FELVÉTEL---------------------------------------------------------------------------------------------
-	$device = stripslashes($_REQUEST['getGroupOfDevices']);
+@	$device = stripslashes($_REQUEST['getGroupOfDevices']);
 	$device = mysqli_real_escape_string($con, $device);
-	$other = stripslashes($_REQUEST['other']);
+@	$other = stripslashes($_REQUEST['other']);
 	$other = mysqli_real_escape_string($con, $other);
-	$brand = stripslashes($_REQUEST['brand']);
+@	$brand = stripslashes($_REQUEST['brand']);
 	$brand = mysqli_real_escape_string($con, $brand);
-	$type = stripslashes($_REQUEST['type']);
+@	$type = stripslashes($_REQUEST['type']);
 	$type = mysqli_real_escape_string($con, $type);
-	$sor = $_REQUEST['sor'];
-	$polc = $_REQUEST['polc'];
-	$days = $_REQUEST['days'];
+@	$sor = $_REQUEST['sor'];
+@	$polc = $_REQUEST['polc'];
+@	$days = $_REQUEST['days'];
 	
 	if (isset($device) AND isset($brand) AND isset($type) AND isset($sor) AND isset($polc) AND isset($days)) {
 		if ($device == 'other') {
@@ -72,11 +72,12 @@
 				<input type="text" id="brand" name="brand" required placeholder="Adja meg az eszköz márkáját...">
 				<label for="type">Típus:</label>
 				<input type="text" id="type" name="type" required placeholder="Adja meg az eszköz típusát...">
+				
 				<label>Tárolási pozíció:</label>
 					</br>
-					<label for="sor">Sor:</label>
-					<select id ="sor" required name="sor" class="select">
-						<option value="" disabled selected>Kérlek válassz!</option>
+				<center>
+					<select id ="sor" required name="sor" class="select select-sor">
+						<option value="" disabled selected>Sor...</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -86,10 +87,8 @@
 						<option value="7">7</option>
 						<option value="8">8</option>
 					</select>	
-					</br>
-					<label for="polc">Polc:</label>					
-					<select id ="polc" name="polc" class="select" required>
-						<option value="" disabled selected>Kérlek válassz!</option>
+					<select id ="polc" name="polc" class="select select-polc" required>
+						<option value="" disabled selected>Polc...</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -99,7 +98,7 @@
 						<option value="7">7</option>
 						<option value="8">8</option>
 					</select>				
-
+				</center>
 				<label for="days">Maximális foglalás hossza: (max 15 nap)</label>
 				<center>
 				<select id ="days" name="days" class="select" required>

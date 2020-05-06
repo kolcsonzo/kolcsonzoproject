@@ -4,7 +4,7 @@ require('auth_session.php'); //session ellenőrzése, hogy egyáltalán létezik
 include("auth_user.php");	 //user adatainak lekérdezése
 include("auth_admin.php");	//vezetői jog meglétének ellenőrzése
 
-$eszkoz_id = $_REQUEST['eszkoz_id'];
+@$eszkoz_id = $_REQUEST['eszkoz_id'];
 //---------------------------------------------------------ESZKÖZ TÖRLÉSE-----------------------------------------------------------------------------------------
 if (isset($eszkoz_id)) {
 //törlés az eszközlistából
@@ -55,7 +55,7 @@ echo'
 						<input type="text" id="keresoInput" onkeyup="myFunction()" placeholder="Keresés...">
 					</li>
 				</ul>		
-				<div class="table-responsive">
+				<div class="table-responsive-sm">
 				<table id="device" class="table table-hover" style="width:100%">
 					<thead>
 						<tr>
@@ -63,7 +63,7 @@ echo'
 							<th>Eszköz</th>
 							<th>Márka</th>
 							<th>Típus</th>
-							<th>Törlés</th>
+							<th id="torles"></th>
 						</tr>
 					</thead>
 					<tbody>';

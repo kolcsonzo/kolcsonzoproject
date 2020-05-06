@@ -70,7 +70,7 @@ $target = $_POST['target'];
 								<tr>
 									<th>Felhasználónév</th>
 									<th>Beosztás</th>
-									<th>Törlés</th>
+									<th id="torles"></th>
 								</tr>
 							</thead>
 							<tbody>';

@@ -72,7 +72,7 @@ echo '
 					<th>Foglalás kezdete</th>
 					<th>Foglalás vége</th>
 					<th>Státusz</th>
-					<th>Törlés</th>
+					<th id="torles"></th>
 				</tr>
 			</thead>
 			<tbody>';
