@@ -6,7 +6,32 @@
 	include('inc/top.php');
 //Vezető szerep azonosítás
 	include("auth_admin.php");
-?>
+
+//----------------------------------------------------ESZKÖZ FELVÉTEL---------------------------------------------------------------------------------------------
+	$device = stripslashes($_REQUEST['getGroupOfDevices']);
+	$device = mysqli_real_escape_string($con, $device);
+	$other = stripslashes($_REQUEST['other']);
+	$other = mysqli_real_escape_string($con, $other);
+	$brand = stripslashes($_REQUEST['brand']);
+	$brand = mysqli_real_escape_string($con, $brand);
+	$type = stripslashes($_REQUEST['type']);
+	$type = mysqli_real_escape_string($con, $type);
+	$sor = $_REQUEST['sor'];
+	$polc = $_REQUEST['polc'];
+	$days = $_REQUEST['days'];
+	
+	if (isset($device) AND isset($brand) AND isset($type) AND isset($sor) AND isset($polc) AND isset($days)) {
+		if ($device == 'other') {
+			$device = $other;
+		}
+		$query = "INSERT INTO devices (name, period_days, type, brand, pos_s, pos_p) VALUES ('$device', '$days', '$type', '$brand', '$sor', '$polc')";
+		$execute = mysqli_query($con, $query) or die(mysql_error());
+		//success üzenet
+		echo 'Sikeres eszközfelvétel!';
+	}
+
+
+	?>
 <main>
 		<div class="pagename" style>
 			<span class="text content-name">Eszközkezelő</span>
@@ -22,47 +47,78 @@
 			<div class="info">
 				<span><strong>Eszköz felvételéhez</strong> a következő űrlap kitöltése szükséges.</span>
 			</div>
-			<form action="useradd.php" id="add-user-form" method="post" autocomplete="off">
+			<form action="eszkozkezelo.php" id="add-user-form" method="post" autocomplete="off">
 				<br>
-				<label>Válasszon eszközcsoportot!</label>
+				<label for="getGroupOfDevices">Válasszon eszközcsoportot!</label>
 				<center>
-					<select id ="getGroupOfDevices" class="select" onchange="group_of_devices()">
-						<option value="Choose" disabled selected>Kérlek válassz!</option>
-						<option value="Laptop">Laptop</option>
-						<option value="Monitor">Monitor</option>
-						<option value="Projektor">Projektor</option>
+					<select id ="getGroupOfDevices" name="getGroupOfDevices" class="select" onchange="group_of_devices()" required>
+						<option value="" disabled selected>Kérlek válassz!</option>
+						<?php
+						//jelenlegi eszközcsoportok lekérdezése
+						$query    = "SELECT * FROM devices GROUP BY name";
+						$result   = mysqli_query($con, $query);
+						while ($row = $result->fetch_assoc()) {
+							echo '<option value="'.$row['name'].'">'.$row['name'].'</option>';
+							}
+						?>
 						<option value="other">Egyéb</option>
 					</select>				
 				</center>
 				<div id="group_of_devices">
-					<label>Eszközcsoport létrehozása:</label>
-					<input type="text" id="username" name="username" required placeholder="Adja meg az eszközcsoport nevét...">
+					<label for="other">Eszközcsoport létrehozása:</label>
+					<input type="text" id="other" name="other" required placeholder="Adja meg az eszközcsoport nevét...">
 				</div>
-				<label>Márka:</label>
-				<input type="text" id="username" name="username" required placeholder="Adja meg az eszköz márkáját...">
-				<label>Típus:</label>
-				<input type="text" id="full_name" name="full_name" required placeholder="Adja meg az eszköz típusát...">
+				<label for="brand">Márka:</label>
+				<input type="text" id="brand" name="brand" required placeholder="Adja meg az eszköz márkáját...">
+				<label for="type">Típus:</label>
+				<input type="text" id="type" name="type" required placeholder="Adja meg az eszköz típusát...">
 				<label>Tárolási pozíció:</label>
-				<input type="text" id="full_name" name="full_name" required placeholder="Adja meg az eszköz típusát...">
-				<label>Maximális foglalás hossza: (max 15 nap)</label>
+					</br>
+					<label for="sor">Sor:</label>
+					<select id ="sor" required name="sor" class="select">
+						<option value="" disabled selected>Kérlek válassz!</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+					</select>	
+					</br>
+					<label for="polc">Polc:</label>					
+					<select id ="polc" name="polc" class="select" required>
+						<option value="" disabled selected>Kérlek válassz!</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+					</select>				
+
+				<label for="days">Maximális foglalás hossza: (max 15 nap)</label>
 				<center>
-				<select class="select">
+				<select id ="days" name="days" class="select" required>
 					<option value="" disabled selected>Kérlek válassz!</option>
-					<option value"1">1</option>
-					<option value"2">2</option>
-					<option value"3">3</option>
-					<option value"4">4</option>
-					<option value"5">5</option>
-					<option value"6">6</option>
-					<option value"7">7</option>
-					<option value"8">8</option>
-					<option value"9">9</option>
-					<option value"10">10</option>
-					<option value"11">11</option>
-					<option value"12">12</option>
-					<option value"13">13</option>
-					<option value"14">14</option>
-					<option value"15">15</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
 				</select>				
 				<div class="elvalaszto2">
 					<button class="button">Eszköz felvétele</button>

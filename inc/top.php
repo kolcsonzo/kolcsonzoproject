@@ -40,9 +40,11 @@
 		function group_of_devices() {
 			if (document.getElementById("getGroupOfDevices").value == 'other') {
 				document.getElementById("group_of_devices").style.display = "block";
+				document.getElementById("other").disabled = false;
 			}
 			else {
 				document.getElementById("group_of_devices").style.display = "none";
+				document.getElementById("other").disabled = true;
 			}
 		};
 	<!-- Ez a script frissíti le a taglistát, és töröl az adatbázisból. Átadja a törlendő felhasználó nevét a query-nek -->

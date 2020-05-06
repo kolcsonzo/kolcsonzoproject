@@ -12,12 +12,12 @@ $target = $_POST['target'];
 
 				//Vezető szerepkörhöz kötött..
 				if ($role == 2 AND $target != "") {
+					//user eszközfoglalásainak törlése
+					$del_query = "DELETE FROM reservations WHERE user_id='".$target."'";
+					$execute = mysqli_query($con, $del_query) or die(mysql_error());	
 					//törlés az users táblából
 					$del_query = "DELETE FROM users WHERE username='".$target."'";
 					$execute = mysqli_query($con, $del_query) or die(mysql_error());
-					//eszköz foglalásainak törlése
-					$del_query = "DELETE FROM reservations WHERE user_id='".$target."'";
-					$execute = mysqli_query($con, $del_query) or die(mysql_error());	
 					//Tényleg volt törlés az sql-ben..?
 					if (mysqli_affected_rows($con) == 1) {
 								echo '<script language="javascript">';
