@@ -1,7 +1,7 @@
 <?php
 //azonosítás
 	include("auth_session.php");
-	
+	include("auth_user.php");
 	header("Content-Type: text/html; charset=utf-8");
 	include('inc/top.php');
 ?>
@@ -39,10 +39,17 @@
 				  ?>
 				  <div id="foglalas_result" class=""></div>
 			<?php
+
 			//User ID és Device ID lekérése az új sor beszúrásához
-			$userid = $userinfo['id']; //minden userinfot elérünk bármelyik oldalon, miután az inc.php -ben már lekérdezzük
+			$userid = $userinfo['id'];
 			$device_id = $_REQUEST['id']; //a postban megkapott ID lesz a device_id
-			//Mai dátum lekérdezése
+			
+								$query		=	"SELECT * FROM devices WHERE id='$device_id'";
+								$result		=	mysqli_query($con, $query) or die(mysql_error());
+								$row		=	mysqli_fetch_assoc(result);
+								$name = $row['name'];
+								echo $name;			
+			
 			$days = $_REQUEST['idotartam']; //foglalás időtartama
 			$StartDate = date('Y-m-d H:i:s'); //aktuális dátum
 			$EndDate = date('Y-m-d H:i:s', strtotime(' + '.$days.' days'));//lejárati dátum (amit az aktuális dátum+időtartam hozzáadásából kapunk meg)
@@ -52,7 +59,7 @@
 						$query    = "INSERT INTO reservations (user_id, device_id, start_datetime, end_datetime) 
 														VALUES ('$userid','$device_id','$StartDate', '$EndDate')";
 														$result   = mysqli_query($con, $query);
-					  //Ezután az eszközlistában átállítjuk az eszköz státuszát foglaltra
+
 
 						//ide jöhet bármilyen success üzenet
 						echo '<script language="javascript">
@@ -66,6 +73,19 @@
 								});
 								}													
 							</script>';
+//------------------------------------------------------------NAPLÓZÁS------------------------------------------------------------------------------------------
+								$query		=	"SELECT * FROM devices WHERE id='$device_id'";
+								$result		=	mysqli_query($con, $query) or die(mysql_error());
+								$row = $result -> fetch_assoc();
+								$eszkoz = $row['name'];
+								$type = $row['type'];
+								$brand = $row['brand'];
+								
+								$user = $userinfo['username'];
+								$query    = "INSERT INTO events (event, user)
+											 VALUES ('Eszköz foglalása: $eszkoz | $brand $type | eID: $device_id', '$user')";
+								$execute   = mysqli_query($con, $query) or die(mysql_error());
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 				  }
 				  ?>
 				</form>

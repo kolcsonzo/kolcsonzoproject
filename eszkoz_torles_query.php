@@ -7,9 +7,22 @@ include("auth_admin.php");	//vezetői jog meglétének ellenőrzése
 @$eszkoz_id = $_REQUEST['eszkoz_id'];
 //---------------------------------------------------------ESZKÖZ TÖRLÉSE-----------------------------------------------------------------------------------------
 if (isset($eszkoz_id)) {
+//------------------------------------------------------------NAPLÓZÁS 1. rész----------------------------------------------------------------------------------
+//az adatok lekérdezése még a törlés előtt
+								$query		=	"SELECT * FROM devices WHERE id='$eszkoz_id'";
+								$result		=	mysqli_query($con, $query) or die(mysql_error());
+								$row = $result -> fetch_assoc();
+								$eszkoz = $row['name'];
+								$type = $row['type'];
+								$brand = $row['brand'];
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 //törlés az eszközlistából
 $query    = "DELETE FROM devices WHERE id='$eszkoz_id'";
 $result   = mysqli_query($con, $query) or die(mysql_error());
+//törlés a foglalások közül
+$query    = "DELETE FROM reservations WHERE device_id='$eszkoz_id'";
+$result   = mysqli_query($con, $query);
+if ($result) {
 echo '<script type="text/javascript">openPage('."'".'user-delete'."'".')</script>';//törlés tab megnyitása a törlés megtörténte után
 //success üzenet
 echo '<script language="javascript">';
@@ -21,7 +34,26 @@ echo 'icon: "img/check-square-solid.svg",'; /*Ingyenes ikon: https://fontawesome
 echo 'closeable: false';
 echo '});';
 echo '</script>';
-} 
+//------------------------------------------------------------NAPLÓZÁS 2.rész-----------------------------------------------------------------------------------
+								$user = $userinfo['username'];
+								$query    = "INSERT INTO events (event, user)
+											 VALUES ('Eszköz törlése: $eszkoz | $brand $type | ID: $eszkoz_id', '$user')";
+								$execute   = mysqli_query($con, $query) or die(mysql_error());
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+} else
+{
+//fail
+echo '<script language="javascript">';
+echo '$.meow({';
+echo 'message: "A törlési folyamat nem sikerült!",';
+echo 'title: "Sikertelen törlés!",';
+echo 'duration: 3500,';
+echo 'icon: "img/exclamation-triangle-solid.svg",'; /*Ingyenes ikon: https://fontawesome.com/icons/check-square?style=solid  - szín megváltoztatva*/
+echo 'closeable: false';
+echo '});';
+echo '</script>';
+	}
+}
 //----------------------------------------------------------ESZKÖZÖK KILISTÁZÁSA-----------------------------------------------------------------------------------
 $query ="SELECT *, devices.id as id
 			FROM devices

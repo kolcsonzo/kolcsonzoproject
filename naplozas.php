@@ -1,8 +1,10 @@
 <?php
 //azonosítás
-	include("auth_session.php");
-	header("Content-Type: text/html; charset=utf-8");
-	include('inc/top.php');
+require('auth_session.php'); //session ellenőrzése, hogy egyáltalán létezik -e
+include("auth_user.php");	 //user adatainak lekérdezése
+include("auth_admin.php");	//vezetői jog meglétének ellenőrzése
+header("Content-Type: text/html; charset=utf-8");
+include('inc/top.php');
 ?>
 <main>
 		<div class="pagename" style>
@@ -38,54 +40,19 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td>Felhasználó létrehozása</td>
-					<td>Admin</td>
-					<td>2020-05-05</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>Felhasználó létrehozása</td>
-					<td>Admin</td>
-					<td>2020-05-05</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>Felhasználó létrehozása</td>
-					<td>Admin</td>
-					<td>2020-05-05</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>Felhasználó létrehozása</td>
-					<td>Admin</td>
-					<td>2020-05-01</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>Felhasználó létrehozása</td>
-					<td>Admin</td>
-					<td>2020-05-02</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>Felhasználó létrehozása</td>
-					<td>Admin</td>
-					<td>2020-05-03</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Felhasználó törlése</td>
-					<td>Valaki</td>
-					<td>2020-05-04</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>Felhasználó létrehozása</td>
-					<td>Admin</td>
-					<td>2020-05-05</td>
-				</tr>
+<?php
+$query = "SELECT * FROM events";
+$result = mysqli_query($con, $query) or die(mysql_error());
+				
+		while ($row = $result->fetch_assoc()) {
+			echo '<tr>';
+				echo '<td>'.$row['event_id'].'</td>';
+				echo '<td>'.$row['event'].'</td>';
+				echo '<td>'.$row['user'].'</td>';
+				echo '<td>'.$row['datetime'].'</td>';
+			echo '</tr>';
+		}
+?>
 			</tbody>
 		</table>
 		</div>

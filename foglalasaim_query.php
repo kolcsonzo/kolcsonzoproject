@@ -24,16 +24,45 @@ if ($rows != 1) {
 $query    = "UPDATE reservations SET end_datetime=NOW()-1 WHERE id = '$foglalas_id'";
 $result   = mysqli_query($con, $query);
 
-//Ide jöhet a success üzenet
+//success
+if ($result) {
 		echo '<script language="javascript">';
 		echo '$.meow({';
 		echo 'message: "Az eszköz visszaadása sikeresen megtörtént.",';
-		echo 'title: "Sikeres visszamondás!",';
+		echo 'title: "Sikeres visszaadás!",';
 		echo 'duration: 3500,';
 		echo 'icon: "img/check-square-solid.svg",'; /*Ingyenes ikon: https://fontawesome.com/icons/check-square?style=solid  - szín megváltoztatva*/
 		echo 'closeable: false';
 		echo '});';
 		echo '</script>';
+//------------------------------------------------------------NAPLÓZÁS------------------------------------------------------------------------------------------
+								$query		=	"SELECT * FROM  reservations
+												INNER JOIN devices
+												ON reservations.device_id = devices.id
+												WHERE reservations.id = '$foglalas_id'";
+								$result		=	mysqli_query($con, $query) or die(mysql_error());
+								$row = $result -> fetch_assoc();
+								$eszkoz = $row['name'];
+								$type = $row['type'];
+								$brand = $row['brand'];
+								$device_id = $row['device_id'];
+
+								$user = $userinfo['username'];
+								$query    = "INSERT INTO events (event, user)
+											 VALUES ('Eszköz visszaadása: $eszkoz | $brand $type | eID: $device_id | fID: $foglalas_id', '$user')";
+								$execute   = mysqli_query($con, $query) or die(mysql_error());
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+		} else {
+		echo '<script language="javascript">';
+		echo '$.meow({';
+		echo 'message: "Az eszköz visszaadása sikertelen volt!",';
+		echo 'title: "Sikertelen visszaadás!",';
+		echo 'duration: 3500,';
+		echo 'icon: "img/exclamation-triangle-solid.svg",'; /*Ingyenes ikon: https://fontawesome.com/icons/exclamation-triangle?style=solid  - szín megváltoztatva*/
+		echo 'closeable: false';
+		echo '});';
+		echo '</script>';		
+			}
 		} 
 }
 

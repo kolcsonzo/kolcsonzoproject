@@ -25,9 +25,42 @@
 			$device = $other;
 		}
 		$query = "INSERT INTO devices (name, period_days, type, brand, pos_s, pos_p) VALUES ('$device', '$days', '$type', '$brand', '$sor', '$polc')";
-		$execute = mysqli_query($con, $query) or die(mysql_error());
+		$execute = mysqli_query($con, $query);
+		if ($execute) {
 		//success üzenet
-		echo 'Sikeres eszközfelvétel!';
+		echo '<script language="javascript">';
+		echo '$.meow({';
+		echo 'message: "Az eszköz felvétele sikeresen megtörtént.",';
+		echo 'title: "Sikeres eszközfelvétel!",';
+		echo 'duration: 3500,';
+		echo 'icon: "img/check-square-solid.svg",'; /*Ingyenes ikon: https://fontawesome.com/icons/check-square?style=solid  - szín megváltoztatva*/
+		echo 'closeable: false';
+		echo '});';
+		echo '</script>';
+//------------------------------------------------------------NAPLÓZÁS------------------------------------------------------------------------------------------
+								$query		=	"SELECT max(id) as id FROM devices";
+								$result		=	mysqli_query($con, $query) or die(mysql_error());
+								$row = $result -> fetch_assoc();
+								$id = $row['id'];
+
+								$user = $userinfo['username'];
+								$query    = "INSERT INTO events (event, user)
+											 VALUES ('Eszköz felvétele: $device | $brand $type | ID: $id', '$user')";
+								$execute   = mysqli_query($con, $query) or die(mysql_error());
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+		} else {
+		//fail
+		echo '<script language="javascript">';
+		echo '$.meow({';
+		echo 'message: "Az eszköz felvétele során hiba adódott!",';
+		echo 'title: "Sikertelen eszközfelvétel!",';
+		echo 'duration: 3500,';
+		echo 'icon: "img/exclamation-triangle-solid.svg",'; /*Ingyenes ikon: https://fontawesome.com/icons/check-square?style=solid  - szín megváltoztatva*/
+		echo 'closeable: false';
+		echo '});';
+		echo '</script>';	
+		}
+
 	}
 
 

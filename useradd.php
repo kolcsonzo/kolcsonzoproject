@@ -2,6 +2,7 @@
 <?php
 //Szimpla azonosítás
 	include("auth_session.php");
+	include("auth_user.php");
 	header("Content-Type: text/html; charset=utf-8");
 	include('inc/top.php');
 //Vezető szerep azonosítás
@@ -12,7 +13,7 @@
 			<span class="text content-name">Felhasználók kezelése</span>
 			<div style="float:right;">
 				<button class="button" onclick="openPage('user-add')">Tag felvétel</button>
-				<button class="button" name="del" onclick="openPage('user-delete')">Tag törlés</button>
+				<button class="button" name="del" onclick="openPage('user-delete')">Taglista</button>
 				<svg class="fas fa-user-plus" onclick="openPage('user-add')"></svg>
 				<svg class="fas fa-user-minus" onclick="openPage('user-delete')"></svg>
 			</div>
@@ -76,7 +77,13 @@
 														}													
 												</script>';
 								} else {
-
+//------------------------------------------------------------NAPLÓZÁS------------------------------------------------------------------------------------------
+								$user	= $userinfo['username'];
+								if ($role == '1') {$szerepkor='Munkatárs';} else {$szerepkor='Vezető';}
+								$query    = "INSERT INTO events (event, user)
+											 VALUES ('Felhasználó hozzáadása: $username | Jogosultság: $szerepkor', '$user')";
+								$execute   = mysqli_query($con, $query) or die(mysql_error());
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 								//Ha nincs, akkor mehet
 								$query    = "INSERT into `users` (username, full_name, email, password, role, create_datetime)
 											 VALUES ('$username', '$full_name', '$email','" . md5($password) . "', '$role', '$create_datetime')";

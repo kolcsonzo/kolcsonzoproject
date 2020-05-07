@@ -29,6 +29,12 @@ $target = $_POST['target'];
 								echo 'closeable: false';
 								echo '});';
 								echo '</script>';
+//------------------------------------------------------------NAPLÓZÁS------------------------------------------------------------------------------------------
+								$user = $userinfo['username'];
+								$query    = "INSERT INTO events (event, user)
+											 VALUES ('Felhasználó eltávolítása: $target', '$user')";
+								$execute   = mysqli_query($con, $query) or die(mysql_error());
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 					} else {
 								echo '<script language="javascript">';
 								echo '$.meow({';
