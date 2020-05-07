@@ -28,10 +28,10 @@
 			</div>
 		</div>
 		<div class="table-responsive-lg">
-		<table id="device" class="table table-hover" style="width:100%; font-size:12px; min-width: 780px;">
+		<table id="device" class="table table-hover" style="width:100%; font-size:12px; min-width: 680px;">
 			<thead>
 				<tr>
-					<th>ID</th>
+					<th style="width:30px;">ID</th>
 					<th>Név</th>
 					<th>Max. foglalás</th>
 					<th>Márka</th>
@@ -62,7 +62,7 @@
 				
 		while ($row = $result->fetch_assoc()) {
 			echo'<tr>
-					<td>'.$row["eszkoz_id"].'</td>
+					<td style="width:30px;">'.$row["eszkoz_id"].'</td>
 					<td>'.$row["name"].'</td>
 					<td>'.$row["period_days"].'&nbsp;nap</td>
 					<td>'.$row["brand"].'</td>

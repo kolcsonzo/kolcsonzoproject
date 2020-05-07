@@ -29,13 +29,13 @@ include('inc/top.php');
 				</ul>	
 			</div>
 		</div>
-		<div class="table-responsive" style="border: 0px;">
-		<table id="device" class="table table-hover" style="width:100%">
+		<div class="table-responsive-lg">
+		<table id="device" class="table table-hover" style="width:100%; min-width:800px">
 			<thead>
 				<tr>
-					<th>ID</th>
+					<th style="padding-left:2px;padding-right:2px; width:60px;">ID</th>
 					<th>Esemény</th>
-					<th>Kezdeményező</th>
+					<th style="min-width:160px;">Kezdeményező</th>
 					<th>Időpont</th>
 				</tr>
 			</thead>
@@ -46,7 +46,7 @@ $result = mysqli_query($con, $query) or die(mysql_error());
 				
 		while ($row = $result->fetch_assoc()) {
 			echo '<tr>';
-				echo '<td>'.$row['event_id'].'</td>';
+				echo '<td style="padding-left:2px;padding-right:2px; width:60px;">'.$row['event_id'].'</td>';
 				echo '<td>'.$row['event'].'</td>';
 				echo '<td>'.$row['user'].'</td>';
 				echo '<td>'.$row['datetime'].'</td>';
