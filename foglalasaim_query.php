@@ -76,8 +76,8 @@ echo '
 					<li class="tablazat_merteke">
 						<select name="state" id="maxRows" class="select-list">
 							<option value="5000">Mind</option>
-							<option value="5" selected>5</option>
-							<option value="10">10</option>
+							<option value="5">5</option>
+							<option value="10" selected>10</option>
 							<option value="15">15</option>
 							<option value="20">20</option>
 							<option value="50">50</option>
@@ -140,6 +140,9 @@ echo '
 		echo'
 			</tbody>
 		</table>
+			<div class="print">
+				<svg class="fas fa-print" onclick="window.print()"></svg>			
+			<div/>		
 		</div>'
 ?>
 				<script>
