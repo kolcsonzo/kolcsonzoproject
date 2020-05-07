@@ -37,6 +37,9 @@
 					<th>Márka</th>
 					<th>Típus</th>
 					<th>Státusz</th>
+					<?php 
+					if ($userinfo['role'] == 2) {echo '<th>Foglaló</th>';}
+					?>
 					<th>Tárolási pozíció</th>
 				</tr>
 			</thead>
@@ -49,10 +52,12 @@
 							 SELECT *
 							 FROM reservations
 							 WHERE reservations.device_id = devices.id AND NOW() BETWEEN reservations.start_datetime AND reservations.end_datetime ), 1, 0) as allapot
-FROM devices
-LEFT JOIN reservations
-ON reservations.device_id = devices.id
-GROUP BY device_id";
+			FROM devices
+			LEFT JOIN reservations
+			ON reservations.device_id = devices.id
+            INNER JOIN users
+            ON reservations.user_id = users.id
+			GROUP BY device_id";
 		$result = mysqli_query($con, $query) or die(mysql_error());
 				
 		while ($row = $result->fetch_assoc()) {
@@ -64,11 +69,12 @@ GROUP BY device_id";
 					<td>'.$row["type"].'</td>';
 			if ($row["allapot"] == 1) {
 			echo'	<td>Foglalt ('.$row["lejarati_datum"].' -ig)</td>';
+			if ($userinfo['role'] == 2) {echo '<td>'.$row["username"].'</td>';}
 			} else {	
 			echo'	<td>Szabad</td>';
+			if ($userinfo['role'] == 2) {echo '<td></td>';}
 			}
-			echo'	<td>S'.$row["pos_s"].' P'.$row["pos_p"].'</td>
-				</tr>';	
+			echo'	<td>S'.$row["pos_s"].' P'.$row["pos_p"].'</td></tr>';	
 		}
 ?>			
 			</tbody>
