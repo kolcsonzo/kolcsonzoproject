@@ -29,7 +29,7 @@ include('inc/top.php');
 				</ul>	
 			</div>
 		</div>
-		<div class="table-responsive">
+		<div class="table-responsive" style="border: 0px;">
 		<table id="device" class="table table-hover" style="width:100%">
 			<thead>
 				<tr>
