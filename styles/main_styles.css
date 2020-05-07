@@ -492,3 +492,37 @@ th#torles:after {
 .print svg:hover{
 	color: #2293BD;
 }
+.tooltiptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -225px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 90%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+div#information {
+	position: relative;
+	cursor: pointer;
+}
+#information:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+} 

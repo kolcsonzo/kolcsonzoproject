@@ -27,8 +27,8 @@
 				</ul>	
 			</div>
 		</div>
-		<div class="table-responsive">
-		<table id="device" class="table table-hover" style="width:100%">
+		<div class="table-responsive-lg">
+		<table id="device" class="table table-hover" style="width:100%; font-size:12px; min-width: 780px;">
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -40,7 +40,7 @@
 					<?php 
 					if ($userinfo['role'] == 2) {echo '<th>Foglaló</th>';}
 					?>
-					<th>Tárolási pozíció</th>
+					<th>Tárolási poz.</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -68,7 +68,16 @@
 					<td>'.$row["brand"].'</td>
 					<td>'.$row["type"].'</td>';
 			if ($row["allapot"] == 1) {
-			echo'	<td>Foglalt ('.$row["lejarati_datum"].' -ig)</td>';
+			echo'	<td>
+						<div id="information">
+							<span style="font-size: 12px; color: #26ACDE;">
+								<span>Foglalt </span><i class="fas fa-info-circle" style="font-size:13px"></i> 		
+							</span>
+						<span class="tooltiptext">
+							Lejárat dátuma: '.$row["lejarati_datum"].'	
+						</span>
+						</div>
+					</td>';
 			if ($userinfo['role'] == 2) {echo '<td>'.$row["username"].'</td>';}
 			} else {	
 			echo'	<td>Szabad</td>';
