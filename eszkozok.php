@@ -92,7 +92,8 @@ GROUP BY device_id";
 					"zeroRecords": "Nincs találat...",
 					"infoEmpty": "Nincsenek rekordok az adatbázisban."
 					},
-				"lengthMenu": [ [5,10,15,20,50,70,100,5000], [5,10,15,20,50,70,100,"Mind"] ]
+				"lengthMenu": [ [5,10,15,20,50,70,100,5000], [5,10,15,20,50,70,100,"Mind"] ],
+				"pageLength": 10
 				} );
 			
 			var table = $('#device').DataTable();
