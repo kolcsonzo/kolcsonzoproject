@@ -40,6 +40,42 @@
 
       return $ipaddress;
  }
+ 
+ function get_ip_address() {
+
+    // Check for shared Internet/ISP IP
+    if (!empty($_SERVER['HTTP_CLIENT_IP']) && validate_ip($_SERVER['HTTP_CLIENT_IP'])) {
+        return $_SERVER['HTTP_CLIENT_IP'];
+    }
+
+    // Check for IP addresses passing through proxies
+    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+
+        // Check if multiple IP addresses exist in var
+        if (strpos($_SERVER['HTTP_X_FORWARDED_FOR'], ',') !== false) {
+            $iplist = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+            foreach ($iplist as $ip) {
+                if (validate_ip($ip))
+                    return $ip;
+            }
+        }
+        else {
+            if (validate_ip($_SERVER['HTTP_X_FORWARDED_FOR']))
+                return $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
+    }
+    if (!empty($_SERVER['HTTP_X_FORWARDED']) && validate_ip($_SERVER['HTTP_X_FORWARDED']))
+        return $_SERVER['HTTP_X_FORWARDED'];
+    if (!empty($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']) && validate_ip($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']))
+        return $_SERVER['HTTP_X_CLUSTER_CLIENT_IP'];
+    if (!empty($_SERVER['HTTP_FORWARDED_FOR']) && validate_ip($_SERVER['HTTP_FORWARDED_FOR']))
+        return $_SERVER['HTTP_FORWARDED_FOR'];
+    if (!empty($_SERVER['HTTP_FORWARDED']) && validate_ip($_SERVER['HTTP_FORWARDED']))
+        return $_SERVER['HTTP_FORWARDED'];
+
+    // Return unreliable IP address since all else failed
+    return $_SERVER['REMOTE_ADDR'];
+}
 
 echo '
 	<div class="grid-container-login">
@@ -78,7 +114,7 @@ echo '
 					// Van ilyen user és jó a pw
 					header("Location: foglalas.php");
 //------------------------------------------------------------NAPLÓZÁS------------------------------------------------------------------------------------------
-											$ipaddress = get_client_ip();
+											$ipaddress = get_ip_address();
 											$query    = "INSERT INTO events (event, user)
 											 VALUES ('Felhasználó bejelentkezés: $username | IP: $ipaddress', '$username')";
 								$execute   = mysqli_query($con, $query) or die(mysql_error());

@@ -36,10 +36,7 @@
 					<th>Max. foglalás</th>
 					<th>Márka</th>
 					<th>Típus</th>
-					<th>Státusz</th>
-					<?php 
-					if ($userinfo['role'] == 2) {echo '<th>Foglaló</th>';}
-					?>
+					<th style="width:100px;">Státusz</th>
 					<th>Tárolási poz.</th>
 				</tr>
 			</thead>
@@ -55,9 +52,9 @@
 			FROM devices
 			LEFT JOIN reservations
 			ON reservations.device_id = devices.id
-            INNER JOIN users
-            ON reservations.user_id = users.id
-			GROUP BY device_id";
+            LEFT JOIN users
+			ON reservations.user_id = users.id
+            GROUP BY devices.id";
 		$result = mysqli_query($con, $query) or die(mysql_error());
 				
 		while ($row = $result->fetch_assoc()) {
@@ -73,15 +70,14 @@
 							<span style="font-size: 12px; color: #26ACDE;">
 								<span>Foglalt </span><i class="fas fa-info-circle" style="font-size:13px"></i> 		
 							</span>
+							
 						<span class="tooltiptext">
-							Lejárat dátuma: '.$row["lejarati_datum"].'	
-						</span>
+							Lejárat dátuma: '.$row["lejarati_datum"]; if ($userinfo['role'] == 2) {echo  ' | '.$row["username"];}
+				  echo '</span>
 						</div>
 					</td>';
-			if ($userinfo['role'] == 2) {echo '<td>'.$row["username"].'</td>';}
 			} else {	
 			echo'	<td>Szabad</td>';
-			if ($userinfo['role'] == 2) {echo '<td></td>';}
 			}
 			echo'	<td>S'.$row["pos_s"].' P'.$row["pos_p"].'</td></tr>';	
 		}

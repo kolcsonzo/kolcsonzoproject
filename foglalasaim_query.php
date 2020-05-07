@@ -107,7 +107,7 @@ echo '
 			<tbody>';
 			
 		$query =" 
-			SELECT reservations.id AS id, devices.name AS name, devices.type AS type, DATE_FORMAT(start_datetime, '%Y-%m-%d %H:%i') as start_datetime, DATEDIFF( end_datetime, NOW()) AS remaining, IF (end_datetime < NOW(), 1, 0) AS allapot, DATE_FORMAT(end_datetime, '%Y-%m-%d %H:%i') as end_datetime
+			SELECT reservations.id AS id, devices.name AS name, devices.brand AS brand, devices.type AS type, DATE_FORMAT(start_datetime, '%Y-%m-%d %H:%i') as start_datetime, DATEDIFF( end_datetime, NOW()) AS remaining, IF (end_datetime < NOW(), 1, 0) AS allapot, DATE_FORMAT(end_datetime, '%Y-%m-%d %H:%i') as end_datetime
 			FROM `reservations`
 			INNER JOIN devices
 			ON devices.id = reservations.device_id
@@ -120,10 +120,24 @@ echo '
 			echo'<tr>
 					<td>'.$row["id"].'</td>
 					<td>'.$row["name"].'</td>
-					<td>'.$row["type"].'</td>
+					<td>'; echo $row["brand"]; echo '  '.$row["type"];
+					echo'</td>
 					<td>'.$row["start_datetime"].'</td>';
 					if ($row["remaining"] > 0){
-					echo '<td>'.$row["end_datetime"].' ('.$row["remaining"].' nap)</td>';
+						echo '
+					<td>
+					<div id="information">
+							<span style="font-size: 12px; color: #26ACDE;">
+								<span>'.$row["end_datetime"].'</span>
+								<i class="fas fa-info-circle" style="font-size:13px"></i> 		
+							</span>
+						<span class="tooltiptext">
+							'.$row["remaining"].' nap maradt
+						</span>
+					</div>
+					</td>';
+						
+					
 					} else {
 					echo '<td>'.$row["end_datetime"].'</td>';
 					}

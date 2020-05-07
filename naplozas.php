@@ -34,7 +34,7 @@ include('inc/top.php');
 			<thead>
 				<tr>
 					<th style="padding-left:2px;padding-right:2px; width:60px;">ID</th>
-					<th>Esemény</th>
+					<th style="width:450px;">Esemény</th>
 					<th style="min-width:160px;">Kezdeményező</th>
 					<th>Időpont</th>
 				</tr>
