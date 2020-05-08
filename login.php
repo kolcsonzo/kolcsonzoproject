@@ -65,7 +65,7 @@ echo '
 						<i class="fas fa-info-circle"></i>		
 					</span>
 					<span class="tooltiptext">
-						Regisztrációs szándék esetén forduljon a rendszergazdához!	
+						Regisztrációs szándék esetén forduljon egy vezetőhöz!	
 					</span>
 				</div>
 				<form name="login" id="" method="post" autocomplete="off">
