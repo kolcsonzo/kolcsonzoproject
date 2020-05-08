@@ -1,6 +1,6 @@
 <?php
 //azonosítás
-	include("auth_session.php");
+	require("auth_session.php");
 	include("auth_user.php");
 	header("Content-Type: text/html; charset=utf-8");
 	include('inc/top.php');
@@ -60,7 +60,7 @@
 														VALUES ('$userid','$device_id','$StartDate', '$EndDate')";
 														$result   = mysqli_query($con, $query);
 
-
+						if ($result) {
 						//ide jöhet bármilyen success üzenet
 						echo '<script language="javascript">
 								window.onload = function(){
@@ -85,6 +85,18 @@
 								$query    = "INSERT INTO events (event, user)
 											 VALUES ('Eszköz foglalása: $eszkoz | $brand $type | eID: $device_id', '$user')";
 								$execute   = mysqli_query($con, $query) or die(mysql_error());
+								} else {
+									//fail
+								echo '<script language="javascript">';
+								echo '$.meow({';
+								echo 'message: "Az eszközfoglalás nem sikerült!",';
+								echo 'title: "Sikertelen foglalás!",';
+								echo 'duration: 3500,';
+								echo 'icon: "img/exclamation-triangle-solid.svg",'; /*Ingyenes ikon: https://fontawesome.com/icons/check-square?style=solid  - szín megváltoztatva*/
+								echo 'closeable: false';
+								echo '});';
+								echo '</script>';
+									}
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 				  }
 				  ?>

@@ -1,24 +1,24 @@
 
 <?php
 //Szimpla azonosítás
-	include("auth_session.php");
+	require("auth_session.php");
 	header("Content-Type: text/html; charset=utf-8");
 	include('inc/top.php');
-@//Vezető szerep azonosítás
+//Vezető szerep azonosítás
 	include("auth_admin.php");
 
 //----------------------------------------------------ESZKÖZ FELVÉTEL---------------------------------------------------------------------------------------------
-@	$device = stripslashes($_REQUEST['getGroupOfDevices']);
+	$device = stripslashes($_REQUEST['getGroupOfDevices']);
 	$device = mysqli_real_escape_string($con, $device);
-@	$other = stripslashes($_REQUEST['other']);
+	$other = stripslashes($_REQUEST['other']);
 	$other = mysqli_real_escape_string($con, $other);
-@	$brand = stripslashes($_REQUEST['brand']);
+	$brand = stripslashes($_REQUEST['brand']);
 	$brand = mysqli_real_escape_string($con, $brand);
-@	$type = stripslashes($_REQUEST['type']);
+	$type = stripslashes($_REQUEST['type']);
 	$type = mysqli_real_escape_string($con, $type);
-@	$sor = $_REQUEST['sor'];
-@	$polc = $_REQUEST['polc'];
-@	$days = $_REQUEST['days'];
+	$sor = $_REQUEST['sor'];
+	$polc = $_REQUEST['polc'];
+	$days = $_REQUEST['days'];
 	
 	if (isset($device) AND isset($brand) AND isset($type) AND isset($sor) AND isset($polc) AND isset($days)) {
 		if ($device == 'other') {

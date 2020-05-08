@@ -1,6 +1,6 @@
 <?php
 //azonosítás
-	include("auth_session.php");
+	require("auth_session.php");
 	header("Content-Type: text/html; charset=utf-8");
 	include('inc/top.php');
 ?>
